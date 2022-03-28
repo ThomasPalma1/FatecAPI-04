@@ -80,9 +80,10 @@ Tecnologias | Usamos para
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" width = "95px" height="25px"> | <p align = "justify">A linguagem de alto nível, JavaScript foi desenvolvida, primordialmente, para ser executada em navegadores e manipular os comportamentos de páginas web.</p>
 <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" width = "200px" height="25px"> | <p align = "justify">PostgreSQL, é um sistema de gerenciamento de banco de dados do tipo relacional. Seu objetivo é permitir a realização da linguagem SQL em estruturas de programação. Sendo assim, garantindo um trabalho bem-organizado seguindo as diretrizes desse tipo de ordenação dos dados.</p>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"> | Figma é uma ferramenta UI online e gratuita para prototipação de projetos que oferece trabalho colaborativo. |</p>
-<img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> | <p align = "justify"> escreva aqui </p>
-<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> | escreva aqui |</p>
-<img src="https://img.shields.io/badge/Expo-20232A?style=for-the-badge&logo=expo"> | escreva aqui  |</p>
+<img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> | <p align = "justify"> O React Native é um framework, baseado em React, que nos possibilita desenvolver aplicações mobile utilizando apenas Javascript. </p>
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> | Node.js é um ambiente de execução JavaScript de código aberto e multiplataforma. Ele, por sua vez, utiliza o JavaScript como linguagem para realizar o processamento de suas aplicações no lado do servidor. |</p>
+<img src="https://img.shields.io/badge/Expo-20232A?style=for-the-badge&logo=expo"> | Expo é uma ferramenta de desenvolvedor para criar experiências com gestos e gráficos interativos, usando JavaScript e React Native.
+ |</p>
 
 <h2><i>📅Cards</i> das entregas</h2>
 
