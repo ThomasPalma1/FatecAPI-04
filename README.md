@@ -64,9 +64,16 @@ Em desenvolvimento.
               
 <table align="center">
   <tr>
-    Em desenvolvmento
+    <td align="center"><a href="https://br.linkedin.com/in/higor-mariano-5587b81b8"><img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQG8XgS03ABIFg/profile-displayphoto-shrink_200_200/0/1602967908178?e=1654128000&v=beta&t=awfsuM4Bppaao6fAxeuNikhF5FWFANWts-IrxusyrMM" width="100px;" alt=""/><br /><sub><b>Higor Mariano</b></sub></a><br/><sub><b>Scrum Master</b></sub></td>
+     <td align="center"><a href="https://br.linkedin.com/in/barbara-bidetti-bb910a1b3"><img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQFTQzm03BKxjQ/profile-displayphoto-shrink_200_200/0/1637982935297?e=1654128000&v=beta&t=qWm0FFXVA-Uk7qN1ao71sfcclBK9NqgVeUZ7gwKJYHw" width="100px;" alt=""/><br/><sub><b>Barbara Bidetti</b></sub></a><br/><sub><b>Product Owner</b></sub></td>
+    <td align="center"><a href="https://www.linkedin.com/in/juliane-freitas-9b6287163"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Juliane.jfif" width="100px;" alt=""/><br /><sub><b>Juliane Freitas</b></sub></a><br/><sub><b>Development Team</b></sub></td>
+    <td align="center"><a href="https://www.linkedin.com/in/pedro-ferreira-6a8417190/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/pedro.jpg" width="100px;" alt=""/><br /><sub><b>Pedro Ferreira</b></sub></a><br/><sub><b>Development Team</b></sub></td>
   </tr>
-  
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/gustavo-oliveira-353647207/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Gustavo.jfif" width="100px;" alt=""/><br /><sub><b>Gustavo Oliveira</b></sub></a><br/><sub><b>Development Team</b></sub></td>
+    <td align="center"><a href="https://br.linkedin.com/in/anderson-lira-ads"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/72878812?v=4" width="100px;" alt=""/><br /><sub><b>Anderson Lira</b></sub></a><br/><sub><b>Development Team</b></sub></td>
+   <td align="center"><a href="https://www.linkedin.com/in/thomas-palma-0764b81b3/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Thomas.jfif" width="100px;" alt=""/><br /><sub><b>Thomas Palma</b></sub></a><br/><sub><b>Development Team</b></sub></td>
+  </tr>
 </table>
 
 <h2>⚙Ferramentas utilizadas</h2>
@@ -83,7 +90,7 @@ Tecnologias | Usamos para
 <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> | <p align = "justify"> O React Native é um framework, baseado em React, que nos possibilita desenvolver aplicações mobile utilizando apenas Javascript. </p>
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> | Node.js é um ambiente de execução JavaScript de código aberto e multiplataforma. Ele, por sua vez, utiliza o JavaScript como linguagem para realizar o processamento de suas aplicações no lado do servidor. |</p>
 <img src="https://img.shields.io/badge/Expo-20232A?style=for-the-badge&logo=expo"> | Expo é uma ferramenta de desenvolvedor para criar experiências com gestos e gráficos interativos, usando JavaScript e React Native.
- |</p>
+ 
 
 <h2><i>📅Cards</i> das entregas</h2>
 
