@@ -47,10 +47,22 @@ Em desenvolvimento.
         <td style="text-align: center; vertical-align: middle;">Datas</td>
         <td style="text-align: center; vertical-align: middle;">Links</td>
      <tr>
-        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td> 
+        <td style="text-align: center; vertical-align: middle;">Sprint 1</td> 
         <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
         <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;"><p><a href="https://github.com/ThomasPalma1/FatecAPI-04/tree/entrega-01">Visualizar</a></p></td>
+    </tr>
+        <tr>
+        <td style="text-align: center; vertical-align: middle;">Sprint 2</td> 
         <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;"><p><a href="https://github.com/ThomasPalma1/FatecAPI-04/tree/entrega-02">Visualizar</a></p></td>
+    </tr>
+    <tr>
+        <td style="text-align: center; vertical-align: middle;">Sprint 3</td> 
+        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;"><p><a href="https://github.com/ThomasPalma1/FatecAPI-04/tree/entrega-03">Visualizar</a></p></td>
     </tr>
 </table>
        
@@ -68,9 +80,12 @@ Em desenvolvimento.
      <td align="center"><a href="https://br.linkedin.com/in/barbara-bidetti-bb910a1b3"><img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQFTQzm03BKxjQ/profile-displayphoto-shrink_200_200/0/1637982935297?e=1654128000&v=beta&t=qWm0FFXVA-Uk7qN1ao71sfcclBK9NqgVeUZ7gwKJYHw" width="100px;" alt=""/><br/><sub><b>Barbara Bidetti</b></sub></a><br/><sub><b>Product Owner</b></sub></td>
     <td align="center"><a href="https://www.linkedin.com/in/juliane-freitas-9b6287163"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Juliane.jfif" width="100px;" alt=""/><br /><sub><b>Juliane Freitas</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
     <td align="center"><a href="https://www.linkedin.com/in/pedro-ferreira-6a8417190/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/pedro.jpg" width="100px;" alt=""/><br /><sub><b>Pedro Ferreira</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
+         <tr>
+         </tr>
     <td align="center"><a href="https://www.linkedin.com/in/gustavo-oliveira-353647207/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Gustavo.jfif" width="100px;" alt=""/><br /><sub><b>Gustavo Oliveira</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
     <td align="center"><a href="https://br.linkedin.com/in/anderson-lira-ads"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/72878812?v=4" width="100px;" alt=""/><br /><sub><b>Anderson Lira</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
    <td align="center"><a href="https://www.linkedin.com/in/thomas-palma-0764b81b3/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Thomas.jfif" width="100px;" alt=""/><br /><sub><b>Thomas Palma</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
+   <td align="center"><a href="https://br.linkedin.com/in/raphael-lisboa-7b3597187?trk=people-guest_people_search-card"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/71613664?v=4" width="100px;" alt=""/><br /><sub><b>Raphael Lisboa</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
   </tr>
 </table>
 
