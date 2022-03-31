@@ -49,19 +49,19 @@ Em desenvolvimento.
      <tr>
         <td style="text-align: center; vertical-align: middle;">Sprint 1</td> 
         <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
-        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;">25/03 a 14/04</td>
         <td style="text-align: center; vertical-align: middle;"><p><a href="https://github.com/ThomasPalma1/FatecAPI-04/tree/entrega-01">Visualizar</a></p></td>
     </tr>
         <tr>
         <td style="text-align: center; vertical-align: middle;">Sprint 2</td> 
         <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
-        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;">25/04 a 15/05</td>
         <td style="text-align: center; vertical-align: middle;"><p><a href="https://github.com/ThomasPalma1/FatecAPI-04/tree/entrega-02">Visualizar</a></p></td>
     </tr>
     <tr>
         <td style="text-align: center; vertical-align: middle;">Sprint 3</td> 
         <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
-        <td style="text-align: center; vertical-align: middle;">Em desenvolvimento</td>
+        <td style="text-align: center; vertical-align: middle;">16/05 a 05/06</td>
         <td style="text-align: center; vertical-align: middle;"><p><a href="https://github.com/ThomasPalma1/FatecAPI-04/tree/entrega-03">Visualizar</a></p></td>
     </tr>
 </table>
