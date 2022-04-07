@@ -64,7 +64,7 @@ Em desenvolvimento.
               
 <table align="center">
   <tr>
-    Em desenvolvmento
+    Em desenvolvmento.
   </tr>
   
 </table>
