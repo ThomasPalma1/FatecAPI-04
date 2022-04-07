@@ -4,7 +4,7 @@
   "packagerPort": 19000,
   "expoServerNgrokUrl": "https://3x-tvr.anonymous.sr-soybean.exp.direct",
   "packagerNgrokUrl": "https://3x-tvr.anonymous.sr-soybean.exp.direct",
-  "ngrokPid": 10612,
+  "ngrokPid": 7032,
   "packagerPid": null,
-  "webpackServerPort": null
+  "webpackServerPort": 19006
 }
