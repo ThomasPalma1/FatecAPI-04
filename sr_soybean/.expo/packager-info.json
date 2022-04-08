@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
+  "expoServerPort": null,
   "packagerPort": 19000,
-  "expoServerNgrokUrl": "https://3x-tvr.anonymous.sr-soybean.exp.direct",
-  "packagerNgrokUrl": "https://3x-tvr.anonymous.sr-soybean.exp.direct",
-  "ngrokPid": 7032,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "packagerPid": null,
-  "webpackServerPort": 19006
+  "webpackServerPort": null
 }

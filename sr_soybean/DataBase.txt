@@ -1,0 +1,75 @@
+
+
+-- Trabalhar com dois terminais
+ - um para o front e outro o back rodando o servidor
+
+=============================================================================================================
+
+- Instalações
+    - npm install express --save (express)
+    - npm install cors --save (cors)
+    - npm install --save sequelize (sequelize)
+    - npm install --save pg pg-hstore (intalando modulo PostgreSQL
+    - npm install --save sequelize cli (Trabalhar com migrations)
+    - npx sequelize-cli init (cria uma sequencia de pastas para utilizarmos)
+    - npm install --save nodemon;
+
+=============================================================================================================
+
+- Criar banco no PostgreSQL - utf8_general_ci;
+
+- Controller.js 
+     
+     const express = require('express');
+     const cors = require('cors');
+     const bodyParser = require('body-parser');
+     const app = express();
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+const port =process.env.PORT || 3000;
+
+app.listen(port, (res, res) => {
+    console.log("SERVIDOR RODANDO")
+})
+
+=============================================================================================================
+
+ -- Comandos criação de models e migrations
+  - npx sequelize-cli model:generate --name Model --attributes Nome:string, idade:integer, email:string
+  - Definir associações em 
+  static assosiate(models){
+            Model.hasMany(models.X)
+  }; meu Model possui muitos X
+
+  static assosiate(models){
+            X.belongsTo(models.Model)
+  };
+
+
+=============================================================================================================
+
+  -- Na migrations
+   - Setar chave estrangeira, pegar atributo criado como chave estrangeira e acrescentar
+   modelId: {
+        type: sequelize.INTEGER,
+         
+        references:{
+            model: 'models',
+            key: 'id'
+        },
+
+        onUpdate: 'cascade'
+        onDelete: 'cascade' - Deletar um model, deleta todos X relacionados
+   }
+
+
+==============================================================================================================
+
+-- config - config.json
+ - editar development - verificar em index.js na model
+==============================================================================================================
+
+ - Migração criando tabelas e atributos no banco
+  - npx sequelize-cli db:migrate
