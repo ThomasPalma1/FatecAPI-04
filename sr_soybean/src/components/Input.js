@@ -1,6 +1,6 @@
 import React from "react";
-import { TextInput, View } from "react-native";
-import { Styles } from "./styles/Styles.js";
+import { TextInput, View, StyleSheet } from "react-native";
+
 
 export default function Input() {
 
@@ -12,3 +12,12 @@ export default function Input() {
       </View>
     );
   }
+
+const Styles = StyleSheet.create({
+    input: {
+      height: 40,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+    },
+  });
