@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 import { FAB } from 'react-native-paper';
+import Talhoes from '../pages/Talhoes/Talhoes';
+
 
 const Fab = () => (
   <FAB
@@ -9,7 +11,7 @@ const Fab = () => (
     color='white'
     medium
     icon="plus"
-    onPress={() => console.log('Pressed')}
+    onPress={()=>this.props.navigation.navigate("Talhoes")}   
   />
 );
 

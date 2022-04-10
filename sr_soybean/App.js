@@ -1,13 +1,18 @@
-import React from 'react';
-import Route from './pages/Route';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
+import Home from "./pages/Home/Home";
+import Route from "./pages/Route";
 
-export default function App(){
-  return(
+const Stack = createNativeStackNavigator();
 
+export default function App() {
+  return (
     <NavigationContainer>
-      <Route/>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+      <Route />
     </NavigationContainer>
-
   );
 }

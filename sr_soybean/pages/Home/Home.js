@@ -1,10 +1,13 @@
-import { Text, View } from 'react-native';
-import Fab from '../../components/Fab';
+import { View } from "react-native";
+import { Screen } from "react-native-screens";
+import Fab from "../../components/Fab";
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
-    <View >
-      <Fab/>
-    </View>
+    <Stack.Navigator>
+      <View>
+        <Fab />
+      </View>
+    </Stack.Navigator>
   );
 }
