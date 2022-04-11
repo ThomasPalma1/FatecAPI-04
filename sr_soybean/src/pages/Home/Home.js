@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native';
 import Fab from '../../components/Fab'
 
-export default function Home() {
+export default function Home({}) {
   return (
     <View style={styles.container}>
       <Fab/>

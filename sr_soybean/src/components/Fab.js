@@ -1,80 +1,70 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Talhoes from '../pages/Talhoes/Talhoes'
+import { NavigationContainerRefContext } from '@react-navigation/native';
 
 
-export default class Fab extends Component{
+const Fab = props => {
 
-  animation = new Animated.Value(0);
+  const [animation] = useState(new Animated.Value(0))
 
+  const toggleMenu = () => {
 
-  toggleMenu = () => {
     const toValue = this.open ? 0 : 1
-    console.log(toValue);
 
-    Animated.spring(this.animation, {
+    Animated.spring(animation, {
       toValue,
       friction: 6,
-    }).start();
-
+      useNativeDriver: true
+    }).start()
 
     this.open = !this.open;
+
+  }
+
+  const rotation = {
+    transform: [
+      {
+        rotate: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: ["0deg", "45deg"]
+        })
+      }
+    ]
   }
 
 
-
-  openTalhoes = () => {
-    
+  const layersStyle = {
+    transform: [
+      { scale: animation },
+      {
+        translateY: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, -60]
+        })
+      }
+    ]
   }
 
 
-  render() {
+  return (
 
-    const layersStyle = {
-      transform: [
-        { scale: this.animation },
-        {
-          translateY: this.animation.interpolate({
-            inputRange: [0, 1],
-            outputRange: [0, -60]
-          })
-        }
-      ]
-    }
+    <View style={{ ...styles.container, ...props.style }}>
+      <TouchableWithoutFeedback>
+        <Animated.View style={[styles.button, styles.submenu, layersStyle]}>
+          <Ionicons name='layers' size={20} color='#fff' />
+        </Animated.View>
+      </TouchableWithoutFeedback>
 
-    const rotation = {
-      transform: [
-        {
-          rotate: this.animation.interpolate({
-            inputRange: [0, 1],
-            outputRange: ["0deg", "45deg"]
-          })
-        }
-      ]
-    }
-
-
-    return (
-
-
-
-      <View style={styles.container, this.props.style}>
-        <TouchableWithoutFeedback  onPress={()=>this.props.navigation.navigate("addTalhoes")}>
-          <Animated.View style={[styles.button, styles.submenu, layersStyle]}>
-            <Ionicons name='layers' size={20} color='#fff' />
-          </Animated.View>
-        </TouchableWithoutFeedback>
-
-        <TouchableWithoutFeedback onPress={this.toggleMenu}>
-          <Animated.View style={[styles.button, styles.menu, rotation]}>
-            <Ionicons name='add' size={24} color='#fff' />
-          </Animated.View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  }
+      <TouchableWithoutFeedback onPress={() => { toggleMenu() }}>
+        <Animated.View style={[styles.button, styles.menu, rotation]}>
+          <Ionicons name='add' size={24} color='#fff' />
+        </Animated.View>
+      </TouchableWithoutFeedback>
+    </View>
+  );
 }
+
 
 
 
@@ -87,7 +77,7 @@ const styles = StyleSheet.create({
   button: {
     margin: '5px',
     right: 0,
-    top: '78vh',
+    top: '60vh',
     position: 'absolute',
     width: 60,
     height: 60,
@@ -113,3 +103,4 @@ const styles = StyleSheet.create({
   }
 });
 
+export default Fab;
