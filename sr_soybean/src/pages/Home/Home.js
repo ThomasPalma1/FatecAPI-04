@@ -1,17 +1,10 @@
 import { Text, View, StyleSheet } from 'react-native';
 import Fab from '../../components/Fab'
 
-export default function Home({}) {
+export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <View style = {{flex: 1}}>
       <Fab/>
     </View>
   );
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

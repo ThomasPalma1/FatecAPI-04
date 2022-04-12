@@ -1,37 +1,33 @@
-import React, { Component, useState } from 'react';
+import React, {useState } from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { NavigationContainerRefContext } from '@react-navigation/native';
 
 
-const Fab = props => {
 
-  const [animation] = useState(new Animated.Value(0))
+export default function Fab({navigation}) {
+
+  const [open, setOpen] = useState(0);
+  const animation = new Animated.Value(open);
+
 
   const toggleMenu = () => {
+    setOpen(open == 0?1:0);
+    const toValue = open;
 
-    const toValue = this.open ? 0 : 1
-
+  
     Animated.spring(animation, {
       toValue,
       friction: 6,
-      useNativeDriver: true
-    }).start()
+      useNativeDriver: false
+    }).start();
 
-    this.open = !this.open;
 
+
+    
   }
 
-  const rotation = {
-    transform: [
-      {
-        rotate: animation.interpolate({
-          inputRange: [0, 1],
-          outputRange: ["0deg", "45deg"]
-        })
-      }
-    ]
-  }
+  console.log(setOpen)
+
 
 
   const layersStyle = {
@@ -46,38 +42,52 @@ const Fab = props => {
     ]
   }
 
+  const rotation = {
+    transform: [
+      {
+        rotate: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: ["0deg", "45deg"]
+        })
+      }
+    ]
+  }
+
 
   return (
 
-    <View style={{ ...styles.container, ...props.style }}>
-      <TouchableWithoutFeedback>
+
+
+    <View style={styles.container}>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate('addTalhoes')}>
         <Animated.View style={[styles.button, styles.submenu, layersStyle]}>
           <Ionicons name='layers' size={20} color='#fff' />
         </Animated.View>
       </TouchableWithoutFeedback>
 
-      <TouchableWithoutFeedback onPress={() => { toggleMenu() }}>
+      <TouchableWithoutFeedback onPress={toggleMenu}>
         <Animated.View style={[styles.button, styles.menu, rotation]}>
           <Ionicons name='add' size={24} color='#fff' />
         </Animated.View>
       </TouchableWithoutFeedback>
     </View>
   );
-}
 
+}
 
 
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    position: 'absolute',
-
+    //position: 'absolute',
+    backgroundColor: 'yellow',
+    flex: 1,
   },
   button: {
-    margin: '5px',
+    margin: 5,
     right: 0,
-    top: '60vh',
+    top: 400,
     position: 'absolute',
     width: 60,
     height: 60,
@@ -102,5 +112,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#00213B'
   }
 });
-
-export default Fab;
