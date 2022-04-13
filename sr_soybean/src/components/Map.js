@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import GlobalStyle from '../utils/GlobalStyle';
 import MapView from 'react-native-maps';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 
 export default function Map({ route }) {
-
+    
     const { city, lat, lng } = route.params;
 
     return (
@@ -17,12 +19,8 @@ export default function Map({ route }) {
             </Text>
             <MapView
                 style={styles.map}
-                initialRegion={{
-                    latitude: lat,
-                    longitude: lng,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }}
+                initialRegion={{origin}}
+                showsUserLocation={true}
             />
         </View>
     );
