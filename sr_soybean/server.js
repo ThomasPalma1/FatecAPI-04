@@ -19,6 +19,16 @@ app.post("/talhao", (req, res) => {
   console.log(req.body);
 });
 
+
+//Ler
+app.get('/Talhao', async(req,res)=>{
+    let getTalhao = await talhao.findAll({
+        raw:true
+    })
+})
+
+
+
 //Criar
 app.post("/createTalhao", async (req, res) => {
   await talhao
