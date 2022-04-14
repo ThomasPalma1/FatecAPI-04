@@ -3,7 +3,8 @@
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": null,
+  "urlRandomness": "mc-fsm",
   "https": false,
-  "scheme": null
+  "scheme": null,
+  "devClient": false
 }
