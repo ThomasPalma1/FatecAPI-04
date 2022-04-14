@@ -1,9 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity, TextInput, Text, View } from 'react-native';
-import Input from '../../components/Input'
 import {cssTalhao} from '../../../assets/css/cssTalhao';
 
-export default function addTalhoesScreen({navigation}) {
+export default function AddTalhoesScreen({navigation}) {
 
   const [campo, setCampo]=useState(null);
   const [latitudeTalhao, setLatitude]=useState(null);
@@ -11,7 +10,7 @@ export default function addTalhoesScreen({navigation}) {
   const [areaDoTalhao, setAreaTalhao]=useState(null);
  //Envio do form
   async function sendForm(){
-    let response=await fetch('http://192.168.1.117:3000/createTalhao',{
+    let response=await fetch('http://192.168.43.233:3000/createTalhao',{
       method: 'POST',
       headers:{
         Accept: 'application/json',
@@ -43,7 +42,7 @@ export default function addTalhoesScreen({navigation}) {
 
       <View style={cssTalhao.talhao_form}>
 
-        <Text style={cssTalhao.talhao_inputText}>Nome do campo</Text>
+        <Text style={cssTalhao.talhao_inputText}>Nome do talhão</Text>
         <TextInput style={cssTalhao.talhao_input} placeholder='Insira o nome do campo.' onChangeText={text=>setCampo(text)}/>
 
         <Text style={cssTalhao.talhao_inputText}>Longitude</Text>
