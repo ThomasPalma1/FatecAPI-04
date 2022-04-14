@@ -115,7 +115,7 @@ Em desenvolvimento
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-Em desenvolvimento
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/backlog.png">
               
 ---
               
