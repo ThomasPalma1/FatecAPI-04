@@ -28,8 +28,8 @@
    
  [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
        
-Em desenvolvimento.
-
+Com o crescimento significativo no campo da agricultura, os agrícolas necessitam de diversas informações para ter melhor eficácia em suas produções, tais como, preço atualizado das sementes de soja, venenos e fertilizantes, informações climáticas e gerenciamento da área de cultivo. Para isso é necessária uma plataforma, de fácil visualização, focada no gerenciamento e visualização geral da produção agrícola com base nas necessidades do usuário, sendo fundamentada em informações inseridas pelo usuário sobre seus talhões.
+              
 <h2>🎯Objetivo do projeto</h2>
        
  [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação) 
