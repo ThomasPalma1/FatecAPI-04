@@ -29,17 +29,17 @@ module.exports = {
       praga: {
         type: Sequelize.STRING
       },
-      talhaoId: {
-        type: Sequelize.INTEGER,
+      // talhaoId: {
+      //   type: Sequelize.INTEGER,
 
-        references:{
-          model: 'Talhaos',
-          key: 'id'
-      },
+      //   references:{
+      //     model: 'Talhaos',
+      //     key: 'id'
+      // },
 
-      onUpdate: 'cascade',
-      onDelete: 'cascade' 
-      },
+      // onUpdate: 'cascade',
+      // onDelete: 'cascade' 
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

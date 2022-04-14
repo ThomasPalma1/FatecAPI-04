@@ -10,20 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Talhao.belongsTo(models.Fazenda);
-      Talhao.hasMany(models.Registro);
+      // Talhao.belongsTo(models.Fazenda);
+      // Talhao.hasMany(models.Registro);
     }
   }
   Talhao.init({
+    nomeCampo: DataTypes.STRING,
     dataSemeadura: DataTypes.DATE,
     dataTalhaoExistente: DataTypes.DATE,
     latitude: DataTypes.STRING,
     dataColheita: DataTypes.DATE,
     cultivares: DataTypes.STRING,
     longitude: DataTypes.STRING,
-    areaPlantada: DataTypes.INTEGER,
-    custoProducao: DataTypes.DOUBLE,
-    fazendaId: DataTypes.INTEGER
+    areaPlantada: DataTypes.FLOAT,
+    custoProducao: DataTypes.FLOAT
+    // fazendaId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Talhao',

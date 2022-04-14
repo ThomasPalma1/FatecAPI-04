@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-       Registro.belongsTo(models.Talhao)
+      //  Registro.belongsTo(models.Talhao)
     }
   }
   Registro.init({
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     anotacao: DataTypes.STRING,
     numeroPlantio2m: DataTypes.INTEGER,
     praga: DataTypes.STRING,
-    talhaoId: DataTypes.INTEGER
+    // talhaoId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Registro',
