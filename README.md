@@ -103,7 +103,12 @@ Em desenvolvimento
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-Em desenvolvimento
+ <table align="center">
+    <tr>
+    <td align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/cadastroTalhoes.gif" width="400px" height="500px;" alt=""/><br /><sub><b>Cadastro de Talhões</b></sub></td>
+            <td align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/bdTalhoes.gif" height="500px;" alt=""/><br /><sub><b>Visualização do talhão no banco.</b></sub></td>
+  </tr>
+</table>
       
 <h2 style="font-family:roboto;">💻<i>Wireframes</i> do projeto</h2>
               
