@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      nomeCampo:{
+        type: Sequelize.STRING
+      },
       dataSemeadura: {
         type: Sequelize.DATE
       },
@@ -32,17 +35,17 @@ module.exports = {
       custoProducao: {
         type: Sequelize.DOUBLE
       },
-      fazendaId: {
-        type: Sequelize.INTEGER,
+      // fazendaId: {
+      //   type: Sequelize.INTEGER,
 
-        references:{
-          model: 'Fazendas',
-          key: 'id'
-      },
+      //   references:{
+      //     model: 'Fazendas',
+      //     key: 'id'
+      // },
 
-      onUpdate: 'cascade',
-      onDelete: 'cascade' 
-      },
+      // onUpdate: 'cascade',
+      // onDelete: 'cascade' 
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

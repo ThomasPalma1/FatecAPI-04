@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Fazenda.belongsTo(models.Usuario);
-      Fazenda.hasMany(models.Talhao);
+      // Fazenda.belongsTo(models.Usuario);
+      // Fazenda.hasMany(models.Talhao);
     }
   }
   Fazenda.init({
