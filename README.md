@@ -104,7 +104,7 @@ Para esta entrega, as maiores dificuldades foram realizar o levantamento de requ
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
               
-<p><a href="https://tecsoja.invisionapp.com/overview/TecSoja-cl1u6icq10n2x01bx5h91dp4f/screens">Link: Wireframe Interativo</a></p>
+<p><a href="https://tecsoja.invisionapp.com/console/share/39ED72FQG5Y">Link: Wireframe Interativo</a></p>
               
 <h2 id="prototipo" style="font-family:roboto;">💻<i>Prototipagem</i> do projeto</h2>
               
