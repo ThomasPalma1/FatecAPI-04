@@ -136,13 +136,24 @@ Tecnologias | Usamos para
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"> | Node.js é um ambiente de execução JavaScript de código aberto e multiplataforma. Ele, por sua vez, utiliza o JavaScript como linguagem para realizar o processamento de suas aplicações no lado do servidor. |</p>
 <img src="https://img.shields.io/badge/Expo-20232A?style=for-the-badge&logo=expo"> | Expo é uma ferramenta de desenvolvedor para criar experiências com gestos e gráficos interativos, usando JavaScript e React Native.
  
+<h2><i>:notebook:User</i> Stories</h2>
+
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_1.png">
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_2.png">
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_3.png">
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_4.png">
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_5.png">
+
+[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+
 
 <h2><i>📅Cards</i> das entregas</h2>
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+
+<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/Cards/cards.png">
               
-Em desenvolvimento
-              
+
 <h2>📘<i>Backlog</i> do projeto</h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
