@@ -162,17 +162,17 @@ Tecnologias | Usamos para
               
 ---
               
-<h2 style="font-family:roboto;">💻<i>Fluxo da plataforma</i> do projeto</h2>
-              
-[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-<div align="center">
-    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/cadastroTalhoes.gif" width="400px" height="800px;" alt=""/><br /><sub><b>Cadastro de Talhões</b></sub></h3>
-         
-</div>
       
 <h2 style="font-family:roboto;">💻<i>Wireframes</i> do projeto</h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+
+<p><a href="https://tecsoja.invisionapp.com/overview/TecSoja-cl1u6icq10n2x01bx5h91dp4f/screens">Link: Wireframe Interativo</a></p>
+
+<h2 style="font-family:roboto;">💻<i>Prototipagem</i> do projeto</h2>
               
-Em desenvolvimento
+[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+
+<p><a href="https://www.figma.com/file/1W9qwDx37D7xhBstm7PVng/FATEC-API-04?node-id=0%3A1">Link: Protótipo Figma</a></p>
+              
