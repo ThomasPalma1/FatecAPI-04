@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity, TextInput, Text, View } from 'react-native';
 import {cssTalhao} from '../../../assets/css/cssTalhao';
+import DatePicker from 'react-native-datepicker';
 
 export default function AddTalhoesScreen({navigation}) {
 
@@ -8,9 +9,10 @@ export default function AddTalhoesScreen({navigation}) {
   const [latitudeTalhao, setLatitude]=useState(null);
   const [longitudeTalhao, setLongitude]=useState(null);
   const [areaDoTalhao, setAreaTalhao]=useState(null);
+
  //Envio do form
   async function sendForm(){
-    let response=await fetch('http://192.168.43.233:3000/createTalhao',{
+    let response=await fetch('http://192.168.1.117:3000/createTalhao',{
       method: 'POST',
       headers:{
         Accept: 'application/json',
@@ -53,7 +55,7 @@ export default function AddTalhoesScreen({navigation}) {
 
         <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
         <TextInput style={cssTalhao.talhao_input} placeholder='Insira a área do talhão.' onChangeText={text=>setAreaTalhao(text)}/>  
-       
+
         <TouchableOpacity style={cssTalhao.talhao_button} onPress={()=>sendForm()}>
           <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
         </TouchableOpacity>

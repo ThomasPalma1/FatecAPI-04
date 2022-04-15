@@ -16,14 +16,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   Talhao.init({
     nomeCampo: DataTypes.STRING,
-    dataSemeadura: DataTypes.DATE,
-    dataTalhaoExistente: DataTypes.DATE,
+    //dataSemeadura: DataTypes.DATE,
+    //dataTalhaoExistente: DataTypes.DATE,
     latitude: DataTypes.STRING,
-    dataColheita: DataTypes.DATE,
-    cultivares: DataTypes.STRING,
+    //dataColheita: DataTypes.DATE,
+    //cultivares: DataTypes.STRING,
     longitude: DataTypes.STRING,
     areaPlantada: DataTypes.FLOAT,
-    custoProducao: DataTypes.FLOAT
+    //custoProducao: DataTypes.FLOAT
     // fazendaId: DataTypes.INTEGER
   }, {
     sequelize,
