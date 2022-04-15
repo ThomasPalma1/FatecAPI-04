@@ -28,13 +28,45 @@
    
  [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
        
-Com o crescimento significativo no campo da agricultura, os agrícolas necessitam de diversas informações para ter melhor eficácia em suas produções, tais como, preço atualizado das sementes de soja, venenos e fertilizantes, informações climáticas e gerenciamento da área de cultivo. Para isso é necessária uma plataforma, de fácil visualização, focada no gerenciamento e visualização geral da produção agrícola com base nas necessidades do usuário, sendo fundamentada em informações inseridas pelo usuário sobre seus talhões.
+No Brasil o setor agrícola é responsável por aproximadamente 26% do PIB. Este cenário, suscita uma relevância da agricultura no desenvolvimento do Brasil.
+              
+O primeiro cultivo de soja no Brasil foi no ano de 1914, em Santa Rosa – RS, segundo SEIBEL. Hoje em dia, a soja representa aproximadamente 50% do setor agrícola, o que faz necessário acompanhamento contínuo da produção de soja, deste modo, as tecnologias podem auxiliar neste acompanhamento com uma análise, dinâmica, detalhada e específica de toda produção de soja.
+
               
 <h2>🎯Objetivo do projeto</h2>
        
  [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação) 
 
-Em desenvolvimento.
+A TecSoja, aplicativo para celular, visa atender estas demandas do uso da tecnologia para uma melhor produção de soja, sendo o foco na análise e aumento da produtividade. 
+              
+A solução proposta por este aplicativo permite que o agricultor possa estimar sua produtividade a cada cultivo e produtividade total, além de comparar a produtividade e áreas plantadas nos municípios. O agricultor também poderá ter uma melhor análise de custos, clima e época ideal de colheita com base na geolocalização do seu cultivo.
+              
+Portanto este aplicativo consolidará registros e informações focadas no cultivo e região do produtor de forma que as informações possam proporcionar melhores análises sobre sua produtividade e assim esta possa ser melhorada.
+
+<h2>📜 Principais Deliverables</h2>
+              
+[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)    
+              
+ - Cadastro para localizar e especificar região de cultivo
+ - Cadastro de dados para produtividade e custos
+ - Vincular APIs para clima e uso do solo
+ - Gráficos para análise informações individuais e coletivas
+ 
+<h2>📜 Limites e Restrições da Solução</h2>
+              
+[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+                     
+ - O acesso poderá ser feito por meio de aplicativo.
+ - O cadastro do CCIR não verificará a autenticidade do documento.
+<h2>Benefícios da nossa plataforma</h2>
+       <p>:white_check_mark: Gratuita</p>
+       <p>:white_check_mark: Permite comparação de dados de produtividade</p>
+       <p>:white_check_mark: Consulta do clima da região </p>
+       <p>:white_check_mark: Alertas climáticos específicos para a produção de soja</p>
+       <p>:white_check_mark: Acompanhamento de custos de produção</p>
+       <p>:white_check_mark: Acampanhamento do uso do solo ao longo dos anos</p>
+       <p>:white_check_mark: Notificação do dia da colheita por análise de imagens do talhão</p>
+   
        
 <h2>📂Branches de cada entrega</h2>
 
