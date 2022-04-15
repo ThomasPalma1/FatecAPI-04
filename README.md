@@ -166,7 +166,10 @@ Tecnologias | Usamos para
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-Em desenvolvimento
+<div align="center">
+    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/cadastroTalhoes.gif" width="400px" height="800px;" alt=""/><br /><sub><b>Cadastro de Talhões</b></sub></h3>
+         
+</div>
       
 <h2 style="font-family:roboto;">💻<i>Wireframes</i> do projeto</h2>
               
