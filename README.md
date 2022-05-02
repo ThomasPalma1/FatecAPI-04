@@ -43,7 +43,7 @@ A solução proposta por este aplicativo permite que o agricultor possa estimar 
               
 Portanto este aplicativo consolidará registros e informações focadas no cultivo e região do produtor de forma que as informações possam proporcionar melhores análises sobre sua produtividade e assim esta possa ser melhorada.
 
-<h2>📜 Principais Deliverables</h2>
+<h2>📜Principais Deliverables</h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)    
               
@@ -52,22 +52,31 @@ Portanto este aplicativo consolidará registros e informações focadas no culti
  - Vincular APIs para clima e uso do solo
  - Gráficos para análise informações individuais e coletivas
  
-<h2>📜 Limites e Restrições da Solução</h2>
+<h2>📜Limites e Restrições da Solução</h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
                      
  - O acesso poderá ser feito por meio de aplicativo.
  - O cadastro do CCIR não verificará a autenticidade do documento.
-<h2>Benefícios da nossa plataforma</h2>
-       <p>:white_check_mark: Gratuita</p>
-       <p>:white_check_mark: Permite comparação de dados de produtividade</p>
-       <p>:white_check_mark: Consulta do clima da região </p>
-       <p>:white_check_mark: Alertas climáticos específicos para a produção de soja</p>
-       <p>:white_check_mark: Acompanhamento de custos de produção</p>
-       <p>:white_check_mark: Acampanhamento do uso do solo ao longo dos anos</p>
-       <p>:white_check_mark: Notificação do dia da colheita por análise de imagens do talhão</p>
-   
        
+<h2>🏷Benefícios da nossa plataforma</h2>
+              
+[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+              
+✅Gratuita
+              
+✅Permite comparação de dados de produtividade
+              
+✅Consulta do clima da região
+              
+✅Alertas climáticos específicos para a produção de soja
+              
+✅Acompanhamento de custos de produção
+              
+✅Acampanhamento do uso do solo ao longo dos anos
+              
+✅Notificação do dia da colheita por análise de imagens do talhão
+              
 <h2>📂Branches de cada entrega</h2>
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
@@ -138,14 +147,13 @@ Tecnologias | Usamos para
  
 <h2><i>:notebook:User</i> Stories</h2>
 
+[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
+
 <img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_1.png">
 <img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_2.png">
 <img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_3.png">
 <img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_4.png">
 <img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/main/docs/User%20Stories/User_Stories_5.png">
-
-[<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
-
 
 <h2><i>📅Cards</i> das entregas</h2>
 
