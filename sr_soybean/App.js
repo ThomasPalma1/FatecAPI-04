@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import Route from "./src/pages/Route";
+import MapView from 'react-native-maps';
+import * as Location from 'expo-location';
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>API</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+    <NavigationContainer>
+      <Route />
+    </NavigationContainer>
+
+  ); 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
