@@ -1,5 +1,5 @@
 node_modules
-.expo/
+
 dist/
 npm-debug.*
 *.jks
@@ -10,8 +10,9 @@ npm-debug.*
 *.orig.*
 web-build/
 .expo-shared/
-package-lock.json
-.expo
+/sr_soybean/package-lock.json
+/sr_soybean/.expo-shared
+/.expo
 
 # macOS
 .DS_Store
