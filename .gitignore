@@ -10,8 +10,10 @@ web-build/
 .expo-shared/
 sr_soybean/.expo/web/cache/development/babel-loader/
 /sr_soybean/package-lock.json
+sr_soybean/package-lock.json
 /sr_soybean/.expo-shared
 sr_soybean/.expo
+sr_soybean/node_modules/*
 
 # macOS
 .DS_Store
