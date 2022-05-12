@@ -1,5 +1,3 @@
-node_modules
-
 dist/
 npm-debug.*
 *.jks
@@ -7,12 +5,13 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
-*.orig.*
+.orig.
 web-build/
 .expo-shared/
+sr_soybean/.expo/web/cache/development/babel-loader/
 /sr_soybean/package-lock.json
 /sr_soybean/.expo-shared
-/.expo
+sr_soybean/.expo
 
 # macOS
 .DS_Store
