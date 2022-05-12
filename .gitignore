@@ -9,11 +9,11 @@ npm-debug.*
 web-build/
 .expo-shared/
 sr_soybean/.expo/web/cache/development/babel-loader/
-/sr_soybean/package-lock.json
 sr_soybean/package-lock.json
 /sr_soybean/.expo-shared
-sr_soybean/.expo
+sr_soybean/.expo/settings.json
 sr_soybean/node_modules/*
+sr_soybean/.expo/web/cache/production/images/favicon/*
 
 # macOS
 .DS_Store
