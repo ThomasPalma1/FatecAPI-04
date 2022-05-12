@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View, Animated, Dimensions,TouchableOpacity, Text } from 'react-native';
+import React, { useState} from 'react';
+import { StyleSheet, TouchableWithoutFeedback, View, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Map from '../../components/map';
 
