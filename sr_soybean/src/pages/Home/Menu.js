@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { View, Image, StyleSheet, Text, Pressable } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons'; 
 import { Octicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
@@ -29,14 +29,14 @@ export default function MenuScreen({ navigation }) {
       fontWeight: 'bold',
       color: '#1C1C1C',
       top: 0,
-      //fontFamily: 'Century Gothic',
     },
     menu: {
-      flex: 4,
+      flex: 3.5,
+      display: 'flex',
       backgroundColor: '#79B078',
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
-      padding: 30,
+      padding: 10,
       alignItems: 'center',
     },
     textInput: {
@@ -46,7 +46,6 @@ export default function MenuScreen({ navigation }) {
       fontWeight: 'bold',
       color: '#6E7B58',
       top: 0,
-      //fontFamily: 'Century Gothic',
     },
     button: {
       alignItems: 'center',
@@ -58,12 +57,13 @@ export default function MenuScreen({ navigation }) {
       borderWidth: 2,
       padding: 10,
       width: 318,
-      height: 150,
+      height: 110,
+      margin: 5,
     },
     configuracoes: {
-      display: 'flex',
       position: 'relative',
       right: '-45%',
+      top: 15,
     }
   });
 
@@ -71,7 +71,7 @@ export default function MenuScreen({ navigation }) {
     <>
       <View style={styles.container}>
         <Pressable style={styles.configuracoes}>
-          <Ionicons name="settings" size={30} color="#40535B" />
+        <Ionicons name="settings-sharp" size={24} color="black" />
         </Pressable>
         <View>
           <Image
@@ -84,21 +84,25 @@ export default function MenuScreen({ navigation }) {
       <View style={styles.menu}>
         <View styles={styles.submenu}>
           <View style={styles.buttons}>
-            <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Fazenda')}>
               <Text style={styles.textInput}>Propriedades</Text>
-              <FontAwesome5 name="warehouse" size={50} color="white" />
+              <FontAwesome5 name="warehouse" size={40} color="white" />
+            </Pressable>
+            <Pressable style={styles.button}>
+              <Text style={styles.textInput}>Talhões</Text>
+              <FontAwesome5 name="leaf" size={40} color="white" />
             </Pressable>
             <Pressable style={styles.button}>
               <Text style={styles.textInput}>Custos</Text>
-              <FontAwesome5 name="dollar-sign" size={50} color="white" />
+              <FontAwesome5 name="dollar-sign" size={40} color="white" />
             </Pressable>
             <Pressable style={styles.button}>
               <Text style={styles.textInput}>Estátisticas</Text>
-              <Octicons name="graph" size={50} color="white" />
+              <Octicons name="graph" size={40} color="white" />
             </Pressable>
             <Pressable style={styles.button}>
               <Text style={styles.textInput}>Clima</Text>
-              <MaterialCommunityIcons name="weather-cloudy" size={50} color="white" />
+              <Entypo name="cloud" size={40} color="white" />
             </Pressable>
           </View>
         </View>

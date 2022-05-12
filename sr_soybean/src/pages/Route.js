@@ -10,7 +10,7 @@ import MenuScreen from './Home/Menu';
 import CadastroScreen from './Login/Cadastro';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MapScreen from '../components/map';
-
+import FazendaScreen from './Fazendas/Fazenda';
 export default function App() {
 
 const HomeStack = createNativeStackNavigator();
@@ -23,6 +23,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name='Map' component={MapScreen} />
       <HomeStack.Screen name='Menu' component={MenuScreen} />
       <HomeStack.Screen name="Inicio" component={HomeScreen} />
+      <HomeStack.Screen name="Fazenda" component={FazendaScreen} />
       <HomeStack.Screen name="addTalhoes" component={AddTalhoesScreen} />
     </HomeStack.Navigator>
   );
