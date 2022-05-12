@@ -89,7 +89,7 @@ export default function FazendasScreen({ navigation }) {
             fontWeight: 'bold',
             color: '#6E7B58',
             top: 0,
-            position: 'relative'
+            position: 'absolute'
         },
         button: {
             alignItems: 'flex-start',
@@ -143,7 +143,8 @@ export default function FazendasScreen({ navigation }) {
             top: 20,
         },
         estatisticas: {
-            position: 'relative',
+            position: 'absolute',
+            marginLeft: 10,
         }
     });
 
@@ -156,10 +157,10 @@ export default function FazendasScreen({ navigation }) {
             <View style={styles.menu}>
                 <View styles={styles.submenu}>
                     <View style={styles.buttons}>
+                        <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
                         <Pressable style={styles.options} onPress={() => navigation.navigate('Inicio')}>
                             <MaterialCommunityIcons name="home-plus" size={24} color="black" />
                         </Pressable>
-                        <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
                             <Text style={styles.textInput}>TITULO 1</Text>
                             <Text style={styles.estatisticas}>CCIR: 111.111.111.111-7</Text>
                             <Text>Área: 10 Hectares</Text>

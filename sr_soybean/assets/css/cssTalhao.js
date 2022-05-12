@@ -32,7 +32,7 @@ const cssTalhao = StyleSheet.create({
         fontSize: 20,
         padding:10,
         marginBottom:15,
-        width: '100%!important',
+        width: '100%',
         borderRadius: 15,
     },
     talhao_button:{
