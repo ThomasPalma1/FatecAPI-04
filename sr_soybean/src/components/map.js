@@ -34,7 +34,7 @@ export default function Map() {
 
   var events = []
   //puxando coordenadas de talhoes.
-fetch('http://192.168.1.119:3100/readTalhaos', {
+fetch('http://192.168.23.233:3100/readTalhaos', {
   method:"GET"
     }).then(function(res) {return res.json(); })
     .then( function(data){

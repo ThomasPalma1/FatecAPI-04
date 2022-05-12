@@ -48,6 +48,20 @@ app.post("/createTalhao", async (req, res) => {
     });
 });
 
+//Criar fazenda
+app.post("/createFazenda", async (req, res) => {
+  await fazenda
+    .create({
+      nomeFazenda: req.body.nome,
+      createdAt: new Date(),
+      updateAt: new Date(),
+    })
+    .then(console.log)
+    .catch(function (e) {
+      console.log(e);
+    });
+});
+
 //ler talhao
 
 app.get('/readTalhaos', async(req,res)=>{
@@ -110,6 +124,6 @@ app.get('/readTalhaos', async(req,res)=>{
 
 //Iniciando servidor em uma porta
 
-app.listen(PORT,'192.168.1.119', (req, res) => {
+app.listen(PORT, (req, res) => {
   console.log(`SERVIDOR RODANDO NA ${PORT}`);
 });

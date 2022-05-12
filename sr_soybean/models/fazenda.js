@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Fazenda.init({
     nomeFazenda: DataTypes.STRING,
-    usuarioId: DataTypes.INTEGER
+    //usuarioId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Fazenda',

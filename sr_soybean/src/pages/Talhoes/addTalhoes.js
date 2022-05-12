@@ -12,7 +12,7 @@ export default function AddTalhoesScreen({navigation}) {
 
  //Envio do form
   async function sendForm(){
-    let response=await fetch('http://192.168.1.119:3100/createTalhao',{
+    let response=await fetch('http://192.168.23.233:3100/createTalhao',{
       method: 'POST',
       headers:{
         Accept: 'application/json',

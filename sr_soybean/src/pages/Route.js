@@ -5,6 +5,7 @@ import HomeScreen from '../pages/Home/Home'
 import SettingsScreen from '../pages/Profile/Profile';
 import AddTalhoesScreen from '../pages/Talhoes/addTalhoes';
 import TalhoesScreen from '../pages/Talhoes/Talhoes';
+import AddFazendasScreen from '../pages/Fazendas/addFazendas';
 import LoginScreen from './Login/Login';
 import MenuScreen from './Home/Menu';
 import CadastroScreen from './Login/Cadastro';
@@ -25,6 +26,8 @@ function HomeStackScreen() {
       <HomeStack.Screen name="Inicio" component={HomeScreen} />
       <HomeStack.Screen name="Fazenda" component={FazendaScreen} />
       <HomeStack.Screen name="addTalhoes" component={AddTalhoesScreen} />
+      <HomeStack.Screen name="addFazendas" component={AddFazendasScreen} />
+
     </HomeStack.Navigator>
   );
 }

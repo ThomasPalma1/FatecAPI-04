@@ -11,18 +11,18 @@ module.exports = {
       nomeFazenda: {
         type: Sequelize.STRING
       },
-      usuarioId: {
-        type: Sequelize.INTEGER,
+      // usuarioId: {
+      //   type: Sequelize.INTEGER,
 
-        references:{
-          model: 'Usuarios',
-          key: 'id'
-      },
+      //   references:{
+      //     model: 'Usuarios',
+      //     key: 'id'
+      // },
 
-      onUpdate: 'cascade',
-      onDelete: 'cascade'
+      // onUpdate: 'cascade',
+      // onDelete: 'cascade'
 
-      },
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

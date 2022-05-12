@@ -80,7 +80,7 @@ export default function FazendasScreen({ navigation }) {
       <View style={styles.menu}>
         <View styles={styles.submenu}>
           <View style={styles.buttons}>
-            <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('addFazendas')}>
               <Text style={styles.textInput}>Propriedades</Text>
             </Pressable>
             <Pressable style={styles.button}>
