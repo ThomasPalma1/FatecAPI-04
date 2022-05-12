@@ -10,16 +10,25 @@ export default function LoginScreen({ navigation }) {
       flex: 1,
       flexDirection: "column",
     },
+    input: {
+      width: '100%',
+      backgroundColor: "#FFFFFF",
+      height: 60,
+      borderRadius: 15,
+      padding:10,
+      marginBottom:15,
+      fontSize: 15,
+    },
     login: {
       backgroundColor: '#D2FFC2',
       width: 318,
-      height: 250,
+      height: 254,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
       borderStyle: 'solid',
       borderWidth: 2,
-      top: '10%',
+      top: '15%',
       alignItems: 'center',
       justifyContent: 'space-between',
     },
@@ -40,7 +49,7 @@ export default function LoginScreen({ navigation }) {
       margin: 5,
     },
     buttons: {
-      top: '15%',
+      top: '20%',
     },
     text: {
       fontSize: 20,
@@ -62,21 +71,19 @@ export default function LoginScreen({ navigation }) {
         <ImageBackground source={require('../../../assets/img/home.png')} style={styles.image}>
           <View style={styles.login}>
             <Text style={cssTalhao.talhao_inputText}>Email</Text>
-            <TextInput style={cssTalhao.talhao_input} placeholder='Ex: abc@example.com' />
+            <TextInput style={styles.input} placeholder='Ex: abc@example.com' />
             <Text style={cssTalhao.talhao_inputText}>Senha</Text>
-            <TextInput style={cssTalhao.talhao_input} />
+            <TextInput style={styles.input} placeholder='******' />
             <Text style={{ textDecorationLine: 'underline' }}>Esqueci minha senha</Text>
-            <View style={styles.buttons}>
-            
-              <Pressable style={styles.button} onPress={() => navigation.navigate('Cadastro')}>
-                <Text style={styles.text}>Não tem cadastro? Cadastre-se</Text>
-              </Pressable>
-            </View>
           </View>
-
-          <Pressable style={styles.button} onPress={() => navigation.navigate('Menu')}>
-                <Text style={styles.text}>Acessar</Text>
-              </Pressable>
+          <View style={styles.buttons}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Menu')}>
+              <Text style={cssTalhao.talhao_buttonText}>Acessar</Text>
+            </Pressable>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Cadastro')}>
+              <Text style={cssTalhao.talhao_buttonText}>Cadastrar-se</Text>
+            </Pressable>
+          </View>
         </ImageBackground>
       </View>
     </>

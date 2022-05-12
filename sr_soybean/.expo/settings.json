@@ -3,7 +3,7 @@
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": null,
+  "urlRandomness": "sf-34c",
   "https": false,
   "scheme": null,
   "devClient": false

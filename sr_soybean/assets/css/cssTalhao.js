@@ -21,17 +21,19 @@ const cssTalhao = StyleSheet.create({
         marginHorizontal: 10
     },
     talhao_form:{
-        width: "80%"
+        width: "100%"
     },
     talhao_inputText:{
-        fontSize: 20,  
+        fontSize: 20, 
+        textAlign: 'left', 
     },
     talhao_input:{
         backgroundColor: "#FFFFFF",
-        fontSize: 25,
+        fontSize: 20,
         padding:10,
         marginBottom:15,
-        borderRadius: 15
+        width: '100%!important',
+        borderRadius: 15,
     },
     talhao_button:{
         padding: 12,
