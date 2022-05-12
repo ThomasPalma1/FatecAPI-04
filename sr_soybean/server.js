@@ -5,11 +5,13 @@ const app = express();
 const models = require("./models");
 const { response } = require("express");
 
+require("dotenv").config();
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 let usuario = models.Usuario;
 let fazenda = models.Fazenda;
@@ -29,7 +31,7 @@ app.get('/Talhao', async(req,res)=>{
 
 
 
-//Criar
+//Criar talhao
 app.post("/createTalhao", async (req, res) => {
   await talhao
     .create({
@@ -45,6 +47,24 @@ app.post("/createTalhao", async (req, res) => {
       console.log(e);
     });
 });
+
+//ler talhao
+
+app.get('/readTalhaos', async(req,res)=>{
+      let readTalhao = await talhao.findAll({
+          raw:true
+      })
+			.then((talhoes) => {
+				return res.json({
+					talhoes: talhoes,
+					count: talhoes.count,
+				});
+			})
+			.catch((e) => {
+				return res.status(400).json({ error: e.message });
+			});
+  })
+
 
 // //Ler
 // app.get('/read', async(req,res)=>{
@@ -75,15 +95,21 @@ app.post("/createTalhao", async (req, res) => {
 
 //Update
 
-app.post("/update", async (req, res) => {
-  let response = await tracking.findOne({
-    where: {}, //passar os parametros
-    include: [{ all: true }],
-  });
+// app.post("/update", async (req, res) => {
+//   let response = await tracking.findOne({
+//     where: {}, //passar os parametros
+//     include: [{ all: true }],
+//   });
 
-  res.send(JSON.stringify("Os dados foram atualizados com sucesso! :D"));
-});
+//   res.send(JSON.stringify("Os dados foram atualizados com sucesso! :D"));
+// });
 
-app.listen(port, (req, res) => {
-  console.log("SERVIDOR RODANDO");
+
+
+
+
+//Iniciando servidor em uma porta
+
+app.listen(PORT,'192.168.1.119', (req, res) => {
+  console.log(`SERVIDOR RODANDO NA ${PORT}`);
 });

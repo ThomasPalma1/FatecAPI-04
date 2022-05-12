@@ -17,6 +17,7 @@
     "body-parser": "^1.20.0",
     "cli": "^1.0.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "expo": "~44.0.0",
     "expo-location": "~14.0.1",
     "expo-permissions": "^13.1.1",

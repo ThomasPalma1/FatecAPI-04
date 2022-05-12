@@ -9,7 +9,7 @@ import LoginScreen from './Login/Login';
 import MenuScreen from './Home/Menu';
 import CadastroScreen from './Login/Cadastro';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import MapScreen from '../components/map';
 
 export default function App() {
 
@@ -20,6 +20,7 @@ function HomeStackScreen() {
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
       <HomeStack.Screen name='Login' component={LoginScreen} />
       <HomeStack.Screen name='Cadastro' component={CadastroScreen} />
+      <HomeStack.Screen name='Map' component={MapScreen} />
       <HomeStack.Screen name='Menu' component={MenuScreen} />
       <HomeStack.Screen name="Inicio" component={HomeScreen} />
       <HomeStack.Screen name="addTalhoes" component={AddTalhoesScreen} />

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, StyleSheet, Text, TextInput, Pressable, ImageBackground } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
@@ -68,16 +67,16 @@ export default function LoginScreen({ navigation }) {
             <TextInput style={cssTalhao.talhao_input} />
             <Text style={{ textDecorationLine: 'underline' }}>Esqueci minha senha</Text>
             <View style={styles.buttons}>
-              <Pressable style={styles.button} onPress={() => navigation.navigate('Menu')}>
-                <Text style={styles.text}>Acessar</Text>
-              </Pressable>
+            
               <Pressable style={styles.button} onPress={() => navigation.navigate('Cadastro')}>
                 <Text style={styles.text}>Não tem cadastro? Cadastre-se</Text>
               </Pressable>
             </View>
           </View>
 
-
+          <Pressable style={styles.button} onPress={() => navigation.navigate('Menu')}>
+                <Text style={styles.text}>Acessar</Text>
+              </Pressable>
         </ImageBackground>
       </View>
     </>

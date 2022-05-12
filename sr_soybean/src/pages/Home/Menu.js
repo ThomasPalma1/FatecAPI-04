@@ -29,7 +29,7 @@ export default function MenuScreen({ navigation }) {
       fontWeight: 'bold',
       color: '#1C1C1C',
       top: 0,
-      fontFamily: 'Century Gothic',
+      //fontFamily: 'Century Gothic',
     },
     menu: {
       flex: 4,
@@ -46,7 +46,7 @@ export default function MenuScreen({ navigation }) {
       fontWeight: 'bold',
       color: '#6E7B58',
       top: 0,
-      fontFamily: 'Century Gothic',
+      //fontFamily: 'Century Gothic',
     },
     button: {
       alignItems: 'center',
@@ -84,7 +84,7 @@ export default function MenuScreen({ navigation }) {
       <View style={styles.menu}>
         <View styles={styles.submenu}>
           <View style={styles.buttons}>
-            <Pressable style={styles.button}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
               <Text style={styles.textInput}>Propriedades</Text>
               <FontAwesome5 name="warehouse" size={50} color="white" />
             </Pressable>
