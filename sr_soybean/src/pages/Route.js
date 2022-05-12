@@ -27,7 +27,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name="Fazenda" component={FazendaScreen} />
       <HomeStack.Screen name="addTalhoes" component={AddTalhoesScreen} />
       <HomeStack.Screen name="addFazendas" component={AddFazendasScreen} />
-
+      <HomeStack.Screen name="Talhoes" component={TalhoesScreen} />
     </HomeStack.Navigator>
   );
 }

@@ -88,7 +88,7 @@ export default function MenuScreen({ navigation }) {
               <Text style={styles.textInput}>Propriedades</Text>
               <FontAwesome5 name="warehouse" size={40} color="white" />
             </Pressable>
-            <Pressable style={styles.button}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Talhoes')}>
               <Text style={styles.textInput}>Talhões</Text>
               <FontAwesome5 name="leaf" size={40} color="white" />
             </Pressable>

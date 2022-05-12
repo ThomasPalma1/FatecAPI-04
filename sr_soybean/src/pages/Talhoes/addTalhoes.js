@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity, TextInput, Text, View } from 'react-native';
 import {cssTalhao} from '../../../assets/css/cssTalhao';
-import DatePicker from 'react-native-datepicker';
 
 export default function AddTalhoesScreen({navigation}) {
 

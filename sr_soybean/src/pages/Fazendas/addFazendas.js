@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import {cssFazenda} from '../../../assets/css/cssFazenda';
 
-export default function App() {
+export default function AddFazendaScreen() {
 
     const [nome, setNome] = useState(null);
     const [ccir, setCcir] = useState(null);
@@ -44,9 +44,6 @@ export default function App() {
         </TouchableOpacity>
 
         </View>
-
-
-
 
 
     );
