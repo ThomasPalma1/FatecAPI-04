@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import {cssFazenda} from '../../../assets/css/cssFazenda';
+import config from '../../../config/config';
 
 export default function AddFazendaScreen() {
 
@@ -10,7 +11,7 @@ export default function AddFazendaScreen() {
 
     //Envio do form
   async function sendForm(){
-    let response=await fetch('http://192.168.23.233:3100/createFazenda',{
+    let response=await fetch(`${config.URL}/createFazenda`,{
       method: 'POST',
       headers:{
         Accept: 'application/json',

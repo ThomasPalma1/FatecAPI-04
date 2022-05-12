@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity, TextInput, Text, View } from 'react-native';
 import {cssTalhao} from '../../../assets/css/cssTalhao';
+import config from '../../../config/config';
 
 export default function AddTalhoesScreen({navigation}) {
 
@@ -11,7 +12,7 @@ export default function AddTalhoesScreen({navigation}) {
 
  //Envio do form
   async function sendForm(){
-    let response=await fetch('http://192.168.23.233:3100/createTalhao',{
+    let response=await fetch(`${config.URL}/createTalhao`,{
       method: 'POST',
       headers:{
         Accept: 'application/json',

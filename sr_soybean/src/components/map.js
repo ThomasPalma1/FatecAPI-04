@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, Alert, View, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import config from '../../config/config';
 
 export default function Map() {
   const [location, setLocation] = useState(null);
@@ -34,7 +35,7 @@ export default function Map() {
 
   var events = []
   //puxando coordenadas de talhoes.
-fetch('http://192.168.23.233:3100/readTalhaos', {
+fetch(`${config.URL}/readTalhaos`, {
   method:"GET"
     }).then(function(res) {return res.json(); })
     .then( function(data){
@@ -53,8 +54,9 @@ fetch('http://192.168.23.233:3100/readTalhaos', {
 
      
     
-    .catch(() => {
-      Alert.alert('Erro', 'Não foi possível carregar os dados do Talhão');
+    .catch((error) => {
+      console.log(error)
+    Alert.alert('Erro', 'Não foi possível carregar os dados do Talhão');
     });
 
 
