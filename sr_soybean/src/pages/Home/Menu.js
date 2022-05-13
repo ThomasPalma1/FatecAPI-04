@@ -16,7 +16,7 @@ export default function MenuScreen({ navigation }) {
       alignItems: 'center',
       flex: 1,
       flexDirection: 'column',
-      paddingTop: 20,
+      paddingTop: 5,
     },
     logo: {
       width: 80,
@@ -64,7 +64,7 @@ export default function MenuScreen({ navigation }) {
       position: 'relative',
       right: '-45%',
       top: 15,
-    }
+    },
   });
 
   return (

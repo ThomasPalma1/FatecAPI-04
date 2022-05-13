@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { View, Image, StyleSheet, Text, TextInput, Pressable } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
+import { Ionicons } from '@expo/vector-icons';
 
-export default function Login(props) {
+export default function RecuperaScreen({ navigation }) {
 
-  const { onPress } = props;
 
   const styles = StyleSheet.create({
     container: {
@@ -13,26 +13,36 @@ export default function Login(props) {
       alignItems: 'center',
       flex: 1,
       flexDirection: 'column',
-      paddingTop: 20,
-      justifyContent: 'space-between',
+      paddingTop: 30,
     },
     logo: {
-      width: 69,
-      height: 69,
+      width: 80,
+      height: 80,
     },
-    login: {
-      backgroundColor: '#D2FFC2',
-      width: 318,
-      height: 250,
-      padding: 5,
-      borderRadius: 20,
-      borderColor: '#79B078',
-      borderStyle: 'solid',
-      borderWidth: 2,
-    },
-    title: {
+    text: {
+      paddingTop: 20,
       fontSize: 20,
+      lineHeight: 21,
       fontWeight: 'bold',
+      color: '#1C1C1C',
+      top: 0,
+      textAlign: 'center',
+    },
+    menu: {
+      flex: 2.5,
+      display: 'flex',
+      backgroundColor: '#79B078',
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+      alignItems: 'center',
+    },
+    textInput: {
+      padding: 5,
+      fontSize: 20,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      color: '#6E7B58',
+      top: 0,
     },
     button: {
       alignItems: 'center',
@@ -46,39 +56,66 @@ export default function Login(props) {
       height: 56,
       margin: 5,
     },
-    text: {
-      fontSize: 20,
-      lineHeight: 21,
-      fontWeight: 'bold',
-      color: '#1C1C1C',
+    buttons: {
+      top: '25%',
+    },
+    login: {
+      width: 318,
+      height: 254,
+      padding: 5,
+      borderRadius: 20,
+      borderColor: '#79B078',
+      borderStyle: 'solid',
+      borderWidth: 2,
+      top: '15%',
+      alignItems: 'center',
+    },
+    input: {
+      width: '100%',
+      backgroundColor: "#FFFFFF",
+      height: 60,
+      borderRadius: 15,
+      padding: 10,
+      marginBottom: 15,
+      fontSize: 15,
+    },
+    arrow:{
+      position: 'absolute',
+      top: 20,
+      left: 10,
     },
   });
 
-    return (
-      <>
-        <View style={styles.container}>
-          <View>
-            <Image
-              style={styles.logo}
-              source={require('../../../assets/img/icon.png')}
-            />
-            <Text style={styles.title}>Tec Soja</Text>
-            <Text style={cssTalhao.title}>Esqueceu sua senha?</Text>
-            <Text style={cssTalhao.subtitle}>Digite seu e-mail para receber seu código de verificação.</Text>
-          </View>
-          <View style={styles.login}>
-            <Text style={cssTalhao.talhao_inputText}>Email</Text>
-            <TextInput style={cssTalhao.talhao_input} placeholder='Ex: abc@example.com' />
-          </View>
-          <View>
-            <Pressable style={styles.button} onPress={onPress}>
-              <Text style={styles.text}>Enviar código</Text>
-            </Pressable>
-            <Pressable style={styles.button} onPress={onPress}>
-              <Text style={styles.text}>Já tem uma conta? Acesse</Text>
-            </Pressable>
-          </View>
+  return (
+    <>
+      <View style={styles.container}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Login')}>
+          <Ionicons name="arrow-undo" size={30} color="#79B078" />
+        </Pressable>
+        <View>
+          <Image
+            style={styles.logo}
+            source={require('../../../assets/img/icon.png')}
+          />
         </View>
-      </>
-    );
-  }
+        <Text style={cssTalhao.title}>Esqueceu a senha?</Text>
+        <Text style={styles.text}>Digite seu e-mail para receber seu código de verificação.</Text>
+      </View>
+      <View style={styles.menu}>
+        <View style={styles.login}>
+          <Text style={cssTalhao.talhao_inputText}>Email</Text>
+          <TextInput style={styles.input} placeholder='Ex: abc@example.com' />
+        </View>
+        <View style={styles.buttons}>
+          <Pressable style={styles.button}>
+            <Text style={cssTalhao.talhao_buttonText} onPress={() => navigation.navigate('Verificacao')}>Enviar código</Text>
+          </Pressable>
+          <Pressable style={styles.button} onPress={() => navigation.navigate('Cadastro')}>
+            <Text style={cssTalhao.talhao_buttonText}>Já tem uma conta? Acesse</Text>
+          </Pressable>
+        </View>
+      </View>
+    </>
+  );
+}
+

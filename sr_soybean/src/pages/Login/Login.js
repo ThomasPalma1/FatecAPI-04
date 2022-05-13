@@ -74,7 +74,9 @@ export default function LoginScreen({ navigation }) {
             <TextInput style={styles.input} placeholder='Ex: abc@example.com' />
             <Text style={cssTalhao.talhao_inputText}>Senha</Text>
             <TextInput style={styles.input} placeholder='******' />
-            <Text style={{ textDecorationLine: 'underline' }}>Esqueci minha senha</Text>
+            <Pressable onPress={() => navigation.navigate('Recuperar')}>
+              <Text style={{ textDecorationLine: 'underline' }}>Esqueci minha senha</Text>
+            </Pressable>
           </View>
           <View style={styles.buttons}>
             <Pressable style={styles.button} onPress={() => navigation.navigate('Menu')}>

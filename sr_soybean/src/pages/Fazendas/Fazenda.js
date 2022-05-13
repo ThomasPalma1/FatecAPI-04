@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableWithoutFeedback, View, Animated, Text, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 
@@ -138,20 +139,19 @@ export default function FazendasScreen({ navigation }) {
             backgroundColor: '#00213B'
         },
         options: {
-            position: 'relative',
-            left: 300,
-            top: 20,
+            position: 'absolute',
+            left: 310,
+            top: 10,
         },
         estatisticas: {
-            position: 'absolute',
-            marginLeft: 10,
+            paddingTop: 20,
         }
     });
 
     return (
         <>
             <View style={styles.container}>
-                <Text style={cssTalhao.title}>Propriedades</Text>
+                <Text style={cssTalhao.title}>PROPRIEDADES</Text>
                 <Text style={styles.text}>Visualize todas suas propriedades registradas</Text>
             </View>
             <View style={styles.menu}>
@@ -159,30 +159,36 @@ export default function FazendasScreen({ navigation }) {
                     <View style={styles.buttons}>
                         <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
                         <Pressable style={styles.options} onPress={() => navigation.navigate('Inicio')}>
-                            <MaterialCommunityIcons name="home-plus" size={24} color="black" />
+                        <FontAwesome5 name="trash" size={20} color="#900505" />
                         </Pressable>
                             <Text style={styles.textInput}>TITULO 1</Text>
-                            <Text style={styles.estatisticas}>CCIR: 111.111.111.111-7</Text>
-                            <Text>Área: 10 Hectares</Text>
+                            <Text style={styles.estatisticas}>Área: 10 Hectares</Text>
                             <Text>Total de talhões: 10</Text>
                             <Text>CEP: 11.111-111</Text>
                             <Text>Caçapava-SP</Text>
+                            <Text>CCIR: 111.111.111.111-7</Text>
                         </Pressable>
-                        <Pressable style={styles.button}>
+                        <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
+                        <Pressable style={styles.options} onPress={() => navigation.navigate('Inicio')}>
+                        <FontAwesome5 name="trash" size={20} color="#900505" />
+                        </Pressable>
                             <Text style={styles.textInput}>TITULO 2</Text>
-                            <Text>CCIR: 111.111.111.111-7</Text>
-                            <Text>Área: 10 Hectares</Text>
+                            <Text style={styles.estatisticas}>Área: 10 Hectares</Text>
                             <Text>Total de talhões: 10</Text>
                             <Text>CEP: 11.111-111</Text>
                             <Text>Caçapava-SP</Text>
+                            <Text>CCIR: 111.111.111.111-7</Text>
                         </Pressable>
-                        <Pressable style={styles.button}>
+                        <Pressable style={styles.button} onPress={() => navigation.navigate('Inicio')}>
+                        <Pressable style={styles.options} onPress={() => navigation.navigate('Inicio')}>
+                        <FontAwesome5 name="trash" size={20} color="#900505" />
+                        </Pressable>
                             <Text style={styles.textInput}>TITULO 3</Text>
-                            <Text>CCIR: 111.111.111.111-7</Text>
-                            <Text>Área: 10 Hectares</Text>
+                            <Text style={styles.estatisticas}>Área: 10 Hectares</Text>
                             <Text>Total de talhões: 10</Text>
                             <Text>CEP: 11.111-111</Text>
                             <Text>Caçapava-SP</Text>
+                            <Text>CCIR: 111.111.111.111-7</Text>
                         </Pressable>
                     </View>
                 </View>

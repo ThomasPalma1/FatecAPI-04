@@ -5,6 +5,9 @@ import HomeScreen from '../pages/Home/Home'
 import SettingsScreen from '../pages/Profile/Profile';
 import AddTalhoesScreen from '../pages/Talhoes/addTalhoes';
 import TalhoesScreen from '../pages/Talhoes/Talhoes';
+import RecuperarSenhaScreen from '../pages/Login/RecuperarSenha';
+import VerificaScreen from './Login/Verficação';
+import NovaSenhaScreen from './Login/NovaSenha'
 import AddFazendasScreen from '../pages/Fazendas/addFazendas';
 import LoginScreen from './Login/Login';
 import MenuScreen from './Home/Menu';
@@ -21,6 +24,9 @@ function HomeStackScreen() {
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
       <HomeStack.Screen name='Login' component={LoginScreen} />
       <HomeStack.Screen name='Cadastro' component={CadastroScreen} />
+      <HomeStack.Screen name="Recuperar" component={RecuperarSenhaScreen} />
+      <HomeStack.Screen name="Verificacao" component={VerificaScreen} />
+      <HomeStack.Screen name="NovaSenha" component={NovaSenhaScreen} />
       <HomeStack.Screen name='Map' component={MapScreen} />
       <HomeStack.Screen name='Menu' component={MenuScreen} />
       <HomeStack.Screen name="Inicio" component={HomeScreen} />

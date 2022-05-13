@@ -55,14 +55,14 @@ export default function LoginScreen({ navigation }) {
     input_text:{
       fontWeight:"bold",
       fontSize: 15,
-      alignSelf: 'center',
-      color: "#fff"
+      alignSelf: 'flex-start',
+      color: "black"
     },
     text: {
       fontSize: 14,
       lineHeight: 21,
       fontWeight: 'bold',
-      color: '#1C1C1C',
+      color: '#fff',
       textAlign: 'center',
       textDecorationLine: 'underline',
     },

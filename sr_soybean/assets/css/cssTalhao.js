@@ -12,7 +12,8 @@ const cssTalhao = StyleSheet.create({
         fontWeight:"bold",
         fontSize: 30,
         color:"#52D047",
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        alignContent: "center",
     },
     subtitle:{
         fontSize: 20,
@@ -24,8 +25,10 @@ const cssTalhao = StyleSheet.create({
         width: "100%"
     },
     talhao_inputText:{
-        fontSize: 20, 
-        textAlign: 'left', 
+        fontSize: 18, 
+        alignSelf: 'flex-start',
+        margin: 3,
+        fontWeight: 'bold',
     },
     talhao_input:{
         backgroundColor: "#FFFFFF",
@@ -34,6 +37,9 @@ const cssTalhao = StyleSheet.create({
         marginBottom:15,
         width: '100%',
         borderRadius: 15,
+        borderColor: '#64FB57',
+        borderStyle: 'solid',
+        borderWidth: 1,
     },
     talhao_button:{
         padding: 12,
