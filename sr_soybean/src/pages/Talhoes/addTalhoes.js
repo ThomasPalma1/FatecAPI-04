@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity, TextInput, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity, TextInput, Text, View,Alert } from 'react-native';
 import {cssTalhao} from '../../../assets/css/cssTalhao';
 import config from '../../../config/config';
 
@@ -11,22 +11,23 @@ export default function AddTalhoesScreen({navigation}) {
   const [areaDoTalhao, setAreaTalhao]=useState(null);
 
  //Envio do form
-  async function sendForm(){
-    let response=await fetch(`${config.URL}/createTalhao`,{
-      method: 'POST',
-      headers:{
-        Accept: 'application/json',
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
-      })
-
+ async function sendForm(){
+ await fetch(`${config.URL}/createTalhao`,{
+    method: 'POST',
+    headers:{
+      Accept: 'application/json',
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({
+      nome: campo,
+      latitude: latitudeTalhao,
+      longitude: longitudeTalhao,
+      areaTalhao: areaDoTalhao
     })
-  }
+  }).then((response) =>{
+    Alert.alert("Sucesso", `sucesso ao salvar talhao`)
+  })
+}
 
   return (
     <KeyboardAvoidingView  

@@ -8,6 +8,7 @@ import {
   Text,
   Pressable,
   Alert,
+  TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { cssTalhao } from "../../../assets/css/cssTalhao";
@@ -139,6 +140,7 @@ export default function TalhoesScreen({ navigation }) {
     },
   });
 
+  //Puxando e setando os dados dos talhões
  useEffect(() => { fetch(`${config.URL}/readTalhaos`, {
   method: "GET",
   cache: "no-cache",
@@ -152,7 +154,8 @@ export default function TalhoesScreen({ navigation }) {
         'latitude': data.talhoes[j].latitude,
         'longitude': data.talhoes[j].longitude,
         'nome': data.talhoes[j].nomeCampo,
-        'areaPlantada': data.talhoes[j].areaPlantada
+        'areaPlantada': data.talhoes[j].areaPlantada,
+        'idTalhao': data.talhoes[j].id
       })
     }
     //console.log(eventsTalhao)
@@ -164,18 +167,58 @@ export default function TalhoesScreen({ navigation }) {
   });
 }, [])    
 
-  console.log(talhoes)
+
+async function deleteTalhao(idTalhao){
+ await fetch(`${config.URL}/deleteTalhao`, {
+    method: "DELETE",
+    cache: "no-cache",
+    headers: {
+      Accept: 'application/json',
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({idTalhao}) 
+  })
+    .then((response) => response.json())
+    .then((data) =>{
+        console.log(data)
+        Alert.alert("Sucesso", "Verificar console do server")
+    })
+   
+}
+
+const excluir = (nome, idTalhao) => {
+  Alert.alert(
 
 
+    null,
+    `Excluir o talhao ${nome}?`,
+    [
+      {  text: "Sim",
+      onPress: () => {
+        deleteTalhao(idTalhao)
+      }
+    
+    },
+    {
+      text: "Não",
+    }]
+  )
+}
+
+ //Renderizando a view do Talhão para um card
   const renderItem = ({item}) =>(
-    <Pressable style={styles.button}>
+  <Pressable style={styles.button}>
     <Text style={styles.textInput}>{item.nome}</Text>
     <Text>Área plantada: {item.areaPlantada} Hectares</Text>
     <Text>Latitude: {item.latitude}</Text>
     <Text>Longitude: {item.longitude}</Text>
+    <TouchableOpacity style={cssTalhao.talhao_button} onPress={()=> excluir (item.nome, item.idTalhao)}>
+       <Text style={cssTalhao.talhao_buttonText}>Excluir</Text>
+    </TouchableOpacity>
   </Pressable>
 
   )
+
   return (
     <>
       <View style={styles.container}>
@@ -187,10 +230,14 @@ export default function TalhoesScreen({ navigation }) {
       <View style={styles.menu}>
         <View styles={styles.submenu}>
           <View style={styles.buttons}>
+
+            {/* //Puxando a redenrização para exibir na tela */}
           <FlatList
             data={talhoes}
             renderItem={renderItem}
+            keyExtractor={item => item.idTalhao}
             />
+
           </View>
         </View>
         <TouchableWithoutFeedback
