@@ -2,35 +2,36 @@
 import React, { useState, useEffect } from 'react';
 import config from '../../../config/config';
 import { Picker } from '@react-native-picker/picker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function NovaSenhaScreen({ navigation }) {
 
   const [selectedLanguage, setSelectedLanguage] = useState();
-  const [campo, setCampo] = useState(null);
-  const [latitudeTalhao, setLatitude] = useState(null);
-  const [longitudeTalhao, setLongitude] = useState(null);
-  const [areaDoTalhao, setAreaTalhao] = useState(null);
+  const [campo, setCampo]=useState(null);
+  const [latitudeTalhao, setLatitude]=useState(null);
+  const [longitudeTalhao, setLongitude]=useState(null);
+  const [areaDoTalhao, setAreaTalhao]=useState(null);
 
-  //Envio do form
-  async function sendForm() {
-    let response = await fetch(`${config.URL}/createTalhao`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
-      })
-
+ //Envio do form
+ async function sendForm(){
+ await fetch(`${config.URL}/createTalhao`,{
+    method: 'POST',
+    headers:{
+      Accept: 'application/json',
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({
+      nome: campo,
+      latitude: latitudeTalhao,
+      longitude: longitudeTalhao,
+      areaTalhao: areaDoTalhao
     })
-  }
+  }).then((response) =>{
+    Alert.alert("Sucesso", `sucesso ao salvar talhao`)
+  })
+}
 
   const styles = StyleSheet.create({
     container: {

@@ -79,6 +79,50 @@ app.get('/readTalhaos', async(req,res)=>{
 			});
   })
 
+//Ler Fazenda
+  app.get('/readFazendas', async(req,res)=>{
+    let readFazendas = await fazenda.findAll({
+        raw:true
+    })
+    .then((fazendas) => {
+      return res.json({
+        fazendas: fazendas,
+        count: fazendas.count,
+      });
+    })
+    .catch((e) => {
+      return res.status(400).json({ error: e.message });
+    });
+})
+
+// Delete Talhão
+app.delete("/deleteTalhao", async(req, res)=>{
+    talhao.destroy({
+        where:{
+          id: req.body.idTalhao,
+        }
+    }).then(() => {
+      console.log("Excluido com sucesso!")
+    }).catch((error)=> {
+      console.log(error)
+    })
+})
+
+
+// Delete Fazendas
+app.delete("/deleteFazenda", async(req, res)=>{
+  fazenda.destroy({
+      where:{
+        id: req.body.idFazenda,
+      }
+  }).then(() => {
+    console.log("Excluido com sucesso!")
+  }).catch((error)=> {
+    console.log(error)
+  })
+})
+
+
 
 // //Ler
 // app.get('/read', async(req,res)=>{
