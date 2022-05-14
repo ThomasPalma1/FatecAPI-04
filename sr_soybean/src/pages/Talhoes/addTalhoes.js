@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import config from '../../../config/config';
+import config from '../../../config/config_config';
 import { Picker } from '@react-native-picker/picker';
 import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';

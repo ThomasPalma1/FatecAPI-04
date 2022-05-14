@@ -1,11 +1,12 @@
 
 import React, { useContext, useEffect, useState } from "react";
-import config from "../../../config/config";
+import config from "../../../config/config_config";
 import {
   StyleSheet,
   TouchableWithoutFeedback,
   View,
   Animated,
+  TouchableOpacity,
   Text,
   Pressable,
   FlatList,
