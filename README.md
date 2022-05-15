@@ -20,9 +20,7 @@
 </p>
               
  <h2 align="center">O que é o TecSoja :iphone:</h2>
- O TecSoja, aplicativo para celular, visa atender demandas do uso da tecnologia para uma melhor produção de soja, sendo o foco na análise e aumento da produtividade.
-
-A solução proposta por este aplicativo permite que o agricultor possa estimar sua produtividade a cada cultivo e produtividade total, além de comparar a produtividade e áreas plantadas nos municípios. O agricultor também poderá ter uma melhor análise de custos, clima e época ideal de colheita com base na geolocalização do seu cultivo.
+ O dispositivo mobile <b><i>TecSoja</b></i> tem como principal objetivo dentro do mercado da agricultura, em específico no ramo da produção e comercialização de soja, satisfazer as exigências do uso da tecnologia para os agricultores atingerem uma melhor produção. O foco do nosso aplicativo é na análise e aumento da produtividade da soja. A solução proposta por nós é que este aplicativo permite que o agricultor possa estimar sua produtividade a cada cultivo e produtividade total. Além de poder comparar a produtividade e áreas plantadas nos municípios e outros estados do país. O agricultor também poderá realizar uma análise absolutamente exata de custos, clima e época ideal de colheita com base na geolocalização do seu cultivo.
 
               
 <h2>📋Menu de Navegação</h2>
