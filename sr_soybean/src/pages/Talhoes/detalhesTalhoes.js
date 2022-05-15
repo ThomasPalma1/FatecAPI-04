@@ -1,11 +1,29 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import config from '../../../config/config_config';
 import { View, Image, StyleSheet, Text, Pressable, TextInput } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons'; 
 
-export default function VerificaScreen({ navigation }) {
+export default function DetalhesTalhoesScreen({ navigation }) {
 
+  const [nome, setNome] = useState(null);
+  const [ccir, setCcir] = useState(null);
+
+    //Envio do form
+  async function sendForm(){
+    let response=await fetch(`${config.URL}/createFazenda`,{
+      method: 'POST',
+      headers:{
+        Accept: 'application/json',
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({
+        nome: nome
+      })
+
+    })
+  }
 
   const styles = StyleSheet.create({
     container: {
@@ -57,7 +75,7 @@ export default function VerificaScreen({ navigation }) {
       margin: 5,
     },
     buttons: {
-      top: '25%',
+      top: '35%',
     },
     login: {
       width: 318,
@@ -75,9 +93,6 @@ export default function VerificaScreen({ navigation }) {
       backgroundColor: "#FFFFFF",
       height: 60,
       borderRadius: 15,
-      borderColor: '#6E7B58',
-      borderStyle: 'solid',
-      borderWidth: 2,
       padding: 10,
       marginBottom: 15,
       fontSize: 15,
@@ -92,7 +107,7 @@ export default function VerificaScreen({ navigation }) {
   return (
     <>
       <View style={styles.container}>
-        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Login')}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Fazenda')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
         <View>
@@ -101,20 +116,19 @@ export default function VerificaScreen({ navigation }) {
             source={require('../../../assets/img/icon.png')}
           />
         </View>
-        <Text style={cssTalhao.title}>Esqueceu a senha?</Text>
-        <Text style={styles.text}>Digite o código de verificação que chegou no seu e-mail</Text>
+        <Text style={cssTalhao.title}>Cadastrar propriedade</Text>
+        <Text style={styles.text}>Cadastre sua propriedade</Text>
       </View>
       <View style={styles.menu}>
         <View style={styles.login}>
-          <Text style={cssTalhao.talhao_inputText}>Código verificação</Text>
-          <TextInput style={styles.input} placeholder='Ex: ABC123' />
+          <Text style={cssTalhao.talhao_inputText}>Nome da sua propriedade</Text>
+          <TextInput style={styles.input} placeholder='Ex: Fazendinha' onChangeText={text => setNome(text)}/>
+          <Text style={cssTalhao.talhao_inputText}>CCRI</Text>
+          <TextInput style={styles.input} onChangeText={text => setCcir(text)} placeholder='Ex: 111.111.111.111-1' />
         </View>
         <View style={styles.buttons}>
-          <Pressable style={styles.button}>
-            <Text style={cssTalhao.talhao_buttonText} onPress={() => navigation.navigate('NovaSenha')}>Verificar código</Text>
-          </Pressable>
-          <Pressable style={styles.button} onPress={() => navigation.navigate('Cadastro')}>
-            <Text style={cssTalhao.talhao_buttonText}>Já tem uma conta? Acesse</Text>
+          <Pressable style={styles.button} onPress={()=>sendForm()}>
+            <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
         </View>
       </View>

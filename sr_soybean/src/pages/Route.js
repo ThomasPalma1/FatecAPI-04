@@ -8,6 +8,7 @@ import AddColheitasScreen from '../pages/Colheitas/addColheita';
 import AddAmostrasScreen from '../pages/Colheitas/addAmostras';
 import AddCustosScreen from './Custos/addCustos';
 import TalhoesScreen from '../pages/Talhoes/Talhoes';
+import DetalhesTalhoesScreen from './Talhoes/detalhesTalhoes';
 import RecuperarSenhaScreen from '../pages/Login/RecuperarSenha';
 import VerificaScreen from './Login/Verficação';
 import NovaSenhaScreen from './Login/NovaSenha'
@@ -37,6 +38,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name="addTalhoes" component={AddTalhoesScreen} />
       <HomeStack.Screen name="addFazendas" component={AddFazendasScreen} />
       <HomeStack.Screen name="Talhoes" component={TalhoesScreen} />
+      <HomeStack.Screen name="Detalhes" component={DetalhesTalhoesScreen} />
       <HomeStack.Screen name="addAmostra" component={AddAmostrasScreen} />
       <HomeStack.Screen name="addColheita" component={AddColheitasScreen} />
       <HomeStack.Screen name="addCusto" component={AddCustosScreen} />
@@ -44,37 +46,6 @@ function HomeStackScreen() {
   );
 }
 
-const SettingsStack = createNativeStackNavigator();
-
-function SettingsStackScreen() {
-  return (
-    <SettingsStack.Navigator screenOptions={{ headerShown: false }}>
-      <SettingsStack.Screen name="Configuracoes" component={SettingsScreen} />
-    </SettingsStack.Navigator>
-  );
-}
-
-const TalhoesStack = createNativeStackNavigator();
-
-function TalhoesStackScreen() {
-  return (
-    <TalhoesStack.Navigator screenOptions={{ headerShown: false }}>
-      <TalhoesStack.Screen name="Talhoes" component={TalhoesScreen} />
-      <TalhoesStack.Screen name="addTalhoes" component={AddTalhoesScreen} />
-    </TalhoesStack.Navigator>
-  );
-}
-
-const LoginStack = createNativeStackNavigator();
-
-function LoginStackScreen() {
-  return (
-    <LoginsStack.Navigator screenOptions={{ headerShown: false }}>
-      <LoginsStack.Screen name="Login" component={LoginsScreen} />
-      <LoginsStack.Screen name="Cadastro" component={CadastroScreen} />
-    </LoginsStack.Navigator>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
@@ -88,20 +59,6 @@ const Tab = createBottomTabNavigator();
           tabBarLabel: 'Inicio',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" color={color} size={size} />
-          ),
-        }} />
-      <Tab.Screen name="Layers" component={TalhoesStackScreen}
-        options={{
-          tabBarLabel: 'Talhões',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="layers-outline" color={color} size={size} />
-          ),
-        }} />
-      <Tab.Screen name="Settings" component={SettingsStackScreen}
-        options={{
-          tabBarLabel: 'Configurações',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings-outline" color={color} size={size} />
           ),
         }} />
     </Tab.Navigator>

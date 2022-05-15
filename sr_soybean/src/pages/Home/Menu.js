@@ -96,7 +96,7 @@ export default function MenuScreen({ navigation }) {
               <Text style={styles.textInput}>Custos</Text>
               <FontAwesome5 name="dollar-sign" size={40} color="white" />
             </Pressable>
-            <Pressable style={styles.button}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Detalhes')}>
               <Text style={styles.textInput}>Estátisticas</Text>
               <Octicons name="graph" size={40} color="white" />
             </Pressable>

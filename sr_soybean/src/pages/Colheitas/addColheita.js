@@ -1,14 +1,16 @@
 
 import React, { useState } from 'react';
 import config from '../../../config/config_config';
+import DatePicker from 'react-native-datepicker';
 import { Picker } from '@react-native-picker/picker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, Button } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function NovaSenhaScreen({ navigation }) {
 
   const [selectedLanguage, setSelectedLanguage] = useState();
+  const [date, setDate] = useState('');
   const [campo, setCampo] = useState(null);
   const [latitudeTalhao, setLatitude] = useState(null);
   const [longitudeTalhao, setLongitude] = useState(null);
@@ -33,6 +35,20 @@ export default function NovaSenhaScreen({ navigation }) {
     })
   }
 
+
+
+  const handleConfirm = (date) => {
+    setDate(date);
+  };
+
+  const getDate = () => {
+    let tempDate = date.toString().split(' ');
+    return date !== ''
+      ? `${tempDate[0]} ${tempDate[1]} ${tempDate[2]} ${tempDate[3]}`
+      : '';
+  };
+
+
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#fff',
@@ -46,11 +62,11 @@ export default function NovaSenhaScreen({ navigation }) {
       height: 80,
     },
     text: {
-      paddingTop: 20,
+      padding: 20,
       fontSize: 20,
       lineHeight: 21,
       fontWeight: 'bold',
-      color: '#1C1C1C',
+      color: '#fff',
       top: 0,
       textAlign: 'center',
     },
@@ -88,7 +104,7 @@ export default function NovaSenhaScreen({ navigation }) {
       margin: 5,
     },
     buttons: {
-      top: '43%',
+      top: '50%',
     },
     login: {
       width: 318,
@@ -105,6 +121,9 @@ export default function NovaSenhaScreen({ navigation }) {
       backgroundColor: "#FFFFFF",
       height: 60,
       borderRadius: 15,
+      borderColor: '#6E7B58',
+      borderStyle: 'solid',
+      borderWidth: 2,
       padding: 10,
       marginBottom: 10,
       fontSize: 15,
@@ -121,7 +140,7 @@ export default function NovaSenhaScreen({ navigation }) {
       padding: 10,
       marginBottom: 10,
       fontSize: 15,
-    }
+    },
   });
 
   return (
@@ -136,35 +155,33 @@ export default function NovaSenhaScreen({ navigation }) {
             source={require('../../../assets/img/icon.png')}
           />
         </View>
-        <Text style={cssTalhao.title}>Amostras</Text>
+        <Text style={cssTalhao.title}>Cultivo</Text>
       </View>
       <View style={styles.menu}>
         <View style={styles.login}>
-          <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo utilizado</Text>
+          <Text style={styles.text}>DADOS DA COLHEITA</Text>
+          <Text style={cssTalhao.talhao_inputText}>Data da colheita prevista</Text>
+          <DatePicker
+            styles={styles.input}
+            date={getDate()}
+            format='DD/MM/YYYY'
+            mode="date"
+            onDateChange={handleConfirm}
+          />
+          <Text style={styles.text}>CULTIVARES</Text>
+          <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo</Text>
           <Picker
             selectedValue={selectedLanguage}
             onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
             style={styles.dropdown}
             mode="dropdown">
-          <Picker.Item label="Selecione o Cultivo" value="Selecione o Cultivo" enabled/>
-          <Picker.Item label="Soja" value="Soja" />
-          <Picker.Item label="Algodão" value="Algodão" />
-          <Picker.Item label="Café" value="Café" />
-          <Picker.Item label="Milho" value="Milho" />
+            <Picker.Item label="Tipo de cultivo" value="Tipo de cultivo" />
+            <Picker.Item label="Soja" value="Soja" />
+            <Picker.Item label="Café" value="Café" />
           </Picker>
-          <Text style={cssTalhao.talhao_inputText}>Nome do seu talhão</Text>
-          <TextInput style={styles.input} placeholder='Ex: Talhão 1' onChangeText={text => setCampo(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Longitude</Text>
-          <TextInput style={styles.input} placeholder="Ex: 23°09'30.3'S" onChangeText={text => setLatitude(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Latitude</Text>
-          <TextInput style={styles.input} placeholder="Ex: 45°47'38.9'W" onChangeText={text => setLongitude(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
-          <TextInput style={styles.input} placeholder='Ex: Ex: 10.000m²' onChangeText={text => setAreaTalhao(text)} />
-          <Text>-OU-</Text>
+          <Text style={cssTalhao.talhao_inputText}>Tempo fenológico</Text>
+          <TextInput style={styles.input} placeholder="" onChangeText={text => setLongitude(text)} />
         </View>
-        <TouchableOpacity style={styles.buttonMap}>
-          <Text style={cssTalhao.talhao_buttonText} onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
-        </TouchableOpacity>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>

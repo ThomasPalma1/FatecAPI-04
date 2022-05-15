@@ -15,8 +15,11 @@ export default function LoginScreen({ navigation }) {
       backgroundColor: "#FFFFFF",
       height: 60,
       borderRadius: 15,
-      padding:10,
-      marginBottom:15,
+      borderColor: '#6E7B58',
+      borderStyle: 'solid',
+      borderWidth: 2,
+      padding: 10,
+      marginBottom: 10,
       fontSize: 15,
     },
     login: {
