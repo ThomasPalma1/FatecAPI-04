@@ -36,7 +36,7 @@ export default function MenuScreen({ navigation }) {
       backgroundColor: '#79B078',
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
-      padding: 10,
+      padding: 50,
       alignItems: 'center',
     },
     textInput: {
@@ -92,10 +92,10 @@ export default function MenuScreen({ navigation }) {
               <Text style={styles.textInput}>Talhões</Text>
               <FontAwesome5 name="leaf" size={40} color="white" />
             </Pressable>
-            <Pressable style={styles.button} onPress={() => navigation.navigate('addCusto')}>
+            {/* <Pressable style={styles.button} onPress={() => navigation.navigate('addCusto')}>
               <Text style={styles.textInput}>Custos</Text>
               <FontAwesome5 name="dollar-sign" size={40} color="white" />
-            </Pressable>
+            </Pressable> */}
             <Pressable style={styles.button} onPress={() => navigation.navigate('addColheita')}>
               <Text style={styles.textInput}>Estátisticas</Text>
               <Octicons name="graph" size={40} color="white" />

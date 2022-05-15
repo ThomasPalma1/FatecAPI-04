@@ -34,7 +34,7 @@ export default function CadastroInfoScreen({ navigation }) {
             backgroundColor: '#79B078',
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
-            padding: 50,
+            padding: 10,
             alignItems: 'center',
         },
         textInput: {
@@ -96,6 +96,10 @@ export default function CadastroInfoScreen({ navigation }) {
                     <Pressable style={styles.button} onPress={() => navigation.navigate('addProdutividade')}>
                         <Text style={styles.textInput}>Produtividade</Text>
                         <FontAwesome5 name="chart-pie" size={40} color="white" />
+                    </Pressable>
+                    <Pressable style={styles.button} onPress={() => navigation.navigate('addCusto')}>
+                        <Text style={styles.textInput}>Custos</Text>
+                        <FontAwesome5 name="dollar-sign" size={40} color="white" />
                     </Pressable>
                 </View>
             </View>
