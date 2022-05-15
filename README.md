@@ -19,14 +19,14 @@
 <img src="https://img.shields.io/badge/Sprint%20atual-Sprint 2-green?style=for-the-badge&logo=appveyor">
 </p>
               
- <h2 align="center">O que é o TecSoja :iphone:</h2>
+ <h2 align="center">O que é o aplicativo <b><i>TecSoja</b></i> :iphone:?</h2>
  O dispositivo mobile <b><i>TecSoja</b></i> tem como principal objetivo dentro do mercado da agricultura, em específico no ramo da produção e comercialização de soja, satisfazer as exigências do uso da tecnologia para os agricultores atingerem uma melhor produção. O foco do nosso aplicativo é na análise e aumento da produtividade da soja. A solução proposta por nós é que este aplicativo permite que o agricultor possa estimar sua produtividade a cada cultivo e produtividade total. Além de poder comparar a produtividade e áreas plantadas nos municípios e outros estados do país. O agricultor também poderá realizar uma análise absolutamente exata de custos, clima e época ideal de colheita com base na geolocalização do seu cultivo.
 
               
 <h2>📋Menu de Navegação</h2>
        
-- <a href="#segundaEntrega">A segunda entrega</a>
-  - [O que fizemos?](#o-que-fizemos)
+- <a href="#segundaEntrega">Segunda entrega</a>
+  - [O que desenvolvemos?](#o-que-desenvolvemos)
   - [Por que entregamos isso?](#por-que-entregamos-isso)
   - [Quais foram as partes mais trabalhosas?](#quais-foram-as-partes-mais-trabalhosas)
 - <a href="#card">Card da Sprint</a>
@@ -36,9 +36,9 @@
 - <a href="#wireframe">Wireframe da entrega</a>
 - <a href="#prototipo">Protótipo da entrega</a>
     
-<h2 align="center" id="segundaEntrega">A segunda entrega</h2>
+<h2 align="center" id="segundaEntrega">Segunda entrega 2️⃣</h2>
 
-<h2 style="font-family:roboto;">💻<i>O que</i> fizemos?</h2>
+<h2 style="font-family:roboto;">💻<i>O que desenvolvemos?</i></h2>
 <p align="justify">
 Foram desenvolvidas e entregues ao cliente as seguintes funções para a plataforma, desenvolvemos o cadastro de:
 </p>
@@ -71,7 +71,7 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
 </p>
 
  
-<h2 id="userStory"><i>:notebook:User</i> Story Sprint 2</h2>
+<h2 id="userStory"><i>:notebook:User Story Sprint 2</i></h2>
 
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
@@ -81,14 +81,14 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
 
 
 
-<h2 id="card"><i>📅Card</i> da entrega 02</h2>
+<h2 id="card"><i>📅Card da entrega 02</i></h2>
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
 <img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/Card_Sprint2.JPG">
               
 
-<h2 id="backlog">📘<i>Backlog</i> do projeto</h2>
+<h2 id="backlog">📘<i>Backlog do projeto</i></h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
@@ -96,7 +96,7 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
               
 ---
               
-<h2 id="funcionamento" style="font-family:roboto;">💻<i>Fluxo da plataforma</i> do projeto</h2>
+<h2 id="funcionamento" style="font-family:roboto;">💻<i>Fluxo da plataforma do projeto</i></h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
          
@@ -121,12 +121,12 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
 </div>
               
       
-<h2 id="wireframe" style="font-family:roboto;">💻<i>Wireframes</i> do projeto</h2>
+<h2 id="wireframe" style="font-family:roboto;">💻<i>Wireframes do projeto</i></h2>
               
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
               
 <p><a href="https://tecsoja.invisionapp.com/console/share/39ED72FQG5Y">Link: Wireframe Interativo</a></p>
               
-<h2 id="prototipo" style="font-family:roboto;">💻<i>Prototipagem</i> do projeto</h2>
+<h2 id="prototipo" style="font-family:roboto;">💻<i>Prototipagem do projeto</i></h2>
               
 <p><a href="https://www.figma.com/file/1W9qwDx37D7xhBstm7PVng/FATEC-API-04?node-id=0%3A1">Link: Protótipo Figma</a></p>
