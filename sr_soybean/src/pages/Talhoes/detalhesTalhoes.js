@@ -6,16 +6,12 @@ import {
   TouchableWithoutFeedback,
   View,
   Animated,
-  TouchableOpacity,
   Text,
   Pressable,
-  FlatList,
-  Alert,
 }
   from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'; 
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 
 export default function FazendasScreen({ navigation }) {
@@ -38,7 +34,17 @@ export default function FazendasScreen({ navigation }) {
 
   }
 
-
+  const colheitaStyle = {
+    transform: [
+      { scale: animation },
+      {
+        translateY: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, -70]
+        })
+      }
+    ]
+  }
 
   const layersStyle = {
     transform: [
@@ -83,7 +89,7 @@ export default function FazendasScreen({ navigation }) {
       textAlign: 'center',
     },
     menu: {
-      flex: 3.5,
+      flex: 5,
       display: 'flex',
       backgroundColor: '#79B078',
       borderTopLeftRadius: 20,
@@ -111,6 +117,25 @@ export default function FazendasScreen({ navigation }) {
       borderWidth: 2,
       width: 150,
       height: 100,
+      margin: 20,
+    },
+    cardText: {
+      padding: 5,
+      fontSize: 20,
+      lineHeight: 21,
+      fontWeight: 'bold',
+      color: '#6E7B58',
+    },
+    card: {
+      alignItems: 'center',
+      backgroundColor: '#FFF',
+      borderColor: '#6E7B58',
+      borderStyle: 'solid',
+      borderRadius: 16,
+      borderWidth: 2,
+      width: 350,
+      height: 100,
+      margin: 5,
     },
     fab: {
       margin: 5,
@@ -128,6 +153,13 @@ export default function FazendasScreen({ navigation }) {
       shadowOffset: {
         height: 10,
       }
+    },
+    submenu: {
+      margin: 10,
+      width: 48,
+      height: 48,
+      borderRadius: 48 / 2,
+      backgroundColor: '#00213B'
     },
     fabmenu: {
       backgroundColor: '#00213B'
@@ -166,17 +198,27 @@ export default function FazendasScreen({ navigation }) {
             <Text style={styles.graos}>50</Text>
           </View>
         </View>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('addTalhoes')}>
-          <Animated.View style={[styles.fab, styles.submenu, layersStyle]}>
-            <FontAwesome name="leaf" size={24} color="#fff" />
-          </Animated.View>
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={toggleMenu}>
-          <Animated.View style={[styles.fab, styles.fabmenu, rotation]}>
-            <Ionicons name='add' size={24} color='#fff' />
-          </Animated.View>
-        </TouchableWithoutFeedback>
+        <View>
+        <View style={styles.card}>
+          <Text style={styles.cardText}>Estimativa de produtividade</Text>
+          <Text style={styles.graos}>120.000</Text>
+        </View>
+        <View style={styles.card}>
+          <Text style={styles.cardText}>Produtividade real</Text>
+          <Text style={styles.graos}>120.000</Text>
+        </View>
       </View>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate('CadastroInfo')}>
+        <Animated.View style={[styles.fab, styles.submenu, layersStyle]}>
+          <AntDesign name="addfile" size={20} color="#fff" />
+        </Animated.View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={toggleMenu}>
+        <Animated.View style={[styles.fab, styles.fabmenu, rotation]}>
+          <Ionicons name='add' size={24} color='#fff' />
+        </Animated.View>
+      </TouchableWithoutFeedback>
+    </View>
     </>
   );
 }

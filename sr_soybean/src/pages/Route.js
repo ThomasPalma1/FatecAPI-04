@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../pages/Home/Home'
 import SettingsScreen from '../pages/Profile/Profile';
+import CadastroInfoScreen from '../pages/Home/Cadastro';
 import AddTalhoesScreen from '../pages/Talhoes/addTalhoes';
 import AddCultivoScreen from '../pages/Colheitas/addCultivo';
 import AddColheitaScreen from '../pages/Colheitas/addColheita';
@@ -45,6 +46,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name="addCultivo" component={AddCultivoScreen} />
       <HomeStack.Screen name="addColheita" component={AddColheitaScreen} />
       <HomeStack.Screen name="addCusto" component={AddCustosScreen} />
+      <HomeStack.Screen name="CadastroInfo" component={CadastroInfoScreen} />
       <HomeStack.Screen name="addProdutividade" component={AddProdutividadeScreen} />
     </HomeStack.Navigator>
   );

@@ -130,7 +130,7 @@ export default function AddProdutividadeScreen({ navigation }) {
   return (
     <>
       <View style={styles.container}>
-        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Talhoes')}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('CadastroInfo')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
         <View>
