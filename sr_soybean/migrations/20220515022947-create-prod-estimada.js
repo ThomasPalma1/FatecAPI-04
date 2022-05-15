@@ -1,28 +1,22 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Fazendas', {
+    await queryInterface.createTable('prodEstimadas', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nomeFazenda: {
-        type: Sequelize.STRING
+      pesoMilGraos: {
+        type: Sequelize.FLOAT
       },
-      // usuarioId: {
-      //   type: Sequelize.INTEGER,
-
-      //   references:{
-      //     model: 'Usuarios',
-      //     key: 'id'
-      // },
-
-      // onUpdate: 'cascade',
-      // onDelete: 'cascade'
-
-      // },
+      qtdeDezM: {
+        type: Sequelize.INTEGER
+      },
+      distanciaLinhas: {
+        type: Sequelize.FLOAT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -34,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Fazendas');
+    await queryInterface.dropTable('prodEstimadas');
   }
 };

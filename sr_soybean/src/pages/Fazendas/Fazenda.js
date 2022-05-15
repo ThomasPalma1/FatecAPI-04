@@ -109,6 +109,9 @@ const styles = StyleSheet.create({
     height: 150,
     margin: 5,
   },
+  textCCIR:{
+      marginTop: 20
+  },
   configuracoes: {
     position: 'relative',
     display: 'flex',
@@ -170,6 +173,7 @@ useEffect(() => {
       for (var j = 0; j < data.fazendas.length; j++) {
         eventsFazendas.push({
           nome: data.fazendas[j].nomeFazenda,
+          ccri: data.fazendas[j].ccri,
           idFazenda: data.fazendas[j].id,
         });
       }
@@ -221,6 +225,7 @@ const renderItem = ({ item }) => (
       <FontAwesome5 name="trash" size={20} color="#900505" />
     </Pressable>
     <Text style={styles.textInput}>{item.nome}</Text>
+    <Text style={styles.textCCIR}>CCIR: {item.ccri}</Text>
   </Pressable>
 );
 

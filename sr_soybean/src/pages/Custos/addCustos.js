@@ -8,31 +8,27 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function NovaSenhaScreen({ navigation }) {
 
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const [campo, setCampo] = useState(null);
-  const [latitudeTalhao, setLatitude] = useState(null);
-  const [longitudeTalhao, setLongitude] = useState(null);
-  const [areaDoTalhao, setAreaTalhao] = useState(null);
+  const [maoObra, setMaoObra] = useState();
+  const [maquinas, setMaquinas] = useState(null);
+  const [insumos, setInsumos] = useState(null);
+  const [valorSementes, setValorSementes] = useState(null);
 
-  //Envio do form
-  async function sendForm() {
-    await fetch(`${config.URL}/createTalhao`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
-      })
-    }).then((response) => {
-      Alert.alert("Sucesso", `sucesso ao salvar talhao`)
-    })
-  }
-
+ //Envio do form
+ async function sendForm() {
+  await fetch(`${config.URL}/createCusto`, {
+    method: 'POST',
+    body: JSON.stringify({
+      maoObra: maoObra,
+      maquinas: maquinas,
+      insumos: insumos,
+      valorSementes: valorSementes
+    }),
+    headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+  }).then((response) => response.json())
+    .then(() => Alert.alert("Sucesso", "Sucesso ao salvar."));
+}
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#fff',
@@ -144,13 +140,13 @@ export default function NovaSenhaScreen({ navigation }) {
       <View style={styles.menu}>
         <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Mão de obra</Text>
-          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setCampo(text)} />
+          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setMaoObra(text)} />
           <Text style={cssTalhao.talhao_inputText}>Máquinas</Text>
-          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setLatitude(text)} />
+          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setMaquinas(text)} />
           <Text style={cssTalhao.talhao_inputText}>Insumos</Text>
-          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setLongitude(text)} />
+          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setInsumos(text)} />
           <Text style={cssTalhao.talhao_inputText}>Valor das sementes</Text>
-          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setAreaTalhao(text)} />
+          <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setValorSementes(text)} />
         </View>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>
