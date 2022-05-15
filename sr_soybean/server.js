@@ -13,23 +13,10 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT;
 
+let custos = models.custos;
 let usuario = models.Usuario;
-let fazenda = models.Fazenda;
+let fazenda = models.fazenda;
 let talhao = models.Talhao;
-
-app.post("/talhao", (req, res) => {
-  console.log(req.body);
-});
-
-
-//Ler
-app.get('/Talhao', async(req,res)=>{
-    let getTalhao = await talhao.findAll({
-        raw:true
-    })
-})
-
-
 
 //Criar talhao
 app.post("/createTalhao", async (req, res) => {
@@ -53,6 +40,7 @@ app.post("/createFazenda", async (req, res) => {
   await fazenda
     .create({
       nomeFazenda: req.body.nome,
+      ccri: req.body.ccri,
       createdAt: new Date(),
       updateAt: new Date(),
     })
@@ -61,6 +49,24 @@ app.post("/createFazenda", async (req, res) => {
       console.log(e);
     });
 });
+
+//Criar custos
+app.post("/createCusto", async (req, res) => {
+  await custos
+    .create({
+      maoObra: req.body.maoObra,
+      maquinas: req.body.maquinas,
+      insumos: req.body.insumos,
+      valorSementes: req.body.valorSementes,
+      createdAt: new Date(),
+      updateAt: new Date(),
+    })
+    .then(console.log)
+    .catch(function (e) {
+      console.log(e);
+    });
+});
+
 
 //ler talhao
 
@@ -95,6 +101,23 @@ app.get('/readTalhaos', async(req,res)=>{
     });
 })
 
+//Ler Custo
+app.get('/readCustos', async(req,res)=>{
+  let readCustos = await custos.findAll({
+      raw:true
+  })
+  .then((custos) => {
+    return res.json({
+      custos: custos,
+      count: custos.count,
+    });
+  })
+  .catch((e) => {
+    return res.status(400).json({ error: e.message });
+  });
+})
+
+
 // Delete Talhão
 app.delete("/deleteTalhao", async(req, res)=>{
     talhao.destroy({
@@ -122,6 +145,18 @@ app.delete("/deleteFazenda", async(req, res)=>{
   })
 })
 
+// Delete Custos
+app.delete("/deleteCustos", async(req, res)=>{
+  custos.destroy({
+      where:{
+        id: req.body.idCustos,
+      }
+  }).then(() => {
+    console.log("Excluido com sucesso!")
+  }).catch((error)=> {
+    console.log(error)
+  })
+})
 
 
 // //Ler
