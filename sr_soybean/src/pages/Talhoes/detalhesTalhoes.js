@@ -1,29 +1,68 @@
 
-import React, { useState, useEffect } from 'react';
-import config from '../../../config/config_config';
-import { View, Image, StyleSheet, Text, Pressable, TextInput } from 'react-native';
+import React, { useEffect, useState } from "react";
+import config from "../../../config/config_config";
+import {
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+  Animated,
+  TouchableOpacity,
+  Text,
+  Pressable,
+  FlatList,
+  Alert,
+}
+  from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
-import { Ionicons } from '@expo/vector-icons'; 
 
-export default function DetalhesTalhoesScreen({ navigation }) {
+export default function FazendasScreen({ navigation }) {
 
-  const [nome, setNome] = useState(null);
-  const [ccir, setCcir] = useState(null);
+  const [open, setOpen] = useState(0);
+  const animation = new Animated.Value(open);
+  const [talhoes, setTalhoes] = useState([]);
 
-    //Envio do form
-  async function sendForm(){
-    let response=await fetch(`${config.URL}/createFazenda`,{
-      method: 'POST',
-      headers:{
-        Accept: 'application/json',
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({
-        nome: nome
-      })
+  const toggleMenu = () => {
+    setOpen(open == 0 ? 1 : 0);
+    const toValue = open;
 
-    })
+
+    Animated.spring(animation, {
+      toValue,
+      friction: 6,
+      useNativeDriver: false
+    }).start();
+
+
   }
+
+
+
+  const layersStyle = {
+    transform: [
+      { scale: animation },
+      {
+        translateY: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, -60]
+        })
+      }
+    ]
+  }
+
+  const rotation = {
+    transform: [
+      {
+        rotate: animation.interpolate({
+          inputRange: [0, 1],
+          outputRange: ["0deg", "45deg"]
+        })
+      }
+    ]
+  }
+
 
   const styles = StyleSheet.create({
     container: {
@@ -31,11 +70,8 @@ export default function DetalhesTalhoesScreen({ navigation }) {
       alignItems: 'center',
       flex: 1,
       flexDirection: 'column',
-      paddingTop: 30,
-    },
-    logo: {
-      width: 80,
-      height: 80,
+      top: 30,
+      paddingTop: 20,
     },
     text: {
       paddingTop: 20,
@@ -47,90 +83,99 @@ export default function DetalhesTalhoesScreen({ navigation }) {
       textAlign: 'center',
     },
     menu: {
-      flex: 2.5,
+      flex: 3.5,
       display: 'flex',
       backgroundColor: '#79B078',
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
+      padding: 10,
       alignItems: 'center',
     },
     textInput: {
-      padding: 5,
-      fontSize: 20,
+      fontSize: 12,
       lineHeight: 21,
       fontWeight: 'bold',
       color: '#6E7B58',
-      top: 0,
+    },
+    graos: {
+      fontSize: 50,
+      fontWeight: '200',
+      color: '#6E7B58',
     },
     button: {
       alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#9DF59B',
+      backgroundColor: '#FFF',
       borderColor: '#6E7B58',
       borderStyle: 'solid',
       borderRadius: 16,
       borderWidth: 2,
-      width: 318,
-      height: 56,
+      width: 150,
+      height: 100,
+    },
+    fab: {
       margin: 5,
-    },
-    buttons: {
-      top: '35%',
-    },
-    login: {
-      width: 318,
-      height: 254,
-      padding: 5,
-      borderRadius: 20,
-      borderColor: '#79B078',
-      borderStyle: 'solid',
-      borderWidth: 2,
-      top: '15%',
-      alignItems: 'center',
-    },
-    input: {
-      width: '100%',
-      backgroundColor: "#FFFFFF",
+      right: 0,
+      bottom: 0,
+      position: 'absolute',
+      width: 60,
       height: 60,
-      borderRadius: 15,
-      padding: 10,
-      marginBottom: 15,
-      fontSize: 15,
+      borderRadius: 60 / 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      shadowRadius: 10,
+      shadowColor: '#00213B',
+      shadowOpacity: 0.3,
+      shadowOffset: {
+        height: 10,
+      }
     },
-    arrow:{
+    fabmenu: {
+      backgroundColor: '#00213B'
+    },
+    div: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    arrow: {
       position: 'absolute',
       top: 20,
       left: 10,
-    }
+    },
   });
+
+
+
 
   return (
     <>
       <View style={styles.container}>
-        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Fazenda')}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Menu')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
-        <View>
-          <Image
-            style={styles.logo}
-            source={require('../../../assets/img/icon.png')}
-          />
-        </View>
-        <Text style={cssTalhao.title}>Cadastrar propriedade</Text>
-        <Text style={styles.text}>Cadastre sua propriedade</Text>
+        <Text style={cssTalhao.title}>Talhão A</Text>
+        <Text style={styles.text}>Confira as estatisticas do seu talhão</Text>
       </View>
       <View style={styles.menu}>
-        <View style={styles.login}>
-          <Text style={cssTalhao.talhao_inputText}>Nome da sua propriedade</Text>
-          <TextInput style={styles.input} placeholder='Ex: Fazendinha' onChangeText={text => setNome(text)}/>
-          <Text style={cssTalhao.talhao_inputText}>CCRI</Text>
-          <TextInput style={styles.input} onChangeText={text => setCcir(text)} placeholder='Ex: 111.111.111.111-1' />
+        <View style={styles.div}>
+          <View style={styles.button}>
+            <Text style={styles.textInput}>GRÃOS POR PLANTA</Text>
+            <Text style={styles.graos}>50</Text>
+          </View>
+          <View style={styles.button}>
+            <Text style={styles.textInput}>GRÃOS POR PLANTA</Text>
+            <Text style={styles.graos}>50</Text>
+          </View>
         </View>
-        <View style={styles.buttons}>
-          <Pressable style={styles.button} onPress={()=>sendForm()}>
-            <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
-          </Pressable>
-        </View>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('addTalhoes')}>
+          <Animated.View style={[styles.fab, styles.submenu, layersStyle]}>
+            <FontAwesome name="leaf" size={24} color="#fff" />
+          </Animated.View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={toggleMenu}>
+          <Animated.View style={[styles.fab, styles.fabmenu, rotation]}>
+            <Ionicons name='add' size={24} color='#fff' />
+          </Animated.View>
+        </TouchableWithoutFeedback>
       </View>
     </>
   );

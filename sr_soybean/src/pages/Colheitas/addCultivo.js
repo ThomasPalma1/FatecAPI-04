@@ -1,40 +1,20 @@
 
 import React, { useState } from 'react';
 import config from '../../../config/config_config';
+import DatePicker from 'react-native-datepicker';
 import { Picker } from '@react-native-picker/picker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, Button } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
-import * as ImagePicker from 'expo-image-picker';
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons'; 
 
-export default function NovaSenhaScreen({ navigation }) {
+export default function AddCultivoScreen({ navigation }) {
 
   const [selectedLanguage, setSelectedLanguage] = useState();
-  const[cultivos]=useState(['Selecione o cultivo','Soja', 'Milho', 'Café', 'Algodão'])
-  const[cultivoSelecionado, setCultivoSelecionado] = useState([])
-  const [cultivo] = useState('null');
-  const [pragas, setPragas] = useState('null');
-  const [doencas, setDoencas] = useState('null');
-  const [falhaplantio, setFalhaplantio] = useState('null');
-  const [anotacoes, setAnotacoes] = useState('null');
-  
-
-  const pickImage = async () => {
-    // No permissions request is necessary for launching the image library
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
-
-    console.log(result);
-
-    if (!result.cancelled) {
-      setImage(result.uri);
-    }
-  };
+  const [date, setDate] = useState('');
+  const [campo, setCampo] = useState(null);
+  const [latitudeTalhao, setLatitude] = useState(null);
+  const [longitudeTalhao, setLongitude] = useState(null);
+  const [areaDoTalhao, setAreaTalhao] = useState(null);
 
   //Envio do form
   async function sendForm() {
@@ -55,6 +35,20 @@ export default function NovaSenhaScreen({ navigation }) {
     })
   }
 
+
+
+  const handleConfirm = (date) => {
+    setDate(date);
+  };
+
+  const getDate = () => {
+    let tempDate = date.toString().split(' ');
+    return date !== ''
+      ? `${tempDate[0]} ${tempDate[1]} ${tempDate[2]} ${tempDate[3]}`
+      : '';
+  };
+
+
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#fff',
@@ -68,11 +62,11 @@ export default function NovaSenhaScreen({ navigation }) {
       height: 80,
     },
     text: {
-      paddingTop: 20,
+      padding: 20,
       fontSize: 20,
       lineHeight: 21,
       fontWeight: 'bold',
-      color: '#1C1C1C',
+      color: '#fff',
       top: 0,
       textAlign: 'center',
     },
@@ -87,15 +81,15 @@ export default function NovaSenhaScreen({ navigation }) {
     buttonMap: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: '#9DF59B',
       borderColor: '#6E7B58',
-      borderStyle: 'dotted',
+      borderStyle: 'solid',
       borderRadius: 16,
       borderWidth: 2,
-      width: 318,
-      height: 80,
+      width: 200,
+      height: 40,
       margin: 5,
-      top: '37%',
+      top: '41%',
     },
     button: {
       alignItems: 'center',
@@ -147,24 +141,12 @@ export default function NovaSenhaScreen({ navigation }) {
       marginBottom: 10,
       fontSize: 15,
     },
-    buttonText:{
-      fontWeight:"bold",
-      fontSize: 22,
-      alignSelf: 'center',
-      color: "#fff"
-  },
-  buttonText:{
-    fontWeight:"bold",
-    fontSize: 22,
-    alignSelf: 'center',
-    color: "#79B078"
-  },
   });
 
   return (
     <>
       <View style={styles.container}>
-        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Menu')}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Talhoes')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
         <View>
@@ -173,16 +155,32 @@ export default function NovaSenhaScreen({ navigation }) {
             source={require('../../../assets/img/icon.png')}
           />
         </View>
-        <Text style={cssTalhao.title}>Colheita</Text>
+        <Text style={cssTalhao.title}>Cultivo</Text>
       </View>
       <View style={styles.menu}>
         <View style={styles.login}>
-          <Text style={cssTalhao.talhao_inputText}>Sementes colhidas (kg)</Text>
-          <TextInput style={styles.input} onChangeText={text => setPragas(text)}  />
-          <Text style={cssTalhao.talhao_inputText}>Produtividade real</Text>
-          <TextInput style={styles.input} onChangeText={text => setDoencas(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Perdas (kg)</Text>
-          <TextInput style={styles.input} onChangeText={text => setFalhaplantio(text)} />
+          <Text style={styles.text}>DADOS DA COLHEITA</Text>
+          <Text style={cssTalhao.talhao_inputText}>Data da colheita prevista</Text>
+          <DatePicker
+            styles={styles.input}
+            date={getDate()}
+            format='DD/MM/YYYY'
+            mode="date"
+            onDateChange={handleConfirm}
+          />
+          <Text style={styles.text}>CULTIVARES</Text>
+          <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo</Text>
+          <Picker
+            selectedValue={selectedLanguage}
+            onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
+            style={styles.dropdown}
+            mode="dropdown">
+            <Picker.Item label="Tipo de cultivo" value="Tipo de cultivo" />
+            <Picker.Item label="Soja" value="Soja" />
+            <Picker.Item label="Café" value="Café" />
+          </Picker>
+          <Text style={cssTalhao.talhao_inputText}>Tempo fenológico</Text>
+          <TextInput style={styles.input} placeholder="" onChangeText={text => setLongitude(text)} />
         </View>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>

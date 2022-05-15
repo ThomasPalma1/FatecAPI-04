@@ -4,7 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../pages/Home/Home'
 import SettingsScreen from '../pages/Profile/Profile';
 import AddTalhoesScreen from '../pages/Talhoes/addTalhoes';
-import AddColheitasScreen from '../pages/Colheitas/addColheita';
+import AddCultivoScreen from '../pages/Colheitas/addCultivo';
+import AddColheitaScreen from '../pages/Colheitas/addColheita';
 import AddAmostrasScreen from '../pages/Colheitas/addAmostras';
 import AddCustosScreen from './Custos/addCustos';
 import TalhoesScreen from '../pages/Talhoes/Talhoes';
@@ -13,6 +14,7 @@ import RecuperarSenhaScreen from '../pages/Login/RecuperarSenha';
 import VerificaScreen from './Login/Verficação';
 import NovaSenhaScreen from './Login/NovaSenha'
 import AddFazendasScreen from '../pages/Fazendas/addFazendas';
+import AddProdutividadeScreen from './Colheitas/addProdutividade';
 import LoginScreen from './Login/Login';
 import MenuScreen from './Home/Menu';
 import CadastroScreen from './Login/Cadastro';
@@ -40,8 +42,10 @@ function HomeStackScreen() {
       <HomeStack.Screen name="Talhoes" component={TalhoesScreen} />
       <HomeStack.Screen name="Detalhes" component={DetalhesTalhoesScreen} />
       <HomeStack.Screen name="addAmostra" component={AddAmostrasScreen} />
-      <HomeStack.Screen name="addColheita" component={AddColheitasScreen} />
+      <HomeStack.Screen name="addCultivo" component={AddCultivoScreen} />
+      <HomeStack.Screen name="addColheita" component={AddColheitaScreen} />
       <HomeStack.Screen name="addCusto" component={AddCustosScreen} />
+      <HomeStack.Screen name="addProdutividade" component={AddProdutividadeScreen} />
     </HomeStack.Navigator>
   );
 }

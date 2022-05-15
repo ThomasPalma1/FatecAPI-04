@@ -234,7 +234,7 @@ export default function FazendasScreen({ navigation }) {
 
   //Renderizando a view do Talhão para um card
   const renderItem = ({ item }) => (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={() => navigation.navigate('Detalhes')} >
       <Text style={styles.textInput}>{item.nome}</Text>
       <Text style={styles.estatisticas}>Área plantada: {item.areaPlantada} Hectares</Text>
       <Text>Latitude: {item.latitude}</Text>

@@ -6,7 +6,7 @@ import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOp
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function NovaSenhaScreen({ navigation }) {
+export default function AddProdutividadeScreen({ navigation }) {
 
   const [selectedLanguage, setSelectedLanguage] = useState();
   const [campo, setCampo] = useState(null);
@@ -88,7 +88,7 @@ export default function NovaSenhaScreen({ navigation }) {
       margin: 5,
     },
     buttons: {
-      top: '43%',
+      top: '50%',
     },
     login: {
       width: 318,
@@ -103,7 +103,7 @@ export default function NovaSenhaScreen({ navigation }) {
     input: {
       width: '100%',
       backgroundColor: "#FFFFFF",
-      height: 60,
+      height: 50,
       borderRadius: 15,
       borderColor: '#6E7B58',
       borderStyle: 'solid',
@@ -143,31 +143,19 @@ export default function NovaSenhaScreen({ navigation }) {
       </View>
       <View style={styles.menu}>
         <View style={styles.login}>
-          <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo utilizado</Text>
-          <Picker
-            selectedValue={selectedLanguage}
-            onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
-            style={styles.dropdown}
-            mode="dropdown">
-          <Picker.Item label="Selecione o Cultivo" value="Selecione o Cultivo" enabled/>
-          <Picker.Item label="Soja" value="Soja" />
-          <Picker.Item label="Algodão" value="Algodão" />
-          <Picker.Item label="Café" value="Café" />
-          <Picker.Item label="Milho" value="Milho" />
-          </Picker>
-          <Text style={cssTalhao.talhao_inputText}>Nome do seu talhão</Text>
-          <TextInput style={styles.input} placeholder='Ex: Talhão 1' onChangeText={text => setCampo(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Longitude</Text>
-          <TextInput style={styles.input} placeholder="Ex: 23°09'30.3'S" onChangeText={text => setLatitude(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Latitude</Text>
-          <TextInput style={styles.input} placeholder="Ex: 45°47'38.9'W" onChangeText={text => setLongitude(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
-          <TextInput style={styles.input} placeholder='Ex: Ex: 10.000m²' onChangeText={text => setAreaTalhao(text)} />
-          <Text>-OU-</Text>
+          <Text style={cssTalhao.talhao_inputText}>Peso de mil grãos</Text>
+          <TextInput style={styles.input} placeholder='' onChangeText={text => setCampo(text)} />
+          <Text style={cssTalhao.talhao_inputText}>Qntd. Plantas em 10 metros</Text>
+          <TextInput style={styles.input} placeholder="" onChangeText={text => setLatitude(text)} />
+          <Text style={cssTalhao.talhao_inputText}>Distância entre linhas</Text>
+          <TextInput style={styles.input} placeholder="" onChangeText={text => setLongitude(text)} />
+          <Text style={cssTalhao.talhao_inputText}>Vagens por planta</Text>
+          <TextInput style={styles.input} placeholder='' onChangeText={text => setAreaTalhao(text)} />
+          <Text style={cssTalhao.talhao_inputText}>Qntd. grãos</Text>
+          <TextInput style={styles.input} placeholder='' onChangeText={text => setAreaTalhao(text)} />
+          <Text style={cssTalhao.talhao_inputText}>Qntd. vagens</Text>
+          <TextInput style={styles.input} placeholder='' onChangeText={text => setAreaTalhao(text)} />
         </View>
-        <TouchableOpacity style={styles.buttonMap}>
-          <Text style={cssTalhao.talhao_buttonText} onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
-        </TouchableOpacity>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
