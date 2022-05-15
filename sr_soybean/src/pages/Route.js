@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../pages/Home/Home'
 import SettingsScreen from '../pages/Profile/Profile';
 import AddTalhoesScreen from '../pages/Talhoes/addTalhoes';
+import AddColheitasScreen from '../pages/Colheitas/addColheita';
+import AddAmostrasScreen from '../pages/Colheitas/addAmostras';
+import AddCustosScreen from './Custos/addCustos';
 import TalhoesScreen from '../pages/Talhoes/Talhoes';
 import RecuperarSenhaScreen from '../pages/Login/RecuperarSenha';
 import VerificaScreen from './Login/Verficação';
@@ -34,6 +37,9 @@ function HomeStackScreen() {
       <HomeStack.Screen name="addTalhoes" component={AddTalhoesScreen} />
       <HomeStack.Screen name="addFazendas" component={AddFazendasScreen} />
       <HomeStack.Screen name="Talhoes" component={TalhoesScreen} />
+      <HomeStack.Screen name="addAmostra" component={AddAmostrasScreen} />
+      <HomeStack.Screen name="addColheita" component={AddColheitasScreen} />
+      <HomeStack.Screen name="addCusto" component={AddCustosScreen} />
     </HomeStack.Navigator>
   );
 }

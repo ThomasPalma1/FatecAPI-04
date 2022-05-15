@@ -1,37 +1,37 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import config from '../../../config/config_config';
 import { Picker } from '@react-native-picker/picker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function NovaSenhaScreen({ navigation }) {
 
   const [selectedLanguage, setSelectedLanguage] = useState();
-  const [campo, setCampo]=useState(null);
-  const [latitudeTalhao, setLatitude]=useState(null);
-  const [longitudeTalhao, setLongitude]=useState(null);
-  const [areaDoTalhao, setAreaTalhao]=useState(null);
+  const [campo, setCampo] = useState(null);
+  const [latitudeTalhao, setLatitude] = useState(null);
+  const [longitudeTalhao, setLongitude] = useState(null);
+  const [areaDoTalhao, setAreaTalhao] = useState(null);
 
- //Envio do form
- async function sendForm(){
- await fetch(`${config.URL}/createTalhao`,{
-    method: 'POST',
-    headers:{
-      Accept: 'application/json',
-      'Content-Type':'application/json'
-    },
-    body: JSON.stringify({
-      nome: campo,
-      latitude: latitudeTalhao,
-      longitude: longitudeTalhao,
-      areaTalhao: areaDoTalhao
+  //Envio do form
+  async function sendForm() {
+    await fetch(`${config.URL}/createTalhao`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nome: campo,
+        latitude: latitudeTalhao,
+        longitude: longitudeTalhao,
+        areaTalhao: areaDoTalhao
+      })
+    }).then((response) => {
+      Alert.alert("Sucesso", `sucesso ao salvar talhao`)
     })
-  }).then((response) =>{
-    Alert.alert("Sucesso", `sucesso ao salvar talhao`)
-  })
-}
+  }
 
   const styles = StyleSheet.create({
     container: {
@@ -73,6 +73,7 @@ export default function NovaSenhaScreen({ navigation }) {
       width: 200,
       height: 40,
       margin: 5,
+      top: '41%',
     },
     button: {
       alignItems: 'center',
@@ -87,7 +88,7 @@ export default function NovaSenhaScreen({ navigation }) {
       margin: 5,
     },
     buttons: {
-      top: '50%',
+      top: '43%',
     },
     login: {
       width: 318,
@@ -126,7 +127,7 @@ export default function NovaSenhaScreen({ navigation }) {
   return (
     <>
       <View style={styles.container}>
-        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Login')}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Talhoes')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
         <View>
@@ -139,28 +140,32 @@ export default function NovaSenhaScreen({ navigation }) {
       </View>
       <View style={styles.menu}>
         <View style={styles.login}>
-        <Text style={cssTalhao.talhao_inputText}>Atribuir talhão a uma propriedade</Text>
-        <Picker
-          selectedValue={selectedLanguage}
-          onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
-          style={styles.dropdown}
-          mode="dropdown">
-          <Picker.Item label="Propriedade1" value="Propriedade1" />
-          <Picker.Item label="Propriedade2" value="Propriedade2" />
-        </Picker>
+          <Text style={cssTalhao.talhao_inputText}>Atribuir talhão a uma propriedade</Text>
+          <Picker
+            selectedValue={selectedLanguage}
+            onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
+            style={styles.dropdown}
+            mode="dropdown">
+            <Picker.Item label="Selecione uma propriedade" value="Propriedade1" />
+            <Picker.Item label="Propriedade1" value="Propriedade1" />
+            <Picker.Item label="Propriedade2" value="Propriedade2" />
+          </Picker>
           <Text style={cssTalhao.talhao_inputText}>Nome do seu talhão</Text>
           <TextInput style={styles.input} placeholder='Ex: Talhão 1' onChangeText={text => setCampo(text)} />
           <Text style={cssTalhao.talhao_inputText}>Longitude</Text>
-          <TextInput style={styles.input} placeholder="Ex: 23°09'30.3'S" onChangeText={text => setLatitude(text)}/>
+          <TextInput style={styles.input} placeholder="Ex: 23°09'30.3'S" onChangeText={text => setLatitude(text)} />
           <Text style={cssTalhao.talhao_inputText}>Latitude</Text>
           <TextInput style={styles.input} placeholder="Ex: 45°47'38.9'W" onChangeText={text => setLongitude(text)} />
           <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
           <TextInput style={styles.input} placeholder='Ex: Ex: 10.000m²' onChangeText={text => setAreaTalhao(text)} />
           <Text>-OU-</Text>
-          <Pressable style={styles.buttonMap}>
+          {/* <Pressable style={styles.buttonMap}>
             <Text style={cssTalhao.talhao_buttonText}  onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
-          </Pressable>
+          </Pressable> */}
         </View>
+        <TouchableOpacity style={styles.buttonMap}>
+          <Text style={cssTalhao.talhao_buttonText} onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
+        </TouchableOpacity>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>

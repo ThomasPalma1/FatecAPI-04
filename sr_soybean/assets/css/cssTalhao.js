@@ -54,7 +54,6 @@ const cssTalhao = StyleSheet.create({
         alignSelf: 'center',
         color: "#fff"
     }
-
 })
 
 export {cssTalhao};

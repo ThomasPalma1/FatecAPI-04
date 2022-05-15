@@ -149,7 +149,12 @@ const styles = StyleSheet.create({
   },
   estatisticas: {
     paddingTop: 20,
-  }
+  },
+  arrow: {
+    position: 'absolute',
+    top: 20,
+    left: 10,
+  },
 });
 
 //Puxando e setando os dados dos talhões
@@ -212,9 +217,8 @@ const renderItem = ({ item }) => (
   <Pressable style={styles.button}>
     <Pressable
       style={styles.options}
-      onPress={() => excluir(item.nome, item.idFazenda)}
-    >
-      <MaterialCommunityIcons name="home-plus" size={24} color="black" />
+      onPress={() => excluir(item.nome, item.idFazenda)}>
+      <FontAwesome5 name="trash" size={20} color="#900505" />
     </Pressable>
     <Text style={styles.textInput}>{item.nome}</Text>
   </Pressable>
@@ -223,6 +227,9 @@ const renderItem = ({ item }) => (
 return (
   <>
     <View style={styles.container}>
+      <Pressable style={styles.arrow} onPress={() => navigation.navigate('Menu')}>
+        <Ionicons name="arrow-undo" size={30} color="#79B078" />
+      </Pressable>
       <Text style={cssTalhao.title}>PROPRIEDADES</Text>
       <Text style={styles.text}>Visualize todas suas propriedades registradas</Text>
     </View>

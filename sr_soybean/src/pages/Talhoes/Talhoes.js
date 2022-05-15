@@ -1,5 +1,5 @@
 
-import React, { useContext, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import config from "../../../config/config_config";
 import {
   StyleSheet,
@@ -16,7 +16,6 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 
 export default function FazendasScreen({ navigation }) {
@@ -158,7 +157,12 @@ export default function FazendasScreen({ navigation }) {
     },
     estatisticas: {
       paddingTop: 20,
-    }
+    },
+    arrow: {
+      position: 'absolute',
+      top: 20,
+      left: 10,
+    },
   });
 
   //Puxando e setando os dados dos talhões
@@ -232,11 +236,11 @@ export default function FazendasScreen({ navigation }) {
   const renderItem = ({ item }) => (
     <Pressable style={styles.button}>
       <Text style={styles.textInput}>{item.nome}</Text>
-      <Text>Área plantada: {item.areaPlantada} Hectares</Text>
+      <Text style={styles.estatisticas}>Área plantada: {item.areaPlantada} Hectares</Text>
       <Text>Latitude: {item.latitude}</Text>
       <Text>Longitude: {item.longitude}</Text>
-      <TouchableOpacity style={cssTalhao.talhao_button} onPress={() => excluir(item.nome, item.idTalhao)}>
-        <Text style={cssTalhao.talhao_buttonText}>Excluir</Text>
+      <TouchableOpacity style={styles.options} onPress={() => excluir(item.nome, item.idTalhao)}>
+        <FontAwesome5 name="trash" size={20} color="#900505" />
       </TouchableOpacity>
     </Pressable>
 
@@ -245,6 +249,9 @@ export default function FazendasScreen({ navigation }) {
   return (
     <>
       <View style={styles.container}>
+      <Pressable style={styles.arrow} onPress={() => navigation.navigate('Menu')}>
+          <Ionicons name="arrow-undo" size={30} color="#79B078" />
+        </Pressable>
         <Text style={cssTalhao.title}>TALHÕES</Text>
         <Text style={styles.text}>Visualize todos seus talhões registrados</Text>
       </View>

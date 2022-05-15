@@ -107,7 +107,7 @@ export default function NovaSenhaScreen({ navigation }) {
   return (
     <>
       <View style={styles.container}>
-        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Login')}>
+        <Pressable style={styles.arrow} onPress={() => navigation.navigate('Fazenda')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
         <View>

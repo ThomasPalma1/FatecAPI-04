@@ -83,7 +83,7 @@ fetch(`${config.URL}/readTalhaos`, {
 
 const styles = StyleSheet.create({
   map: {
-    width: Dimensions.get('window').width,
+    width: Dimensions.get('screen').width,
     height: Dimensions.get('window').height,
   }
 })
