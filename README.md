@@ -40,36 +40,36 @@ A solução proposta por este aplicativo permite que o agricultor possa estimar 
     
 <h2 align="center" id="segundaEntrega">A segunda entrega</h2>
 
-<h2 style="font-family:roboto;">💻<i>O que</i> fizemos</h2>
+<h2 style="font-family:roboto;">💻<i>O que</i> fizemos?</h2>
 <p align="justify">
-Entregando ao cliente funções necessárias para a plataforma, desenvolvemos o cadastro de:
+Foram desenvolvidas e entregues ao cliente as seguintes funções para a plataforma, desenvolvemos o cadastro de:
 </p>
 
-- Usuários
-- Fazenda
-- Cultivo
-- Colheita
-- Produtividade estimada
-- Produtividade real
-- Amostras das plantas
-- Custos de produção
+- Usuários;
+- Fazenda;
+- Cultivo;
+- Colheita;
+- Produtividade estimada;
+- Produtividade real;
+- Amostras das plantas;
+- Custos de produção.
 
 <p align="justify">
-Também contendo os cálculos e exibição de:
+Complementando os cadastros, entregamos também os seguintes calculos e exibição de:
 </p>
               
-- Produtividade estimada
-- Produtividade real
+- Produtividade estimada;
+- Produtividade real.
               
 #### Por que entregamos isso?
 <p align="justify">
-O cadastro é essencial para o usuário, sem cadastrar algo a plataforma teria pouca funcionalidade. Cálculos e a amostra dos dados de produtividades é importante para o usuário ter idéia das condições de sua produção seja ela, eficaz ou ineficaz.  
+A ato de "cadastrar" é essencial ao usuário, em visto disso, desenvolver uma relação entre usuário e aplicação por meio do registro de informação é super importante. E foi nesse tópico que decidimos dar ênfase para essa entrega. Evidenciar os dados, através do cadastro, de forma simples e fácil para o usuário é o nosso propósito. Os cálculos pertinentes aos talhões e as amostras de dados dos cultivos e de produtividade é também de extrema importância. Todas estas funcionalidades servem para usuário compreender as condições de sua produção, mesmo ela tendo resultados bons ou ruins.  
 </p>
 
 
 #### Quais foram as partes mais trabalhosas?
 <p align="justify">
-Em desenvolvimento...
+A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de negócio envolvendo o talhão e suas características. Dentro da programação do projeto, definir e desenvolver uma interface amigável para o usuário, vincular a inserção, leitura, atualização e remoção de informações vinculadas ao talhão também foi um obstaculo que tivemos que superar.
 </p>
 
  
