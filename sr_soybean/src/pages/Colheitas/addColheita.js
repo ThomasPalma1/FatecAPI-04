@@ -10,14 +10,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 export default function NovaSenhaScreen({ navigation }) {
 
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const[cultivos]=useState(['Selecione o cultivo','Soja', 'Milho', 'Café', 'Algodão'])
-  const[cultivoSelecionado, setCultivoSelecionado] = useState([])
-  const [cultivo] = useState('null');
-  const [pragas, setPragas] = useState('null');
-  const [doencas, setDoencas] = useState('null');
-  const [falhaplantio, setFalhaplantio] = useState('null');
-  const [anotacoes, setAnotacoes] = useState('null');
+  const [sementeColhidas, setSementeColhidas] = useState(null);
+  const [ProdReal, setProdReal] = useState(null);
+  const [perdas, setPerdas] = useState(null);
   
 
   const pickImage = async () => {
@@ -38,23 +33,23 @@ export default function NovaSenhaScreen({ navigation }) {
 
   //Envio do form
   async function sendForm() {
-    await fetch(`${config.URL}/createTalhao`, {
+    await fetch(`${config.URL}/createColheita`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
+        sementeColhidas: sementeColhidas,
+        ProdReal: ProdReal,
+        perdas: perdas
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
+    }).catch(() => {
+      Alert.alert("Sucesso", "Sucesso ao salvar colheita!")
     })
   }
-
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#fff',
@@ -178,11 +173,11 @@ export default function NovaSenhaScreen({ navigation }) {
       <View style={styles.menu}>
         <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Sementes colhidas (kg)</Text>
-          <TextInput style={styles.input} onChangeText={text => setPragas(text)}  />
+          <TextInput style={styles.input} keyboardType='decimal-pad' onChangeText={text => setSementeColhidas(text)}  />
           <Text style={cssTalhao.talhao_inputText}>Produtividade real</Text>
-          <TextInput style={styles.input} onChangeText={text => setDoencas(text)} />
+          <TextInput style={styles.input} onChangeText={text => setProdReal(text)} />
           <Text style={cssTalhao.talhao_inputText}>Perdas (kg)</Text>
-          <TextInput style={styles.input} onChangeText={text => setFalhaplantio(text)} />
+          <TextInput style={styles.input} keyboardType='decimal-pad' onChangeText={text => setPerdas(text)} />
         </View>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>

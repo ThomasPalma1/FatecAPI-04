@@ -9,29 +9,25 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function AddCultivoScreen({ navigation }) {
 
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const [date, setDate] = useState('');
-  const [campo, setCampo] = useState(null);
-  const [latitudeTalhao, setLatitude] = useState(null);
-  const [longitudeTalhao, setLongitude] = useState(null);
-  const [areaDoTalhao, setAreaTalhao] = useState(null);
+  const [fenologico, setFenologico] = useState(null);
+  const [tipoCultivo, setTipoCultivo] = useState(null);
 
   //Envio do form
   async function sendForm() {
-    await fetch(`${config.URL}/createTalhao`, {
+    await fetch(`${config.URL}/createCultivo`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
+      tipoCultivo: tipoCultivo,
+      fenologico: fenologico
       })
     }).then((response) => {
-      Alert.alert("Sucesso", `sucesso ao salvar talhao`)
+      Alert.alert("Sucesso", `sucesso ao salvar cultivo`)
+    }).catch(() => {
+      Alert.alert("Sucesso", "Sucesso ao salvar cultivo!")
     })
   }
 
@@ -170,7 +166,8 @@ export default function AddCultivoScreen({ navigation }) {
           />
           <Text style={styles.text}>CULTIVARES</Text>
           <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo</Text>
-          <Picker
+          <TextInput style={styles.input} placeholder="" onChangeText={text => setTipoCultivo(text)} />
+          {/* <Picker
             selectedValue={selectedLanguage}
             onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
             style={styles.dropdown}
@@ -178,9 +175,9 @@ export default function AddCultivoScreen({ navigation }) {
             <Picker.Item label="Tipo de cultivo" value="Tipo de cultivo" />
             <Picker.Item label="Soja" value="Soja" />
             <Picker.Item label="Café" value="Café" />
-          </Picker>
+          </Picker> */}
           <Text style={cssTalhao.talhao_inputText}>Tempo fenológico</Text>
-          <TextInput style={styles.input} placeholder="" onChangeText={text => setLongitude(text)} />
+          <TextInput style={styles.input} placeholder="" onChangeText={text => setFenologico(text)} />
         </View>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>

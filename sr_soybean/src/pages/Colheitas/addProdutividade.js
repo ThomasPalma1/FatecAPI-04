@@ -8,28 +8,27 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function AddProdutividadeScreen({ navigation }) {
 
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const [campo, setCampo] = useState(null);
-  const [latitudeTalhao, setLatitude] = useState(null);
-  const [longitudeTalhao, setLongitude] = useState(null);
-  const [areaDoTalhao, setAreaTalhao] = useState(null);
+ const [pesoMilGraos, setPesoMilGraos] = useState(null);
+ const [qtdPlantas10m, setPlantas10m] = useState(null);
+ const [distanciaLinhas, setDistanciaLinhas] = useState(null);
 
   //Envio do form
   async function sendForm() {
-    await fetch(`${config.URL}/createTalhao`, {
+    await fetch(`${config.URL}/createProdutividade`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
+        pesoMilGraos: pesoMilGraos,
+        qtdPlantas10m: qtdPlantas10m,
+        distanciaLinhas: distanciaLinhas
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
+    }).catch(() => {
+      Alert.alert("Sucesso", "Sucesso ao salvar produtividade!")
     })
   }
 
@@ -142,19 +141,16 @@ export default function AddProdutividadeScreen({ navigation }) {
         <Text style={cssTalhao.title}>Produtividade</Text>
       </View>
       <View style={styles.menu}>
-        <View style={styles.login}>
+      <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Peso de mil grãos</Text>
-          <TextInput style={styles.input} placeholder='' onChangeText={text => setCampo(text)} />
+         
+          <TextInput style={styles.input} placeholder='' onChangeText={text => setPesoMilGraos(text)} />
           <Text style={cssTalhao.talhao_inputText}>Qntd. Plantas em 10 metros</Text>
-          <TextInput style={styles.input} placeholder="" onChangeText={text => setLatitude(text)} />
+          
+          <TextInput style={styles.input} placeholder="" keyboardType='decimal-pad' onChangeText={text => setPlantas10m(text)} />
           <Text style={cssTalhao.talhao_inputText}>Distância entre linhas</Text>
-          <TextInput style={styles.input} placeholder="" onChangeText={text => setLongitude(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Vagens por planta</Text>
-          <TextInput style={styles.input} placeholder='' onChangeText={text => setAreaTalhao(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Qntd. grãos</Text>
-          <TextInput style={styles.input} placeholder='' onChangeText={text => setAreaTalhao(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Qntd. vagens</Text>
-          <TextInput style={styles.input} placeholder='' onChangeText={text => setAreaTalhao(text)} />
+         
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setDistanciaLinhas(text)} />
         </View>
         <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>

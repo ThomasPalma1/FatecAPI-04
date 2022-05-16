@@ -17,6 +17,10 @@ let custos = models.custos;
 let usuario = models.Usuario;
 let fazenda = models.fazenda;
 let talhao = models.Talhao;
+let produtividade = models.prodestimada;
+let registro = models.registro;
+let amostra = models.amostras;
+let colheita = models.colheita;
 
 app.post('/login', async (req,res)=> {
     let response=await usuario.findOne({
@@ -48,6 +52,76 @@ app.post("/createTalhao", async (req, res) => {
       console.log(e);
     });
 });
+
+
+//Criar produtividade
+app.post("/createProdutividade", async (req, res) => {
+  await produtividade
+    .create({
+      pesoMilGraos: req.body.pesoMilGraos,
+      qtdeDezM: req.body.qtdPlantas10m,
+      distanciaLinhas: req.body.distanciaLinhas,
+      createdAt: new Date(),
+      updateAt: new Date(),
+    })
+    .then(console.log)
+    .catch(function (e) {
+      console.log(e);
+    });
+});
+
+
+//Criar Cultivo
+app.post("/createCultivo", async (req, res) => {
+  await produtividade
+    .create({
+     temp_fenologico: req.body.fenologico,
+     tipoCultivo: req.body.tipoCultivo,
+      createdAt: new Date(),
+      updateAt: new Date(),
+    })
+    .then(console.log)
+    .catch(function (e) {
+      console.log(e);
+    });
+});
+
+
+//Criar Colheita
+app.post("/createColheita", async (req, res) => {
+  await colheita
+    .create({
+    sementesColhidas: req.body.sementeColhidas,
+    prodReal: req.body.ProdReal,
+    perdas:req.body.perdas,
+      createdAt: new Date(),
+      updateAt: new Date(),
+    })
+    .then(console.log)
+    .catch(function (e) {
+      console.log(e);
+    });
+});
+
+
+
+//Criar Amostra
+app.post("/createAmostras", async (req, res) => {
+  await amostra
+    .create({
+    pragas: req.body.pragas,
+    doencas: req.body.doencas,
+    falhaPlantio: req.body.falhaPlantio,
+    anotacoes: req.body.anotacoes,
+      createdAt: new Date(),
+      updateAt: new Date(),
+    })
+    .then(console.log)
+    .catch(function (e) {
+      console.log(e);
+    });
+});
+
 
 //Criar fazenda
 app.post("/createFazenda", async (req, res) => {

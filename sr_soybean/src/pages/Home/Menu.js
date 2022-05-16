@@ -79,7 +79,7 @@ export default function MenuScreen({ navigation }) {
             source={require('../../../assets/img/icon.png')}
           />
         </View>
-        <Text style={styles.text}>Bem-vindo Fulano!</Text>
+        <Text style={styles.text}>Bem-vindo Teste!</Text>
       </View>
       <View style={styles.menu}>
         <View styles={styles.submenu}>

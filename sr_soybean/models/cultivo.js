@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   cultivo.init({
-    campos: DataTypes.STRING,
+    tipoCultivo: DataTypes.STRING,
     temp_fenologico: DataTypes.FLOAT
   }, {
     sequelize,

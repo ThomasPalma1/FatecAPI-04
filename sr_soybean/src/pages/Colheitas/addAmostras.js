@@ -10,10 +10,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 export default function NovaSenhaScreen({ navigation }) {
 
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const[cultivos]=useState(['Selecione o cultivo','Soja', 'Milho', 'Café', 'Algodão'])
-  const[cultivoSelecionado, setCultivoSelecionado] = useState([])
-  const [cultivo] = useState('null');
   const [pragas, setPragas] = useState('null');
   const [doencas, setDoencas] = useState('null');
   const [falhaplantio, setFalhaplantio] = useState('null');
@@ -38,20 +34,22 @@ export default function NovaSenhaScreen({ navigation }) {
 
   //Envio do form
   async function sendForm() {
-    await fetch(`${config.URL}/createTalhao`, {
+    await fetch(`${config.URL}/createAmostras`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nome: campo,
-        latitude: latitudeTalhao,
-        longitude: longitudeTalhao,
-        areaTalhao: areaDoTalhao
+       pragas: pragas,
+       doencas: doencas,
+       falhaplantio: falhaplantio,
+       anotacoes: anotacoes
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
+    }).catch(() => {
+      Alert.alert("Sucesso", "Sucesso ao salvar amostra!")
     })
   }
 
@@ -177,8 +175,8 @@ export default function NovaSenhaScreen({ navigation }) {
       </View>
       <View style={styles.menu}>
         <View style={styles.login}>
-          <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo utilizado</Text>
-          <Picker
+          {/* <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo utilizado</Text> */}
+          {/* <Picker
             selectedValue={selectedLanguage}
             onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
             style={styles.dropdown}
@@ -188,7 +186,7 @@ export default function NovaSenhaScreen({ navigation }) {
           <Picker.Item label="Algodão" value="Algodão" />
           <Picker.Item label="Café" value="Café" />
           <Picker.Item label="Milho" value="Milho" />
-          </Picker>
+          </Picker> */}
           <Text style={cssTalhao.talhao_inputText}>Pragas</Text>
           <TextInput style={styles.input} onChangeText={text => setPragas(text)}  />
           <Text style={cssTalhao.talhao_inputText}>Doenças</Text>

@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 10,
     width: 350,
-    height: 150,
+    height: 100,
     margin: 5,
   },
   textCCIR:{
