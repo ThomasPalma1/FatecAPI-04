@@ -76,7 +76,8 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/...">
+<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-02/docs/User%20Stories/1_Users_Stories_02.JPG>
+<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-02/docs/User%20Stories/2_Users_Stories_02.JPG>
 
 
 
