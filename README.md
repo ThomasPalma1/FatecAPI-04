@@ -102,25 +102,8 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
          
 <div align="center">
-    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/..." width="400px" height="800px;" alt=""/><br /><sub><b>Cadastro de usuário e fazenda</b></sub></h3>
-         
-</div>
-              
-<div align="center">
-    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/..." width="400px" height="800px;" alt=""/><br /><sub><b>Cadastro de cultivos e colheita</b></sub></h3>
-         
-</div>
-
-<div align="center">
-    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/..." width="400px" height="800px;" alt=""/><br /><sub><b>Cadastro de produtividade estimada e real</b></sub></h3>
-         
-</div>
-              
-<div align="center">
-    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/..." width="400px" height="800px;" alt=""/><br /><sub><b>Cálculo e exibição da produtividade estimada e real</b></sub></h3>
-         
-</div>
-              
+    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-02/docs/entrega-02.gif" width="300px" height="600px;" alt=""/></h3>
+</div>              
       
 <h2 id="wireframe" style="font-family:roboto;">💻<i>Wireframes do projeto</i></h2>
               
