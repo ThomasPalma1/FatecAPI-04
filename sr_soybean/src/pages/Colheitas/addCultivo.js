@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import config from '../../../config/config_config';
 import DatePicker from 'react-native-datepicker';
 import { Picker } from '@react-native-picker/picker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, Button } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, Button,ScrollView } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -95,9 +95,9 @@ export default function AddCultivoScreen({ navigation }) {
       borderStyle: 'solid',
       borderRadius: 16,
       borderWidth: 2,
-      width: 318,
-      height: 56,
-      margin: 5,
+      width: 280,
+      height: 50,
+      marginLeft: 15,
     },
     buttons: {
       top: '50%',
@@ -109,8 +109,7 @@ export default function AddCultivoScreen({ navigation }) {
       borderRadius: 20,
       borderColor: '#79B078',
       borderStyle: 'solid',
-      borderWidth: 2,
-      alignItems: 'center',
+      borderWidth: 2
     },
     input: {
       width: '100%',
@@ -154,12 +153,12 @@ export default function AddCultivoScreen({ navigation }) {
         <Text style={cssTalhao.title}>Cultivo</Text>
       </View>
       <View style={styles.menu}>
-        <View style={styles.login}>
+      <ScrollView style={styles.login}>
           <Text style={styles.text}>DADOS DA COLHEITA</Text>
           <Text style={cssTalhao.talhao_inputText}>Data da colheita prevista</Text>
           <DatePicker
             styles={styles.input}
-            date={getDate()}
+            // date={getDate()}
             format='DD/MM/YYYY'
             mode="date"
             onDateChange={handleConfirm}
@@ -178,12 +177,11 @@ export default function AddCultivoScreen({ navigation }) {
           </Picker> */}
           <Text style={cssTalhao.talhao_inputText}>Tempo fenológico</Text>
           <TextInput style={styles.input} placeholder="" onChangeText={text => setFenologico(text)} />
-        </View>
-        <View style={styles.buttons}>
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
-        </View>
+        </ScrollView>
+      
       </View>
     </>
   );
