@@ -18,6 +18,20 @@ let usuario = models.Usuario;
 let fazenda = models.fazenda;
 let talhao = models.Talhao;
 
+app.post('/login', async (req,res)=> {
+    let response=await usuario.findOne({
+        where:{nome:req.body.name, senha:req.body.password}
+    });
+    if (response===null){
+      console.log(response)
+        res.send(JSON.stringify('error'));
+    }
+    else{
+      console.log(response)
+        res.send(response)
+    }
+});
+
 //Criar talhao
 app.post("/createTalhao", async (req, res) => {
   await talhao

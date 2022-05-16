@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import config from '../../../config/config_config';
 import { Picker } from '@react-native-picker/picker';
