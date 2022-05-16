@@ -46,8 +46,6 @@ export default function NovaSenhaScreen({ navigation }) {
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
-    }).catch(() => {
-      Alert.alert("Sucesso", "Sucesso ao salvar colheita!")
     })
   }
   const styles = StyleSheet.create({

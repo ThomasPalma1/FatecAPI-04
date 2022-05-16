@@ -27,7 +27,6 @@ export default function NovaSenhaScreen({ navigation }) {
           'Content-type': 'application/json; charset=UTF-8',
         },
   }).then((response) => response.json())
-    .then(() => Alert.alert("Sucesso", "Sucesso ao salvar."));
 }
   const styles = StyleSheet.create({
     container: {

@@ -15,6 +15,7 @@ const PORT = process.env.PORT;
 
 let custos = models.custos;
 let usuario = models.Usuario;
+let cultivo = models.cultivo
 let fazenda = models.fazenda;
 let talhao = models.Talhao;
 let produtividade = models.prodestimada;
@@ -73,7 +74,7 @@ app.post("/createProdutividade", async (req, res) => {
 
 //Criar Cultivo
 app.post("/createCultivo", async (req, res) => {
-  await produtividade
+  await cultivo
     .create({
      temp_fenologico: req.body.fenologico,
      tipoCultivo: req.body.tipoCultivo,
@@ -128,7 +129,7 @@ app.post("/createFazenda", async (req, res) => {
   await fazenda
     .create({
       nomeFazenda: req.body.nome,
-      ccri: req.body.ccri,
+      ccri: req.body.ccir,
       createdAt: new Date(),
       updateAt: new Date(),
     })

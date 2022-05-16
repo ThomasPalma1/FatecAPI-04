@@ -27,8 +27,6 @@ export default function AddProdutividadeScreen({ navigation }) {
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
-    }).catch(() => {
-      Alert.alert("Sucesso", "Sucesso ao salvar produtividade!")
     })
   }
 

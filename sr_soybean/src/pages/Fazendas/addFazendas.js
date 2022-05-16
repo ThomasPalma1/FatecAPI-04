@@ -19,7 +19,8 @@ export default function NovaSenhaScreen({ navigation }) {
         'Content-Type':'application/json'
       },
       body: JSON.stringify({
-        nome: nome
+        nome: nome,
+        ccir: ccir
       })
 
     })

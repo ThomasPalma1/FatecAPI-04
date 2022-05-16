@@ -26,8 +26,6 @@ export default function AddCultivoScreen({ navigation }) {
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar cultivo`)
-    }).catch(() => {
-      Alert.alert("Sucesso", "Sucesso ao salvar cultivo!")
     })
   }
 
