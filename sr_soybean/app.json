@@ -2,6 +2,7 @@
   "expo": {
     "name": "sr_soybean",
     "slug": "sr_soybean",
+    "scheme": "sr_soybean",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/img/icon.png",
