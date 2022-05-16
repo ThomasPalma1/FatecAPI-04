@@ -85,7 +85,7 @@ A parte mais trabalhosa dessa segunda entrega foi justamente entender a regra de
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-<img src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-01/docs/Card_Sprint2.JPG">
+<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-02/docs/Cards/Card_Sprint2.JPG>
               
 
 <h2 id="backlog">📘<i>Backlog do projeto</i></h2>
