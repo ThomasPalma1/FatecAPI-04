@@ -22,6 +22,9 @@ import CadastroScreen from './Login/Cadastro';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MapScreen from '../components/map';
 import FazendaScreen from './Fazendas/Fazenda';
+import AreaMunicipioScreen from './Graficos/addAreaMunicipio';
+import MeteorologiaScreen from './Graficos/addMeteorologia';
+import GraficoMenuScreen from './Graficos/GraficoMenu';
 export default function App() {
 
 const HomeStack = createNativeStackNavigator();
@@ -48,6 +51,9 @@ function HomeStackScreen() {
       <HomeStack.Screen name="addCusto" component={AddCustosScreen} />
       <HomeStack.Screen name="CadastroInfo" component={CadastroInfoScreen} />
       <HomeStack.Screen name="addProdutividade" component={AddProdutividadeScreen} />
+      <HomeStack.Screen name="addAreaMunicipio" component={AreaMunicipioScreen} />
+      <HomeStack.Screen name="addMeteorologia" component={MeteorologiaScreen} />
+      <HomeStack.Screen name="GraficoMenu" component={GraficoMenuScreen} />
     </HomeStack.Navigator>
   );
 }

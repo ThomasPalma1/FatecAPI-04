@@ -7,7 +7,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
 
 
-export default function MenuScreen({ navigation }) {
+export default function GraficoMenuScreen({ navigation }) {
 
 
   const styles = StyleSheet.create({
@@ -85,23 +85,31 @@ export default function MenuScreen({ navigation }) {
         <View styles={styles.submenu}>
           <View style={styles.buttons}>
             <Pressable style={styles.button} onPress={() => navigation.navigate('Fazenda')}>
-              <Text style={styles.textInput}>Propriedades</Text>
+              <Text style={styles.textInput}>Plantação Município</Text>
               <FontAwesome5 name="warehouse" size={40} color="white" />
             </Pressable>
             <Pressable style={styles.button} onPress={() => navigation.navigate('Talhoes')}>
-              <Text style={styles.textInput}>Talhões</Text>
+              <Text style={styles.textInput}>Produtividade Município</Text>
               <FontAwesome5 name="leaf" size={40} color="white" />
             </Pressable>
             {/* <Pressable style={styles.button} onPress={() => navigation.navigate('addCusto')}>
               <Text style={styles.textInput}>Custos</Text>
               <FontAwesome5 name="dollar-sign" size={40} color="white" />
             </Pressable> */}
-            <Pressable style={styles.button} onPress={() => navigation.navigate('GraficoMenu')}>
-              <Text style={styles.textInput}>Estátisticas</Text>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('addAreaMunicipio')}>
+              <Text style={styles.textInput}>Preço do saco da soja</Text>
               <Octicons name="graph" size={40} color="white" />
             </Pressable>
             <Pressable style={styles.button} onPress={() => navigation.navigate('')}>
-              <Text style={styles.textInput}>Clima</Text>
+              <Text style={styles.textInput}>Meteorologia</Text>
+              <Entypo name="cloud" size={40} color="white" />
+            </Pressable>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('')}>
+              <Text style={styles.textInput}>Minha produtividade</Text>
+              <Entypo name="cloud" size={40} color="white" />
+            </Pressable>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('')}>
+              <Text style={styles.textInput}>Meu Custo de Produção</Text>
               <Entypo name="cloud" size={40} color="white" />
             </Pressable>
           </View>
