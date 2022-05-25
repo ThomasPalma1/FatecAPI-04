@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View, Animated, Dimensions, Text } from 'react-native';
+import React, { useState} from 'react';
+import { StyleSheet, TouchableWithoutFeedback, View, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Map from '../../components/map';
 
@@ -69,7 +69,8 @@ export default function HomeScreen({ navigation }) {
         <Animated.View style={[styles.button, styles.menu, rotation]}>
           <Ionicons name='add' size={24} color='#fff' />
         </Animated.View>
-      </TouchableWithoutFeedback></View>
+      </TouchableWithoutFeedback>
+      </View>
 
   );
 
