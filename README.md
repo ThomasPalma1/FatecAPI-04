@@ -12,7 +12,7 @@
               </p>
                 
 <p align="center">
-<img src="https://img.shields.io/badge/status-Em desenvolvimento-orange?style=for-the-badge&logo=appveyor">
+<img src="https://img.shields.io/badge/status-Concluído-orange?style=for-the-badge&logo=appveyor">
 </p>
 
 <p align="center">
