@@ -40,7 +40,11 @@
     "react-native-picker-select": "^8.0.4",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+<<<<<<< Updated upstream
     "react-native-svg": "^12.3.0",
+=======
+    "react-native-weather-api": "^3.0.2",
+>>>>>>> Stashed changes
     "react-native-web": "0.17.1",
     "sequelize": "^6.18.0",
     "sr_soybean": "file:"

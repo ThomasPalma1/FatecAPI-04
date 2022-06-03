@@ -175,7 +175,7 @@ export default function NovaSenhaScreen({ navigation }) {
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
         </View>
-      </View>
+</View>
     </>
   );
 }

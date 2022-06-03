@@ -1,10 +1,12 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import config from '../../../config/config_config';
 import DatePicker from 'react-native-datepicker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert} from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
+import * as Location from 'expo-location';
+import { getWeather, dailyForecast, showWeather } from 'react-native-weather-api';
+import { Feather } from '@expo/vector-icons';
 
 export default function MeteorologiaScreen({ navigation }) {
 
@@ -65,7 +67,7 @@ export default function MeteorologiaScreen({ navigation }) {
     buttons: {
       top: '50%',
     },
-    login: {
+    weather: {
       width: 318,
       height: 254,
       padding: 5,
@@ -74,6 +76,7 @@ export default function MeteorologiaScreen({ navigation }) {
       borderStyle: 'solid',
       borderWidth: 2,
       alignItems: 'center',
+      marginTop: 20,
     },
     input: {
       width: '100%',
@@ -100,7 +103,84 @@ export default function MeteorologiaScreen({ navigation }) {
       marginBottom: 10,
       fontSize: 15,
     },
+    weatherText: {
+      fontSize: 17,
+      lineHeight: 30,
+      fontWeight: 'bold',
+      color: '#fff',
+      textAlign: 'center',
+      flexDirection: 'row',
+    },
   });
+
+  const [location, setLocation] = useState(null);
+  const [Clima, setClima] = useState({
+    "maxima": 0,
+    "minima": 0,
+    "alertas": "",
+    "currentTemp": 0,
+    "currentHumidity": 0,
+    "currentDescription": 0
+  });
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permissão de acesso ao local negada');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({ enableHighAccuracy: true });
+      setLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        latitudeDelta: 0.00922,
+        longitudeDelta: 0.00421
+      })
+      await dailyForecast({
+        key: "b6fd8e9dbbe23332fcf1a56b08dd8acc",
+        lat: location.coords.latitude,
+        lon: location.coords.longitude,
+        unit: "metric",
+        lang: "pt_br"
+      }).then((data) => {
+        const clima = data;
+
+        //NÃO APAGAR O COD
+        // for (var i =0; i < 7; i++){
+        //   const max = clima.daily[i].temp.max;
+        //   const alert = clima.alerts[i].event;
+        //   const min = clima.daily[i].temp.min;
+        //   const cloud = clima.daily[i].clouds; //pode ser a formatação ?
+        //   var maxRound = Math.round(max) + `°`;
+        //   var minRound = Math.round(min) + `°`
+        // } 
+
+
+        const max = clima.daily[0].temp.max;
+        const alert = clima.alerts[0].event;
+        const min = clima.daily[0].temp.min;
+        const currentTemp = clima.current.temp;
+        const currentHumidity = clima.current.humidity;
+        const currentDescription = clima.current.weather[0].description;
+        var maxRound = Math.round(max) + `°`;
+        var minRound = Math.round(min) + `°`
+        //console.log (clima);
+        setClima({
+          maxima: maxRound,
+          minima: minRound,
+          alertas: alert,
+          currentTemp: currentTemp,
+          currentHumidity: currentHumidity,
+          currentDescription: currentDescription
+        })
+      })
+    })
+      ();
+  }, []);
+
+  //console.log(Clima)
 
   return (
     <>
@@ -114,11 +194,20 @@ export default function MeteorologiaScreen({ navigation }) {
             source={require('../../../assets/img/icon.png')}
           />
         </View>
-        <Text style={cssTalhao.title}>Área plantada município</Text>
+        <Text style={cssTalhao.title}>Insira a meteorologia nesse kct</Text>
+
       </View>
       <View style={styles.menu}>
-        <View style={styles.login}>
-            {/* grafico aqui */}
+      <Feather style={{marginTop: 50}} name="sun" size={40} color="orange" />
+        <View style={styles.weather}>
+          <Text style={styles.weatherText}>Temperatura Atual: {Clima.currentTemp}°C</Text>
+          <Text style={styles.weatherText}>Temperatura Máxima: {Clima.maxima}C</Text>
+          <Text style={styles.weatherText}>Temperatura Mínima: {Clima.minima}C</Text>
+          <Text style={styles.weatherText}>Alerta de {Clima.alertas}</Text>
+          <Text style={styles.weatherText}>Umidade: {Clima.currentHumidity}%</Text>
+          <Text style={styles.weatherText}>{Clima.currentDescription}</Text>
+          {/*{/*Clima.nome usado no setClima linha 154*/}
+          
         </View>
       </View>
     </>

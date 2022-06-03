@@ -100,7 +100,7 @@ export default function MenuScreen({ navigation }) {
               <Text style={styles.textInput}>Estátisticas</Text>
               <Octicons name="graph" size={40} color="white" />
             </Pressable>
-            <Pressable style={styles.button} onPress={() => navigation.navigate('')}>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('addMeteorologia')}>
               <Text style={styles.textInput}>Clima</Text>
               <Entypo name="cloud" size={40} color="white" />
             </Pressable>
