@@ -40,7 +40,7 @@
 
 <h2 style="font-family:roboto;">💻<i>O que desenvolvemos?</i></h2>
 <p align="justify">
-Foram desenvolvidas e entregues ao cliente as seguintes funções para a plataforma, desenvolvemos o cadastro de:
+Foram desenvolvidas e entregues ao cliente as seguintes funções para a plataforma:
 </p>
 
 ```              
