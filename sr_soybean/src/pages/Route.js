@@ -25,6 +25,7 @@ import FazendaScreen from './Fazendas/Fazenda';
 import AreaMunicipioScreen from './Graficos/addAreaMunicipio';
 import MeteorologiaScreen from './Graficos/addMeteorologia';
 import GraficoMenuScreen from './Graficos/GraficoMenu';
+import GraficoFazendaScreen from './Fazendas/graficoFazenda';
 export default function App() {
 
 const HomeStack = createNativeStackNavigator();
@@ -54,6 +55,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name="addAreaMunicipio" component={AreaMunicipioScreen} />
       <HomeStack.Screen name="addMeteorologia" component={MeteorologiaScreen} />
       <HomeStack.Screen name="GraficoMenu" component={GraficoMenuScreen} />
+      <HomeStack.Screen name="GraficoFazenda" component={GraficoFazendaScreen} />
     </HomeStack.Navigator>
   );
 }
