@@ -43,16 +43,27 @@
 Foram desenvolvidas e entregues ao cliente as seguintes funções para a plataforma, desenvolvemos o cadastro de:
 </p>
 
-- Gráfico da produtividade estimada e real;
-- Gráfico do custo de produção;
-- Gráfico do valor do saco da soja;
-- Gráfico de produtividade e da área plantada no município;
-- Alertas de baixa temperatura e baixa umidade;
-- Vincular e exibir dados da API MapBiomas e SatVeg com notificação para dia da colheita.
-              
+```              
+<Gráficos existentes no aplicativo>
+├── Produtividade:
+│   ├── Estimada
+│   └── Real
+├── Custo de Produção
+├── Valor do saco da soja
+├── Área plantada no município
+└── Produtividade no município
+<Alertas>
+├── Baixa:
+│   ├── Umidade
+│   └── Temperatura
+└── Notificação para o dia da colheita
+<Vínculo e exibição dos dados da API>
+├── MapBiomas
+└── SatVeg
+```              
 #### Por que entregamos isso?
 <p align="justify">
-... 
+Para o usuário é de suma importância a fácil visualização do seus resultados, os gráficos é uma 
 </p>
 
 
