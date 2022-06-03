@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import config from '../../../config/config_config';
 import DatePicker from 'react-native-datepicker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert } from 'react-native';
+import { View, Image, FlatList, StyleSheet, Text, Pressable, TextInput, Alert } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 import * as Location from 'expo-location';
-import { getWeather, dailyForecast, showWeather } from 'react-native-weather-api';
+import { getWeather, dailyForecast, showWeather} from 'react-native-weather-api';
 import { Feather } from '@expo/vector-icons';
 
 export default function MeteorologiaScreen({ navigation }) {
@@ -114,14 +114,7 @@ export default function MeteorologiaScreen({ navigation }) {
   });
 
   const [location, setLocation] = useState(null);
-  const [Clima, setClima] = useState({
-    "maxima": 0,
-    "minima": 0,
-    "alertas": "",
-    "currentTemp": 0,
-    "currentHumidity": 0,
-    "currentDescription": 0
-  });
+  const [Clima, setClima] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -145,44 +138,54 @@ export default function MeteorologiaScreen({ navigation }) {
         unit: "metric",
         lang: "pt_br"
       }).then((data) => {
-        const clima = data;
 
+        //console.log(data)
         //NÃO APAGAR O COD
-        // for (var i =0; i < 7; i++){
-        //   const max = clima.daily[i].temp.max;
-        //   const alert = clima.alerts[i].event;
-        //   const min = clima.daily[i].temp.min;
-        //   const cloud = clima.daily[i].clouds; //pode ser a formatação ?
-        //   var maxRound = Math.round(max) + `°`;
-        //   var minRound = Math.round(min) + `°`
-        // } 
+        //const max =data.daily[0].temp.max;
+        //const alert = data.alerts[0].event;
+        //const min =
+        //const currentTemp = data.current.temp;
+        //const currentHumidity = data.current.humidity;
+        //const currentDescription = data.current.weather[0].description;
 
-
-        const max = clima.daily[0].temp.max;
-        const alert = clima.alerts[0].event;
-        const min = clima.daily[0].temp.min;
-        const currentTemp = clima.current.temp;
-        const currentHumidity = clima.current.humidity;
-        const currentDescription = clima.current.weather[0].description;
-        var maxRound = Math.round(max) + `°`;
-        var minRound = Math.round(min) + `°`
-        //console.log (clima);
-        setClima({
-          maxima: maxRound,
-          minima: minRound,
-          alertas: alert,
-          currentTemp: currentTemp,
-          currentHumidity: currentHumidity,
-          currentDescription: currentDescription
-        })
+        const eventsClima = [];
+        for (var i = 0; i<8; i++){
+          eventsClima.push({
+            max: data.daily[i].temp.min,
+            min: data.daily[i].temp.max,
+            tempAtual: data.current.temp,
+            umidade:data.current.humidity // VERIFICAR PRA VER COMO PEGA POR DIA, SEM TEMPO IRMÃO, VOU SAIR
+          })
+        }        
+        setClima(eventsClima);
       })
     })
       ();
   }, []);
 
-  //console.log(Clima)
+  console.log(Clima)
+
+  const renderItem = ({ item }) => (
+    <Pressable style={styles.weather}>
+
+
+      {/* <Text style={styles.weatherText}>Temperatura Atual: {item.tempAtual} °C</Text> --> SE COLOCAR ESSA FITA 
+      DENTRO DA LISTA ELA VAI RETORNAR O MESMO VALOR, ALIÁS É SÓ A TEMPERATURA ATUAL, VERIFICAR ONDE VAI COLOCAR ELA, E AJUSTAR O CSS DA BUDEGA */}
+
+
+
+
+      <Text style={styles.weatherText}>Temperatura Máxima: {item.max} °C</Text>
+      <Text style={styles.weatherText}>Temperatura Mínima: {item.min} °C</Text>
+      {/* <Text style={styles.weatherText}>Alerta de {Clima.alertas}</Text> */}
+      <Text style={styles.weatherText}>Umidade: {item.umidade}%</Text>
+      <Text style={styles.weatherText}></Text>
+      {/*{/*Clima.nome usado no setClima linha 154*/}
+    </Pressable>
+  );
 
   return (
+ 
     <>
       <View style={styles.container}>
         <Pressable style={styles.arrow} onPress={() => navigation.navigate('CadastroInfo')}>
@@ -199,13 +202,24 @@ export default function MeteorologiaScreen({ navigation }) {
       </View>
       <View style={styles.menu}>
       <Feather style={{marginTop: 50}} name="sun" size={40} color="orange" />
+
+
+      {/*PEGANDO A FUNÇÃO RENDERITEM VERIFICAR ELA PRA VER CERTIN*/}
+      <FlatList
+            data={Clima}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.min}
+          />
         <View style={styles.weather}>
-          <Text style={styles.weatherText}>Temperatura Atual: {Clima.currentTemp}°C</Text>
+          
+      
+
+          {/* <Text style={styles.weatherText}>Temperatura Atual: {Clima.currentTemp}°C</Text>
           <Text style={styles.weatherText}>Temperatura Máxima: {Clima.maxima}C</Text>
           <Text style={styles.weatherText}>Temperatura Mínima: {Clima.minima}C</Text>
-          <Text style={styles.weatherText}>Alerta de {Clima.alertas}</Text>
-          <Text style={styles.weatherText}>Umidade: {Clima.currentHumidity}%</Text>
-          <Text style={styles.weatherText}>{Clima.currentDescription}</Text>
+          {/* <Text style={styles.weatherText}>Alerta de {Clima.alertas}</Text> */}
+          {/* <Text style={styles.weatherText}>Umidade: {Clima.currentHumidity}%</Text>
+          <Text style={styles.weatherText}>{Clima.currentDescription}</Text> */} 
           {/*{/*Clima.nome usado no setClima linha 154*/}
           
         </View>

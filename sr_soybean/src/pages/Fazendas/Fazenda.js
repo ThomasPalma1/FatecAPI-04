@@ -186,6 +186,8 @@ useEffect(() => {
     });
 }, []);
 
+console.log(fazendas)
+
 async function deleteFazenda(idFazenda) {
   await fetch(`${config.URL}/deleteFazenda`, {
     method: "DELETE",
