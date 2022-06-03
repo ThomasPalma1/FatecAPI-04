@@ -1,5 +1,5 @@
 const obj = {
-    'URL': 'http://192.168.165.233:3100',
+    'URL': 'http://192.168.1.110:3100',
   };
   
   export default obj;
