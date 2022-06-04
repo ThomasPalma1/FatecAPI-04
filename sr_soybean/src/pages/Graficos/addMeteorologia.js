@@ -70,6 +70,7 @@ export default function MeteorologiaScreen({ navigation }) {
     weather: {
       width: 318,
       height: 254,
+      height: 400,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
@@ -77,6 +78,9 @@ export default function MeteorologiaScreen({ navigation }) {
       borderWidth: 2,
       alignItems: 'center',
       marginTop: 20,
+      justifyContent: 'center',
+      margin: 10,
+      backgroundColor: '#FFED00',
     },
     input: {
       width: '100%',
@@ -202,6 +206,7 @@ export default function MeteorologiaScreen({ navigation }) {
       </View>
       <View style={styles.menu}>
       <Feather style={{marginTop: 50}} name="sun" size={40} color="orange" />
+      <Text style={styles.weatherText}>Temperatura Atual: {Clima.currentTemp}°C</Text>
 
 
       {/*PEGANDO A FUNÇÃO RENDERITEM VERIFICAR ELA PRA VER CERTIN*/}
@@ -210,19 +215,6 @@ export default function MeteorologiaScreen({ navigation }) {
             renderItem={renderItem}
             keyExtractor={(item) => item.min}
           />
-        <View style={styles.weather}>
-          
-      
-
-          {/* <Text style={styles.weatherText}>Temperatura Atual: {Clima.currentTemp}°C</Text>
-          <Text style={styles.weatherText}>Temperatura Máxima: {Clima.maxima}C</Text>
-          <Text style={styles.weatherText}>Temperatura Mínima: {Clima.minima}C</Text>
-          {/* <Text style={styles.weatherText}>Alerta de {Clima.alertas}</Text> */}
-          {/* <Text style={styles.weatherText}>Umidade: {Clima.currentHumidity}%</Text>
-          <Text style={styles.weatherText}>{Clima.currentDescription}</Text> */} 
-          {/*{/*Clima.nome usado no setClima linha 154*/}
-          
-        </View>
       </View>
     </>
   );
