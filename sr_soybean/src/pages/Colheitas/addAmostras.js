@@ -104,6 +104,7 @@ export default function NovaSenhaScreen({ navigation }) {
       width: 280,
       height: 50,
       marginLeft: 15,
+      top:'-10%'
     },
     buttons: {
       top: '37%',

@@ -13,6 +13,9 @@ export default function NovaSenhaScreen({ navigation }) {
   const [sementeColhidas, setSementeColhidas] = useState(null);
   const [ProdReal, setProdReal] = useState(null);
   const [perdas, setPerdas] = useState(null);
+  const [plantasHectare, setPlantasHectare] = useState(null);
+  const [vagensPlanta, setVagensPlanta] = useState(null);
+  const [graosVagem, setGraosVagem] = useState(null);
   
 
   const pickImage = async () => {
@@ -31,8 +34,15 @@ export default function NovaSenhaScreen({ navigation }) {
     }
   };
 
+  
+ const prodReal = ()=>{
+  const real = (plantasHectare*vagensPlanta*graosVagem)/60000
+  setProdReal(real);
+}
+
   //Envio do form
   async function sendForm() {
+    prodReal();
     await fetch(`${config.URL}/createColheita`, {
       method: 'POST',
       headers: {
@@ -41,6 +51,9 @@ export default function NovaSenhaScreen({ navigation }) {
       },
       body: JSON.stringify({
         sementeColhidas: sementeColhidas,
+        plantasHectare: plantasHectare,
+        vagensPlanta: vagensPlanta,
+        graosVagem:graosVagem,
         ProdReal: ProdReal,
         perdas: perdas
       })
@@ -101,7 +114,7 @@ export default function NovaSenhaScreen({ navigation }) {
       width: 280,
       height: 50,
       marginLeft: 15,
-      top: '40%',
+      top: '4%',
     },
     login: {
       width: 318,
@@ -170,10 +183,19 @@ export default function NovaSenhaScreen({ navigation }) {
       <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Sementes colhidas (kg)</Text>
           <TextInput style={styles.input} keyboardType='decimal-pad' onChangeText={text => setSementeColhidas(text)}  />
-          <Text style={cssTalhao.talhao_inputText}>Produtividade real</Text>
-          <TextInput style={styles.input} onChangeText={text => setProdReal(text)} />
+
+          <Text style={cssTalhao.talhao_inputText}>Plantas por hectare (mil/ha)</Text>
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setPlantasHectare(text)} />
+          
+          <Text style={cssTalhao.talhao_inputText}>Vagens por planta</Text>
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setVagensPlanta(text)} />
+          
+          <Text style={cssTalhao.talhao_inputText}>Grãos por vagem</Text>
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setGraosVagem(text)} />
+
           <Text style={cssTalhao.talhao_inputText}>Perdas (kg)</Text>
           <TextInput style={styles.input} keyboardType='decimal-pad' onChangeText={text => setPerdas(text)} />
+
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>

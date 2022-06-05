@@ -1,21 +1,33 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('colheita', {
+    await queryInterface.createTable('prodEstimadas', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      sementesColhidas: {
-        type: Sequelize.INTEGER
-      },
-      prodReal: {
+      pesoMilGraos: {
         type: Sequelize.FLOAT
       },
-      perdas: {
+      qtdeDezM: {
         type: Sequelize.INTEGER
+      },
+      distanciaLinhas: {
+        type: Sequelize.FLOAT
+      },
+      plantasHectare: {
+        type: Sequelize.FLOAT
+      },
+      vagensPlanta: {
+        type: Sequelize.FLOAT
+      },
+      graosVagem: {
+        type: Sequelize.FLOAT
+      },
+      prodEstimada: {
+        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('colheita');
+    await queryInterface.dropTable('prodEstimadas');
   }
 };

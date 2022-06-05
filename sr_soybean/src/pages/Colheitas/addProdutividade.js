@@ -11,9 +11,19 @@ export default function AddProdutividadeScreen({ navigation }) {
  const [pesoMilGraos, setPesoMilGraos] = useState(null);
  const [qtdPlantas10m, setPlantas10m] = useState(null);
  const [distanciaLinhas, setDistanciaLinhas] = useState(null);
+ const [plantasHectare, setPlantasHectare] = useState(null);
+ const [vagensPlanta, setVagensPlanta] = useState(null);
+ const [graosVagem, setGraosVagem] = useState(null);
+ const [produtividadeEstimada, setProdEstimada] = useState(null);
+
+ const prodEstimada = ()=>{
+   const estimada = (plantasHectare*vagensPlanta*graosVagem)/60000
+   setProdEstimada(estimada);
+ }
 
   //Envio do form
   async function sendForm() {
+    prodEstimada();
     await fetch(`${config.URL}/createProdutividade`, {
       method: 'POST',
       headers: {
@@ -23,7 +33,11 @@ export default function AddProdutividadeScreen({ navigation }) {
       body: JSON.stringify({
         pesoMilGraos: pesoMilGraos,
         qtdPlantas10m: qtdPlantas10m,
-        distanciaLinhas: distanciaLinhas
+        distanciaLinhas: distanciaLinhas,
+        plantasHectare: plantasHectare,
+        vagensPlanta: vagensPlanta,
+        graosVagem:graosVagem,
+        produtividadeEstimada: produtividadeEstimada
       })
     }).then((response) => {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
@@ -83,7 +97,7 @@ export default function AddProdutividadeScreen({ navigation }) {
       width: 280,
       height: 50,
       marginLeft: 15,
-      top: '35%',
+      top: '2%',
     },
     login: {
       marginTop: 10,
@@ -140,14 +154,23 @@ export default function AddProdutividadeScreen({ navigation }) {
       <View style={styles.menu}>
       <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Peso de mil grãos</Text>
-         
           <TextInput style={styles.input} placeholder='' onChangeText={text => setPesoMilGraos(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Qntd. Plantas em 10 metros</Text>
           
+          <Text style={cssTalhao.talhao_inputText}>Qntd. Plantas em 10 metros</Text>
           <TextInput style={styles.input} placeholder="" keyboardType='decimal-pad' onChangeText={text => setPlantas10m(text)} />
+          
           <Text style={cssTalhao.talhao_inputText}>Distância entre linhas</Text>
-         
           <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setDistanciaLinhas(text)} />
+        
+          <Text style={cssTalhao.talhao_inputText}>Plantas por hectare (mil/ha)</Text>
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setPlantasHectare(text)} />
+          
+          <Text style={cssTalhao.talhao_inputText}>Vagens por planta</Text>
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setVagensPlanta(text)} />
+          
+          <Text style={cssTalhao.talhao_inputText}>Grãos por vagem</Text>
+          <TextInput style={styles.input} placeholder=""keyboardType='decimal-pad' onChangeText={text => setGraosVagem(text)} />
+          
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>

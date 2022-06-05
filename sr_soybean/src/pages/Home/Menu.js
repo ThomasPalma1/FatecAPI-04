@@ -96,10 +96,10 @@ export default function MenuScreen({ navigation }) {
               <Text style={styles.textInput}>Custos</Text>
               <FontAwesome5 name="dollar-sign" size={40} color="white" />
             </Pressable> */}
-            <Pressable style={styles.button} onPress={() => navigation.navigate('GraficoMenu')}>
+            {/* <Pressable style={styles.button} onPress={() => navigation.navigate('GraficoMenu')}>
               <Text style={styles.textInput}>Estátisticas</Text>
               <Octicons name="graph" size={40} color="white" />
-            </Pressable>
+            </Pressable> */}
             <Pressable style={styles.button} onPress={() => navigation.navigate('addMeteorologia')}>
               <Text style={styles.textInput}>Clima</Text>
               <Entypo name="cloud" size={40} color="white" />

@@ -25,7 +25,7 @@ import FazendaScreen from './Fazendas/Fazenda';
 import AreaMunicipioScreen from './Graficos/addAreaMunicipio';
 import MeteorologiaScreen from './Graficos/addMeteorologia';
 import GraficoMenuScreen from './Graficos/GraficoMenu';
-import GraficoFazendaScreen from './Fazendas/graficoFazenda';
+import GraficoFazendaScreen from './Talhoes/graficoProdutividade';
 export default function App() {
 
 const HomeStack = createNativeStackNavigator();

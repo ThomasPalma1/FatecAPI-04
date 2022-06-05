@@ -223,6 +223,7 @@ export default function FazendasScreen({ navigation }) {
           text: "Sim",
           onPress: () => {
             deleteTalhao(idTalhao)
+            navigation.navigate('Talhoes')
           }
 
         },

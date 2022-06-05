@@ -4,6 +4,7 @@ import { Picker } from '@react-native-picker/picker';
 import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, ScrollView } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
+import * as Location from 'expo-location'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function NovaSenhaScreen({ navigation }) {
@@ -11,6 +12,7 @@ export default function NovaSenhaScreen({ navigation }) {
   const [selectedLanguage, setSelectedLanguage] = useState();
   const [campo, setCampo] = useState(null);
   const [latitudeTalhao, setLatitude] = useState(null);
+  const [location, setLocation] = useState(null);
   const [longitudeTalhao, setLongitude] = useState(null);
   const [areaDoTalhao, setAreaTalhao] = useState(null);
 
@@ -32,6 +34,18 @@ export default function NovaSenhaScreen({ navigation }) {
       Alert.alert("Sucesso", `sucesso ao salvar talhao`)
     })
   }
+
+  const puxarCoords = async () => {
+    let location = await Location.getCurrentPositionAsync({ enableHighAccuracy: true });
+    setLocation({
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+      latitudeDelta: 0.00922,
+      longitudeDelta: 0.00421
+    })
+
+  }
+
 
   const styles = StyleSheet.create({
     container: {
@@ -147,9 +161,8 @@ export default function NovaSenhaScreen({ navigation }) {
             onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
             style={styles.dropdown}
             mode="dropdown">
-            <Picker.Item label="Selecione uma propriedade" value="Propriedade1" />
-            <Picker.Item label="Propriedade1" value="Propriedade1" />
-            <Picker.Item label="Propriedade2" value="Propriedade2" />
+            <Picker.Item label="Selecione uma propriedade" value="Fazenda teste 1" />
+            <Picker.Item label="Fazenda teste1" value="Fazenda teste1" />
           </Picker>
           <Text style={cssTalhao.talhao_inputText}>Nome do seu talhão</Text>
           <TextInput style={styles.input} placeholder='Ex: Talhão 1' onChangeText={text => setCampo(text)} />
@@ -157,11 +170,12 @@ export default function NovaSenhaScreen({ navigation }) {
           <TextInput style={styles.input} placeholder="Ex: 23°09'30.3'S" onChangeText={text => setLatitude(text)} />
           <Text style={cssTalhao.talhao_inputText}>Latitude</Text>
           <TextInput style={styles.input} placeholder="Ex: 45°47'38.9'W" onChangeText={text => setLongitude(text)} />
-          <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
-          <TextInput style={styles.input} placeholder='Ex: Ex: 10.000m²' onChangeText={text => setAreaTalhao(text)} />
           <Pressable style={styles.buttonMap}>
-            <Text style={cssTalhao.talhao_buttonText}  onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
+            <Text style={cssTalhao.talhao_buttonText}  onPress={() => puxarCoords()}>Usar localização</Text>
           </Pressable>
+          <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
+          <TextInput style={styles.input} placeholder='Ex:10000' onChangeText={text => setAreaTalhao(text)} />
+          
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>

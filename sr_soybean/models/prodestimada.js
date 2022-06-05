@@ -16,7 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   prodEstimada.init({
     pesoMilGraos: DataTypes.FLOAT,
     qtdeDezM: DataTypes.INTEGER,
-    distanciaLinhas: DataTypes.FLOAT
+    distanciaLinhas: DataTypes.FLOAT,
+    plantasHectare: DataTypes.FLOAT,
+    vagensPlanta: DataTypes.FLOAT,
+    graosVagem: DataTypes.FLOAT,
+    prodEstimada: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'prodEstimada',

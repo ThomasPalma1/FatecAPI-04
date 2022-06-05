@@ -18,7 +18,7 @@ let usuario = models.Usuario;
 let cultivo = models.cultivo
 let fazenda = models.fazenda;
 let talhao = models.Talhao;
-let produtividade = models.prodestimada;
+let produtividade = models.prodEstimada;
 let registro = models.registro;
 let amostra = models.amostras;
 let colheita = models.colheita;
@@ -62,6 +62,10 @@ app.post("/createProdutividade", async (req, res) => {
       pesoMilGraos: req.body.pesoMilGraos,
       qtdeDezM: req.body.qtdPlantas10m,
       distanciaLinhas: req.body.distanciaLinhas,
+      plantasHectare: req.body.plantasHectare,
+      vagensPlanta: req.body.vagensPlanta,
+      graosVagem: req.body.graosVagem,
+      prodEstimada: req.body.produtividadeEstimada,
       createdAt: new Date(),
       updateAt: new Date(),
     })
@@ -95,6 +99,9 @@ app.post("/createColheita", async (req, res) => {
     sementesColhidas: req.body.sementeColhidas,
     prodReal: req.body.ProdReal,
     perdas:req.body.perdas,
+    plantasHectare: req.body.plantasHectare,
+    vagensPlanta: req.body.vagensPlanta,
+    graosVagem: req.body.graosVagem,
       createdAt: new Date(),
       updateAt: new Date(),
     })
@@ -206,6 +213,36 @@ app.get('/readCustos', async(req,res)=>{
   });
 })
 
+//Ler ProdEstimada
+app.get('/readProdEstimada', async(req,res)=>{
+  let readProdEstimada = await produtividade.findAll({
+      raw:true
+  })
+  .then((produtividade) => {
+    return res.json({
+      produtividade: produtividade,
+      count: produtividade.count,
+    });
+  })
+  .catch((e) => {
+    return res.status(400).json({ error: e.message });
+  });
+})
+
+app.get('/readProdReal', async(req,res)=>{
+  let readProdReal = await colheita.findAll({
+      raw:true
+  })
+  .then((colheita) => {
+    return res.json({
+      colheita: colheita,
+      count: colheita.count,
+    });
+  })
+  .catch((e) => {
+    return res.status(400).json({ error: e.message });
+  });
+})
 
 // Delete Talhão
 app.delete("/deleteTalhao", async(req, res)=>{
@@ -246,49 +283,6 @@ app.delete("/deleteCustos", async(req, res)=>{
     console.log(error)
   })
 })
-
-
-// //Ler
-// app.get('/read', async(req,res)=>{
-//     let read = await usuario.findAll({
-//         raw:true
-//     })
-
-//     console.log(read)
-// })
-
-// //Edit
-// app.get('/update', async(req, res)=>{
-//     let update = await usuario.findByPk(1).then((response)=>{
-//         response.nome = 'teste1Edit';
-//         response.senha = 'senhaTeste1Edit';
-//         response.save();
-//     })
-// })
-
-// //Delete
-// app.get("/delete", async(req, res)=>{
-//     usuario.destroy({
-//         where:{
-//             id:1
-//         }
-//     })
-// })
-
-//Update
-
-// app.post("/update", async (req, res) => {
-//   let response = await tracking.findOne({
-//     where: {}, //passar os parametros
-//     include: [{ all: true }],
-//   });
-
-//   res.send(JSON.stringify("Os dados foram atualizados com sucesso! :D"));
-// });
-
-
-
-
 
 //Iniciando servidor em uma porta
 

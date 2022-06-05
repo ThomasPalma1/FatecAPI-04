@@ -16,7 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   colheita.init({
     sementesColhidas: DataTypes.INTEGER,
     prodReal: DataTypes.FLOAT,
-    perdas: DataTypes.INTEGER
+    perdas: DataTypes.INTEGER,
+    plantasHectare: DataTypes.FLOAT,
+    vagensPlanta: DataTypes.FLOAT,
+    graosVagem: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'colheita',

@@ -81,7 +81,7 @@ export default function GraficoMenuScreen({ navigation }) {
           <View style={styles.buttons}>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("GraficoFazenda")}>
+              onPress={() => navigation.navigate("")}>
               <Text style={styles.textInput}>Plantação Município</Text>
             </Pressable>
             <Pressable
@@ -96,12 +96,7 @@ export default function GraficoMenuScreen({ navigation }) {
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("")}>
-              <Text style={styles.textInput}>Meteorologia</Text>
-            </Pressable>
-            <Pressable
-              style={styles.button}
-              onPress={() => navigation.navigate("")}>
+              onPress={() => navigation.navigate("GraficoFazenda")}>
               <Text style={styles.textInput}>Minha produtividade</Text>
             </Pressable>
             <Pressable
