@@ -1,10 +1,10 @@
 {
-  "expoServerPort": 19000,
-  "devToolsPort": 19002,
+  "expoServerPort": null,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://sf-34c.anonymous.sr-soybean.exp.direct",
-  "packagerNgrokUrl": "https://sf-34c.anonymous.sr-soybean.exp.direct",
-  "ngrokPid": 2588,
-  "webpackServerPort": null
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "webpackServerPort": null,
+  "devToolsPort": 19002
 }
