@@ -190,12 +190,12 @@ export default function FazendasScreen({ navigation }) {
       <View style={styles.menu}>
         <View style={styles.div}>
           <View style={styles.button}>
-            <Text style={styles.textInput}>GRÃOS POR PLANTA</Text>
+            <Text style={styles.textInput}>QNTD. PLANTAS</Text>
             <Text style={styles.graos}>50</Text>
           </View>
           <View style={styles.button}>
-            <Text style={styles.textInput}>GRÃOS POR PLANTA</Text>
-            <Text style={styles.graos}>50</Text>
+            <Text style={styles.textInput}>GRÃOS POR PLANTAS</Text>
+            <Text style={styles.graos}>5</Text>
           </View>
         </View>
         <View>

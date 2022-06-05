@@ -37,9 +37,8 @@ export default function NovaSenhaScreen({ navigation }) {
     container: {
       backgroundColor: '#fff',
       alignItems: 'center',
-      flex: 1,
       flexDirection: 'column',
-      paddingTop: 30,
+      paddingTop: 50,
     },
     logo: {
       width: 80,
@@ -63,7 +62,7 @@ export default function NovaSenhaScreen({ navigation }) {
       alignItems: 'center',
     },
     buttonMap: {
-      alignItems: 'center',
+      alignSelf: 'center',
       justifyContent: 'center',
       backgroundColor: '#9DF59B',
       borderColor: '#6E7B58',
@@ -73,7 +72,6 @@ export default function NovaSenhaScreen({ navigation }) {
       width: 200,
       height: 40,
       margin: 5,
-      top: '41%',
     },
     button: {
       alignItems: 'center',
@@ -88,16 +86,15 @@ export default function NovaSenhaScreen({ navigation }) {
       marginLeft: 15,
     },
     buttons: {
-      top: '43%',
+      top: '40%',
     },
     login: {
+      marginTop: 10,
       width: 318,
-      height: 254,
+      height: 750,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
-      borderStyle: 'solid',
-      borderWidth: 2
     },
     input: {
       width: '100%',
@@ -113,7 +110,7 @@ export default function NovaSenhaScreen({ navigation }) {
     },
     arrow: {
       position: 'absolute',
-      top: 20,
+      top: 40,
       left: 10,
     },
     dropdown: {
@@ -128,7 +125,9 @@ export default function NovaSenhaScreen({ navigation }) {
 
   return (
     <>
+    <ScrollView >
       <View style={styles.container}>
+      
         <Pressable style={styles.arrow} onPress={() => navigation.navigate('Talhoes')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
         </Pressable>
@@ -141,7 +140,7 @@ export default function NovaSenhaScreen({ navigation }) {
         <Text style={cssTalhao.title}>Cadastrar talhão</Text>
       </View>
       <View style={styles.menu}>
-        <ScrollView style={styles.login}>
+        <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Atribuir talhão a uma propriedade</Text>
           <Picker
             selectedValue={selectedLanguage}
@@ -160,22 +159,17 @@ export default function NovaSenhaScreen({ navigation }) {
           <TextInput style={styles.input} placeholder="Ex: 45°47'38.9'W" onChangeText={text => setLongitude(text)} />
           <Text style={cssTalhao.talhao_inputText}>Área do talhão (ha)</Text>
           <TextInput style={styles.input} placeholder='Ex: Ex: 10.000m²' onChangeText={text => setAreaTalhao(text)} />
-          <Pressable style={styles.button} onPress={() => sendForm()}>
-            <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
-          </Pressable>
-          {/* <Pressable style={styles.buttonMap}>
+          <Pressable style={styles.buttonMap}>
             <Text style={cssTalhao.talhao_buttonText}  onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
-          </Pressable> */}
-        </ScrollView>
-        <TouchableOpacity style={styles.buttonMap}>
-          <Text style={cssTalhao.talhao_buttonText} onPress={() => navigation.navigate('Map')}>localizar no mapa</Text>
-        </TouchableOpacity>
-        <View style={styles.buttons}>
+          </Pressable>
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
-        </View>
+          </View>
+        
 </View>
+</ScrollView>
     </>
+    
   );
 }

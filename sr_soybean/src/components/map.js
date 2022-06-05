@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
+import { cssTalhao } from '../../../sr_soybean/assets/css/cssTalhao';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, Alert, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, Alert, View, Pressable, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import config from '../../config/config';
@@ -62,6 +63,7 @@ fetch(`${config.URL}/readTalhaos`, {
 
     
   return (
+    <View> 
     <MapView
       //pega coordenadas ao clicar.
       onPress={(e) => handleNewMarker(e.nativeEvent.coordinate)}
@@ -76,7 +78,10 @@ fetch(`${config.URL}/readTalhaos`, {
             <Marker coordinate={m} key={Math.random().toString()} />
           );
         })}
+  
+        
     </MapView>
+     </View>
   );
 }
 
@@ -84,6 +89,6 @@ fetch(`${config.URL}/readTalhaos`, {
 const styles = StyleSheet.create({
   map: {
     width: Dimensions.get('screen').width,
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('screen').height,
   }
 })

@@ -63,7 +63,7 @@ export default function MenuScreen({ navigation }) {
     configuracoes: {
       position: 'relative',
       right: '-45%',
-      top: 15,
+      top: 30,
     },
   });
 

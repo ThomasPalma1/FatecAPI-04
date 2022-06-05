@@ -81,13 +81,14 @@ export default function NovaSenhaScreen({ navigation }) {
       width: 280,
       height: 50,
       marginLeft: 15,
+      top: '25%',
     },
     buttons: {
-      top: '50%',
+      
     },
     login: {
       width: 318,
-      height: 254,
+      height: 750,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
@@ -108,7 +109,7 @@ export default function NovaSenhaScreen({ navigation }) {
     },
     arrow: {
       position: 'absolute',
-      top: 20,
+      top: 30,
       left: 10,
     },
     dropdown: {
@@ -123,6 +124,7 @@ export default function NovaSenhaScreen({ navigation }) {
 
   return (
     <>
+    <ScrollView>
       <View style={styles.container}>
         <Pressable style={styles.arrow} onPress={() => navigation.navigate('CadastroInfo')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
@@ -136,7 +138,7 @@ export default function NovaSenhaScreen({ navigation }) {
         <Text style={cssTalhao.title}>Custos</Text>
       </View>
       <View style={styles.menu}>
-        <ScrollView style={styles.login}>
+        <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Mão de obra</Text>
           <TextInput style={styles.input} keyboardType='decimal-pad' placeholder='R$:' onChangeText={text => setMaoObra(text)} />
           <Text style={cssTalhao.talhao_inputText}>Máquinas</Text>
@@ -148,8 +150,9 @@ export default function NovaSenhaScreen({ navigation }) {
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
-        </ScrollView>
+        </View>
       </View>
+      </ScrollView>
     </>
   );
 }

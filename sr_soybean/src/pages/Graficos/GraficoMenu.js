@@ -53,7 +53,7 @@ export default function GraficoMenuScreen({ navigation }) {
       borderWidth: 2,
       padding: 10,
       width: 318,
-      height: 110,
+      height: 80,
       margin: 5,
     },
     configuracoes: {
@@ -75,59 +75,41 @@ export default function GraficoMenuScreen({ navigation }) {
             source={require("../../../assets/img/icon.png")}
           />
         </View>
-        <Text style={styles.text}>Bem-vindo Teste!</Text>
+        <Text style={styles.text}>Veja suas estátisticas por topicos:</Text>
       </View>
       <View style={styles.menu}>
-        <View styles={styles.submenu}>
           <View style={styles.buttons}>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("GraficoFazenda")}
-            >
+              onPress={() => navigation.navigate("GraficoFazenda")}>
               <Text style={styles.textInput}>Plantação Município</Text>
-              <FontAwesome5 name="warehouse" size={40} color="white" />
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("Talhoes")}
-            >
+              onPress={() => navigation.navigate("Detalhes")}>
               <Text style={styles.textInput}>Produtividade Município</Text>
-              <FontAwesome5 name="leaf" size={40} color="white" />
             </Pressable>
-            {/* <Pressable style={styles.button} onPress={() => navigation.navigate('addCusto')}>
-              <Text style={styles.textInput}>Custos</Text>
-              <FontAwesome5 name="dollar-sign" size={40} color="white" />
-            </Pressable> */}
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("addAreaMunicipio")}
-            >
+              onPress={() => navigation.navigate("")}>
               <Text style={styles.textInput}>Preço do saco da soja</Text>
-              <Octicons name="graph" size={40} color="white" />
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("")}
-            >
+              onPress={() => navigation.navigate("")}>
               <Text style={styles.textInput}>Meteorologia</Text>
-              <Entypo name="cloud" size={40} color="white" />
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("")}
-            >
+              onPress={() => navigation.navigate("")}>
               <Text style={styles.textInput}>Minha produtividade</Text>
-              <Entypo name="cloud" size={40} color="white" />
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("")}
-            >
+              onPress={() => navigation.navigate("")}           >
               <Text style={styles.textInput}>Meu Custo de Produção</Text>
-              <Entypo name="cloud" size={40} color="white" />
             </Pressable>
           </View>
-        </View>
       </View>
     </>
   );

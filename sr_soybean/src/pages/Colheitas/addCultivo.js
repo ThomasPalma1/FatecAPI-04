@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import config from '../../../config/config_config';
 import DatePicker from 'react-native-datepicker';
-import { Picker } from '@react-native-picker/picker';
-import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, Button,ScrollView } from 'react-native';
+import { View, Image, StyleSheet, Text, Pressable, TextInput, Alert, TouchableOpacity, Button, ScrollView } from 'react-native';
 import { cssTalhao } from '../../../assets/css/cssTalhao';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -11,7 +10,7 @@ export default function AddCultivoScreen({ navigation }) {
 
   const [fenologico, setFenologico] = useState(null);
   const [tipoCultivo, setTipoCultivo] = useState(null);
-
+  const [date, setDate] = useState(new Date);
   //Envio do form
   async function sendForm() {
     await fetch(`${config.URL}/createCultivo`, {
@@ -36,7 +35,7 @@ export default function AddCultivoScreen({ navigation }) {
   };
 
   const getDate = () => {
-    let tempDate = date.toString().split(' ');
+    let tempDate = date.toLocaleString().split(' ');
     return date !== ''
       ? `${tempDate[0]} ${tempDate[1]} ${tempDate[2]} ${tempDate[3]}`
       : '';
@@ -96,18 +95,16 @@ export default function AddCultivoScreen({ navigation }) {
       width: 280,
       height: 50,
       marginLeft: 15,
-    },
-    buttons: {
-      top: '50%',
+      top: '25%'
     },
     login: {
       width: 318,
-      height: 254,
+      height: 750,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
       borderStyle: 'solid',
-      borderWidth: 2
+      borderWidth: 2,
     },
     input: {
       width: '100%',
@@ -123,7 +120,7 @@ export default function AddCultivoScreen({ navigation }) {
     },
     arrow: {
       position: 'absolute',
-      top: 20,
+      top: 30,
       left: 10,
     },
     dropdown: {
@@ -134,10 +131,15 @@ export default function AddCultivoScreen({ navigation }) {
       marginBottom: 10,
       fontSize: 15,
     },
+    date:{
+      alignSelf: 'center',
+      backgroundColor: 'white',
+    }
   });
 
   return (
     <>
+     <ScrollView>
       <View style={styles.container}>
         <Pressable style={styles.arrow} onPress={() => navigation.navigate('CadastroInfo')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
@@ -151,12 +153,17 @@ export default function AddCultivoScreen({ navigation }) {
         <Text style={cssTalhao.title}>Cultivo</Text>
       </View>
       <View style={styles.menu}>
-      <ScrollView style={styles.login}>
+      <View style={styles.login}>
           <Text style={styles.text}>DADOS DA COLHEITA</Text>
           <Text style={cssTalhao.talhao_inputText}>Data da colheita prevista</Text>
           <DatePicker
-            styles={styles.input}
-            // date={getDate()}
+          customStyles={{
+            dateInput: {
+                borderWidth: 0,
+            }
+        }}
+            style={styles.date}
+            date={getDate()}
             format='DD/MM/YYYY'
             mode="date"
             onDateChange={handleConfirm}
@@ -164,23 +171,14 @@ export default function AddCultivoScreen({ navigation }) {
           <Text style={styles.text}>CULTIVARES</Text>
           <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo</Text>
           <TextInput style={styles.input} placeholder="" onChangeText={text => setTipoCultivo(text)} />
-          {/* <Picker
-            selectedValue={selectedLanguage}
-            onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
-            style={styles.dropdown}
-            mode="dropdown">
-            <Picker.Item label="Tipo de cultivo" value="Tipo de cultivo" />
-            <Picker.Item label="Soja" value="Soja" />
-            <Picker.Item label="Café" value="Café" />
-          </Picker> */}
           <Text style={cssTalhao.talhao_inputText}>Tempo fenológico</Text>
           <TextInput style={styles.input} placeholder="" onChangeText={text => setFenologico(text)} />
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
-        </ScrollView>
-      
+        </View>
       </View>
+     </ScrollView>
     </>
   );
 }

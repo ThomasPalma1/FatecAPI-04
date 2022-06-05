@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import config from "../../../config/config_config";
-import { StyleSheet, TouchableWithoutFeedback, View, Animated, Text, Pressable, FlatList, Alert } from "react-native";
+import { StyleSheet, View, Animated, Text, Pressable} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -182,14 +182,13 @@ export default function FazendasScreen({ navigation }) {
       <Pressable style={styles.arrow} onPress={() => navigation.navigate('Menu')}>
         <Ionicons name="arrow-undo" size={30} color="#79B078" />
       </Pressable>
-      <Text style={cssTalhao.title}>PROPRIEDADES</Text>
-      <Text style={styles.text}>Visualize todas suas propriedades registradas</Text>
+      <Text style={cssTalhao.title}>PLantação Município</Text>
+      <Text style={styles.text}>Grafico Teste</Text>
     </View>
     <View style={styles.menu}>
 
 
 <View styles={styles.submenu}>
-      <Text style={styles.text}>Gráfico TESTE</Text>
       <LineChart
         data={{
           labels: ["January", "February", "March", "April", "May", "June"],
@@ -206,7 +205,7 @@ export default function FazendasScreen({ navigation }) {
             },
           ],
         }}
-        width={410} // from react-native
+        width={350} // from react-native
         height={220}
         yAxisLabel="$"
         yAxisSuffix="k"
@@ -220,6 +219,7 @@ export default function FazendasScreen({ navigation }) {
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           style: {
             borderRadius: 16,
+            
           },
           propsForDots: {
             r: "6",

@@ -13,7 +13,7 @@ const cssTalhao = StyleSheet.create({
         fontSize: 30,
         color:"#52D047",
         marginHorizontal: 10,
-        alignContent: "center",
+        alignSelf: 'center',
     },
     subtitle:{
         fontSize: 20,
@@ -53,7 +53,22 @@ const cssTalhao = StyleSheet.create({
         fontSize: 22,
         alignSelf: 'center',
         color: "#fff"
-    }
+    },
+    button: {
+        position: 'absolute',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#9DF59B',
+        borderColor: '#6E7B58',
+        borderStyle: 'solid',
+        borderRadius: 16,
+        borderWidth: 2,
+        width: 280,
+        height: 60,
+        marginLeft: 15,
+        marginTop:20,
+        bottom: 10,
+      }
 })
 
 export {cssTalhao};

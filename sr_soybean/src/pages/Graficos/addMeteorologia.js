@@ -4,7 +4,7 @@ import { Feather } from '@expo/vector-icons'
 import {useState, useEffect} from 'react'
 import * as Location from 'expo-location'
 import { EvilIcons } from '@expo/vector-icons'
-import { getWeather, dailyForecast, showWeather} from 'react-native-weather-api';
+import { dailyForecast} from 'react-native-weather-api';
 
 import InfoCard from './InfoCard'
 import MainCard from "./MainCard"
@@ -159,7 +159,7 @@ export default function App({ navigation }) {
       <View style={styles.container}>
       
         <TouchableOpacity style={styles.refreshButton} onPress={() => navigation.navigate('addMeteorologia')}>
-          <EvilIcons name="refresh" color={'white'} size={24}/>
+          <EvilIcons name="refresh" color={'black'} size={30}/>
         </TouchableOpacity>
 
         <Feather style={{marginTop: 50}} name="sun" size={40} color="orange" />
@@ -179,7 +179,7 @@ export default function App({ navigation }) {
         <View style={styles.info}>
           <Text style={styles.infoText}>Informações adicionais:</Text>
           <View style={styles.addtionalInfo}>
-            <InfoCard title={'Vento'} variable={wind} ></InfoCard>
+            <InfoCard title={'Vento'} variable={wind + ' km/h'}></InfoCard>
             <InfoCard title={'Umidade'} variable={Clima.currentHumidity + `%`}></InfoCard>
             <InfoCard title={'Sensação'} variable={Clima.sensacao} ></InfoCard>
             <InfoCard title={'Clima'} variable={Clima.currentDescription} ></InfoCard>

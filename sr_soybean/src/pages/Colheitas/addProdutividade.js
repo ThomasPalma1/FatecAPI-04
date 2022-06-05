@@ -83,13 +83,12 @@ export default function AddProdutividadeScreen({ navigation }) {
       width: 280,
       height: 50,
       marginLeft: 15,
-    },
-    buttons: {
-      top: '50%',
+      top: '35%',
     },
     login: {
+      marginTop: 10,
       width: 318,
-      height: 254,
+      height: 750,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
@@ -99,7 +98,7 @@ export default function AddProdutividadeScreen({ navigation }) {
     input: {
       width: '100%',
       backgroundColor: "#FFFFFF",
-      height: 50,
+      height: 60,
       borderRadius: 15,
       borderColor: '#6E7B58',
       borderStyle: 'solid',
@@ -110,7 +109,7 @@ export default function AddProdutividadeScreen({ navigation }) {
     },
     arrow: {
       position: 'absolute',
-      top: 20,
+      top: 30,
       left: 10,
     },
     dropdown: {
@@ -125,6 +124,7 @@ export default function AddProdutividadeScreen({ navigation }) {
 
   return (
     <>
+    <ScrollView>
       <View style={styles.container}>
         <Pressable style={styles.arrow} onPress={() => navigation.navigate('CadastroInfo')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
@@ -138,7 +138,7 @@ export default function AddProdutividadeScreen({ navigation }) {
         <Text style={cssTalhao.title}>Produtividade</Text>
       </View>
       <View style={styles.menu}>
-      <ScrollView style={styles.login}>
+      <View style={styles.login}>
           <Text style={cssTalhao.talhao_inputText}>Peso de mil grãos</Text>
          
           <TextInput style={styles.input} placeholder='' onChangeText={text => setPesoMilGraos(text)} />
@@ -151,8 +151,9 @@ export default function AddProdutividadeScreen({ navigation }) {
           <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
-        </ScrollView>
+        </View>
       </View>
+      </ScrollView>
     </>
   );
 }

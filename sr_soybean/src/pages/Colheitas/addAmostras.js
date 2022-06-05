@@ -110,7 +110,7 @@ export default function NovaSenhaScreen({ navigation }) {
     },
     login: {
       width: 318,
-      height: 254,
+      height: 750,
       padding: 5,
       borderRadius: 20,
       borderColor: '#79B078',
@@ -131,7 +131,7 @@ export default function NovaSenhaScreen({ navigation }) {
     },
     arrow: {
       position: 'absolute',
-      top: 20,
+      top: 30,
       left: 10,
     },
     dropdown: {
@@ -158,6 +158,7 @@ export default function NovaSenhaScreen({ navigation }) {
 
   return (
     <>
+     <ScrollView>
       <View style={styles.container}>
         <Pressable style={styles.arrow} onPress={() => navigation.navigate('CadastroInfo')}>
           <Ionicons name="arrow-undo" size={30} color="#79B078" />
@@ -171,11 +172,10 @@ export default function NovaSenhaScreen({ navigation }) {
         <Text style={cssTalhao.title}>Amostras</Text>
       </View>
       <View style={styles.menu}>
-      <ScrollView style={styles.login}>
-          {/* <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo utilizado</Text> */}
-          {/* <Picker
-            selectedValue={selectedLanguage}
-            onValueChange={selectedLanguage => setSelectedLanguage(selectedLanguage)}
+      <View style={styles.login}>
+          <Text style={cssTalhao.talhao_inputText}>Tipo de cultivo utilizado</Text>
+          <Picker
+            
             style={styles.dropdown}
             mode="dropdown">
           <Picker.Item label="Selecione o Cultivo" value="Selecione o Cultivo"/>
@@ -183,7 +183,7 @@ export default function NovaSenhaScreen({ navigation }) {
           <Picker.Item label="Algodão" value="Algodão" />
           <Picker.Item label="Café" value="Café" />
           <Picker.Item label="Milho" value="Milho" />
-          </Picker> */}
+          </Picker>
           <Text style={cssTalhao.talhao_inputText}>Pragas</Text>
           <TextInput style={styles.input} onChangeText={text => setPragas(text)}  />
           <Text style={cssTalhao.talhao_inputText}>Doenças</Text>
@@ -201,9 +201,9 @@ export default function NovaSenhaScreen({ navigation }) {
         <Pressable style={styles.button} onPress={() => sendForm()}>
             <Text style={cssTalhao.talhao_buttonText}>Salvar</Text>
           </Pressable>
-        </ScrollView>
-
+        </View>
       </View>
+     </ScrollView>
     </>
   );
 }
