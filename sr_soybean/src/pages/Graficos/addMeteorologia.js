@@ -114,16 +114,21 @@ export default function App() {
     const data = await getCurrentWeather(locationCoords)
 
     // Vem da api nessa ordem [currentTemperature, temperatureMin, temperatureMax, locationName, wind, humidity]
-
-    setCurrentTemperature(convertKelvinToC(data[0]))
-    setTemperatureMin(convertKelvinToC(data[1]))
-    setTemperatureMax(convertKelvinToC(data[2]))
-    setLocationName(data[3])
-    setWind(data[4])
-    setHumidity(data[5])
+    // console.log(data)
+    // setCurrentTemperature(convertKelvinToC(data[0]))
+    // setTemperatureMin(convertKelvinToC(data[1]))
+    // setTemperatureMax(convertKelvinToC(data[2]))
+    setLocationName(data[0])
+    setWind(data[1])
+    // setHumidity(data[5])
     
   }
-
+// console.log(currentTemperature)
+// console.log(temperatureMin)
+// console.log(temperatureMax)
+// console.log(locationName)
+// console.log(wind)
+// console.log(humidity)
   function convertKelvinToC(kelvin){
     return parseInt(kelvin - 273)
   }
@@ -149,8 +154,8 @@ export default function App() {
         <Text style={styles.localizationText}>{locationName}</Text>
 
         <View style={styles.cardsView}>
-          <MainCard title={"Temperatura Máxima"} icon={'morning'} temperature={temperatureMin} backgroundColor={  '#CC6E30'} ></MainCard>
-          <MainCard title={"Temperatura Minima"} icon={'night'} temperature={temperatureMax} backgroundColor={'#008081'} ></MainCard>
+          <MainCard title={"Temperatura Máxima"} icon={'morning'} temperature={temperatureMax} backgroundColor={'#CC6E30'} ></MainCard>
+          <MainCard title={"Temperatura Minima"} icon={'night'} temperature={temperatureMin} backgroundColor={'#008081'} ></MainCard>
         </View>
     
         <View style={styles.info}>
