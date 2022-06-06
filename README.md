@@ -63,13 +63,13 @@ Foram desenvolvidas e entregues ao cliente as seguintes funções para a platafo
 ```              
 #### Por que entregamos isso?
 <p align="justify">
-Para o usuário é de suma importância a fácil visualização do seus resultados, os gráficos é uma 
+A visualização dos resultados através de tendências disponibilizadas por gráficos é de suma importância para o produtor de soja, pois permite uma visão mais ampla de seu negócio, auxiliando na tomada de decisões, além de permitir obter insights que podem deixar sua produção mais eficiente e lucrativa.
 </p>
 
 
 #### Quais foram as partes mais trabalhosas?
 <p align="justify">
-...
+A conexão com APIs foi a parte mais trabalhosa, pois necessitou pesquisa e entendimento do funcionamento da API para obter as informações corretas.
 </p>
 
  
