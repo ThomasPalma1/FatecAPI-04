@@ -105,7 +105,7 @@ A conexão com APIs foi a parte mais trabalhosa, pois necessitou pesquisa e ente
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
          
 <div align="center">
-    <h3 align="center"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-03/docs/entrega-03.gif" width="300px" height="600px;" alt=""/></h3>
+    <h3 align="center"><img style="border-radius: 50%;" src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-03/docs/tecsoja.gif width="300px" height="600px;" alt=""/></h3>
 </div>              
       
 <h2 id="wireframe" style="font-family:roboto;">💻<i>Wireframes do projeto</i></h2>
