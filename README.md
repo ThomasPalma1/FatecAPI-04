@@ -78,8 +78,9 @@ Para o usuário é de suma importância a fácil visualização do seus resultad
 
 [<img src="https://svgshare.com/i/WF7.svg" width = "40%">](#menu-de-navegação)
 
-<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-03/docs/User%20Stories/1_Users_Stories_03.JPG>
-<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-03/docs/User%20Stories/2_Users_Stories_03.JPG>
+<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-03/docs/User%20Stories/User_Stories_SPRINT3_1.png>
+<img src=https://github.com/ThomasPalma1/FatecAPI-04/blob/entrega-03/docs/User%20Stories/User_Stories_SPRINT3_2.png>
+       
 
 
 
