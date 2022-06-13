@@ -275,23 +275,23 @@ export default function FazendasScreen({ navigation }) {
   }, [])
 
   
-  const dataGraph = {
-      labels: ['Prod Estimada', 'Prod Real', ''],
-      datasets: [{
-        data:  [1.88,1.33,0], 
-      }]
-    }
-
-
-  // const prodEstimadaGraph = (prodEstimada.prodCorrect).toString().replace(",", ".")
-  // const prodRealGraph =  (prodReal.prodCorrect).toString().replace(",", ".")
   // const dataGraph = {
-  //   labels: ['Produtividade Estimada', 'Produtividade Real'],
-  //   datasets: [{
-  //     data:  [prodEstimadaGraph, prodRealGraph],
+  //     labels: ['Prod Estimada', 'Prod Real', ''],
+  //     datasets: [{
+  //       data:  [1.88,1.33,0], 
+  //     }]
+  //   }
+
+
+  const prodEstimadaGraph = (prodEstimada.prodCorrect).toString().replace(",", ".")
+  const prodRealGraph =  (prodReal.prodCorrect).toString().replace(",", ".")
+  const dataGraph = {
+    labels: ['Produtividade Estimada', 'Produtividade Real'],
+    datasets: [{
+      data:  [prodEstimadaGraph, prodRealGraph],
       
-  //   }]
-  // }
+    }]
+  }
 
   return (
     <ScrollView>
