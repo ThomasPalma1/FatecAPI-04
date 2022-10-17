@@ -118,7 +118,7 @@ Portanto este aplicativo consolidará registros e informações focadas no culti
 <table align="center">
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/higor-mariano-5587b81b8/"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/72944799?v=4" width="100px;" alt=""/><br /><sub><b>Higor Mariano</b></sub></a><br/><sub><b>Scrum Master</b></sub></td>
-     <td align="center"><a href="https://br.linkedin.com/in/barbara-bidetti-bb910a1b3"><img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQFTQzm03BKxjQ/profile-displayphoto-shrink_200_200/0/1637982935297?e=1654128000&v=beta&t=qWm0FFXVA-Uk7qN1ao71sfcclBK9NqgVeUZ7gwKJYHw" width="100px;" alt=""/><br/><sub><b>Barbara Bidetti</b></sub></a><br/><sub><b>Product Owner</b></sub></td>
+     <td align="center"><a href="https://br.linkedin.com/in/barbara-bidetti-bb910a1b3"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/60778277?v=4" width="100px;" alt=""/><br/><sub><b>Barbara Bidetti</b></sub></a><br/><sub><b>Product Owner</b></sub></td>
     <td align="center"><a href="https://www.linkedin.com/in/juliane-freitas-9b6287163"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/Juliane.jfif" width="100px;" alt=""/><br /><sub><b>Juliane Freitas</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
     <td align="center"><a href="https://www.linkedin.com/in/pedro-ferreira-6a8417190/"><img style="border-radius: 50%;" src="https://github.com/ThomasPalma1/FatecAPI-03/blob/main/docs/Equipe/pedro.jpg" width="100px;" alt=""/><br /><sub><b>Pedro Ferreira</b></sub></a><br/><sub><b>Dev Team</b></sub></td>
          <tr>
